@@ -1,0 +1,18 @@
+.Lobby {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Lobby h1 {
+    font-size: 4rem;
+}
+.Lobby h2 {
+    font-size: 2rem;
+}
+.LinksWrapper {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}

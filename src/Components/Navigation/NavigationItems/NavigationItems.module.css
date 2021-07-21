@@ -1,0 +1,32 @@
+.NavigationItems {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    /* background-color: black; */
+}
+
+.SchoolName {
+    /* color: #ffffff; */
+    font-size: 1.2rem;
+    margin-left: 3rem;
+}
+
+.Items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background-color: red; */
+}
+.Items a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.75rem;
+    /* background-color: #515E63; */
+    color: #e6e6e6;
+    color: #282c34;
+    height: 80%;
+    /* width: 100px; */
+}

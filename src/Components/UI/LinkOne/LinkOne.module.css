@@ -1,0 +1,21 @@
+.LinkOne {
+    display: inline-block;
+    background-color: #515E63;
+    color: #F1ECC3;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2px;
+    transition:
+        transform 100ms ease,
+        box-shadow 250ms ease,
+        background-color 250ms ease;
+}
+.LinkOne:hover {
+    /* transform: translateY(-2px); */
+    /* transform: scale(1.01); */
+    /* opacity: 0.95; */
+    background-color: #3e484d;
+    box-shadow: 0 0 6px #515E63;
+}
+.LinkOne:active {
+    transform: scale(0.97);
+}

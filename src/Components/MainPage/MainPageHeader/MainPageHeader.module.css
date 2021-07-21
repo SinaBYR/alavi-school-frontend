@@ -1,0 +1,53 @@
+.MainPageHeader {
+    width: 100%;
+    height: 80px;
+    background-color: #57837B;
+    background-color: #283344;
+    background-color: #2a3546;
+    background-color: #eeeeee;
+    padding: 0 1rem;
+}
+
+.Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* background-color: red; */
+
+    /* border-radius: 25px 25px 0 0; */
+    /* box-shadow: 0 0 8px #57837B; */
+}
+
+.Wrapper > * {
+    /* margin: 0 1rem; */
+}
+
+.Profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background-color: red; */
+}
+.Profile a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100px; */
+    background-color: #476072;
+    background-color: #eeeeee;
+    background-color: #ffb62d;
+    color: white;
+    color: #283344;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.Profile a:hover {
+    background-color: #dddddd;
+    background-color: #e69d17;
+}
