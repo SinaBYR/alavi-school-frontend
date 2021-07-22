@@ -1,0 +1,37 @@
+.SectionTwo {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.Wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* background-color: #fcfcfc; */
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    /* box-shadow: 0 0 15px #e2e2e2; */
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    /* border: 1px solid gray; */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #cacaca;
+}
+.Card h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.Card p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+.Card a {
+    margin-top: 0.5rem;
+    margin-right: auto;
+}

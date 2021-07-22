@@ -1,7 +1,10 @@
 import MainPageHeader from './MainPageHeader/MainPageHeader';
 import classes from './MainPage.module.css';
 import SectionOne from './SectionOne/SectionOne';
-import TopNav from '../Navigation/TopNav/TopNav';
+import TopNav from '../../Navigation/TopNav/TopNav';
+import SectionTwo from './SectionTwo/SectionTwo';
+import SectionThree from './SectionThree/SectionThree';
+import Footer from '../../Footer/Footer';
 
 
 
@@ -11,6 +14,9 @@ const MainPage = props => {
             <TopNav />
             <MainPageHeader />
             <SectionOne />
+            <SectionTwo />
+            <SectionThree />
+            <Footer />
         </div>
     )
 }

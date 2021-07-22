@@ -1,11 +1,20 @@
 .MainPageHeader {
+    position: fixed;
+    top: 44px;
+    left: 0;
     width: 100%;
     height: 80px;
     background-color: #57837B;
     background-color: #283344;
     background-color: #2a3546;
     background-color: #eeeeee;
+    background-color: #184D47;
+    background-color: #476072;
+    background-color: #282c34;
     padding: 0 1rem;
+    box-shadow: 0 4px 10px -5px black;
+    /* box-shadow: 0 4px 2px -2px gray; */
+    z-index: 9;
 }
 
 .Wrapper {
@@ -32,22 +41,4 @@
     align-items: center;
     height: 100%;
     /* background-color: red; */
-}
-.Profile a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* width: 100px; */
-    background-color: #476072;
-    background-color: #eeeeee;
-    background-color: #ffb62d;
-    color: white;
-    color: #283344;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-.Profile a:hover {
-    background-color: #dddddd;
-    background-color: #e69d17;
 }

@@ -1,0 +1,40 @@
+.SectionOne {
+    max-width: 1280px;
+    margin: 0 auto;
+    /* padding: 0 1rem; */
+    /* background-color: green; */
+    margin-bottom: 4rem;
+    height: 600px;
+}
+
+.Wrapper {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    /* padding: 0 1rem; */
+    /* background-color: red; */
+}
+
+.Text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 2rem; */
+    /* background-color: blue; */
+}
+.Text h2 {
+    font-size: 3.5rem;
+}
+.Text p {
+    font-size: 1.5rem;
+}
+
+.Wrapper img {
+    height: 450px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* background-color: red; */
+}

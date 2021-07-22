@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import MainPage from '../MainPage/MainPage';
+import MainPage from './MainPage/MainPage';
 import classes from './School.module.css';
 
 
