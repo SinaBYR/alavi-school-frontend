@@ -1,0 +1,27 @@
+.LinkOne {
+    display: inline-block;
+    /* width: 100px; */
+    background-color: #476072;
+    background-color: #eeeeee;
+    background-color: #ffb62d;
+    color: white;
+    color: #283344;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition:
+        transform 100ms ease,
+        box-shadow 250ms ease,
+        background-color 250ms ease;
+}
+.LinkOne:hover {
+    /* transform: translateY(-2px); */
+    /* transform: scale(1.01); */
+    /* opacity: 0.95; */
+    /* background-color: #3e484d; */
+    /* box-shadow: 0 0 6px #515E63; */
+    background-color: #dddddd;
+    background-color: #e69d17;
+}
+.LinkOne:active {
+    transform: scale(0.97);
+}

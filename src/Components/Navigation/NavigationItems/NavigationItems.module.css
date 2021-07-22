@@ -1,0 +1,120 @@
+.NavigationItems {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    /* background-color: black; */
+}
+
+.SchoolName {
+    /* color: #ffffff; */
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-left: 2rem;
+    margin-left: 2rem;
+    border-left: 1px solid #ffb62d;
+}
+
+.Logo {
+    width: 70px;
+    height: 55px;
+}
+
+.Items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background-color: red; */
+}
+.Items .Link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.75rem;
+    /* background-color: #515E63; */
+    color: #e6e6e6;
+    color: #282c34;
+    color: #F4F4F4;
+    height: 80%;
+    /* width: 100px; */
+}
+
+.AboutUs,
+.EducationalContent {
+    position: relative;
+}
+.AboutUs:hover .AboutUsSubMenu,
+.EducationalContent:hover .EducationalContentSubMenu {
+    display: block;
+}
+
+.AboutUsSubMenu,
+.EducationalContentSubMenu {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    width: 400px;
+    padding: 1rem;
+    transform: translateX(-50%, 0);
+    /* background-color: darkslategrey; */
+    animation: animate-1 300ms ease forwards;
+    /* z-index: 0; */
+}
+.AboutUsSubMenu::after,
+.EducationalContentSubMenu::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #f4f4f4;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    /* z-index: -1; */
+}
+
+.AboutUsSubMenuWrapper,
+.EducationalContentSubMenuWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 8px black;
+}
+
+.SubLink {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #282c34;
+    background-color: #ffb62d;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.SubLink:hover {
+    background-color: #e69d17;
+}
+
+.SubLink span {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-right: auto;
+}
+
+@keyframes animate-1 {
+    from {
+        transform: translate(-50%, 10px);
+    }
+    to {
+        transform: translate(-50%, 0);
+    }
+}

@@ -1,0 +1,99 @@
+.Footer {
+    background-color: #354e61;
+    background-color: #282c34;
+    color: white;
+}
+
+.Footer h2 {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid gray;
+    padding-right: 0.5rem;
+}
+
+.Wrapper {
+    display: grid;
+    grid-template-columns: 35% 20% 45%;
+    /* max-width: 1280px;
+    margin: 0 auto; */
+    padding: 3rem;
+}
+
+.About {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    padding: 0 1rem;
+    margin-left: 1rem;
+}
+.About p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-align: justify;
+    padding: 0 0.5rem;
+    /* color: rgb(214, 214, 214); */
+}
+.SVGs {
+    /* display: flex; */
+    margin-top: auto;
+    /* margin-right: auto; */
+    margin-left: auto;
+}
+.SVGs img {
+    background-color: #f4f4f4;
+    width: 100px;
+    height: 100px;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 0 5px #354e61;
+    border-radius: 10px;
+}
+
+.Links {
+    /* background-color: blue; */
+    padding: 0 1rem;
+    /* text-align: center; */
+}
+.LinksWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 1.5rem;
+    /* background-color: red; */
+}
+.LinksWrapper > li {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.Contact {
+    display: grid;
+    /* background-color: pink; */
+    padding: 0 1rem;
+    gap: 2rem 0;
+    margin-right: auto;
+}
+.Contact h3 {
+    margin-bottom: 0.5rem;
+}
+.ContactItem {
+    display: flex;
+    gap: 0 1rem;
+}
+
+.BottomFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 1px solid gray;
+}
+.Socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 0.5rem;
+}

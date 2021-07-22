@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import './App.css';
+import Lobby from './Components/Lobby/Lobby';
+import School from './Components/School/School';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const location = useLocation();
+    const [displayLocation, setDisplayLocation] = useState(location);
+    const [transitionStage, setTransitionStage] = useState('fadeIn');
+
+    useEffect(() => {
+        if(displayLocation !== location) {
+            setTransitionStage('fadeOut')
+        }
+    }, [location])
+
+    const animationEndHandler = () => {
+        if(transitionStage === 'fadeOut') {
+            setTransitionStage('fadeIn');
+            setDisplayLocation(location);
+        }
+    }
+
+    return (
+        <div className={['App', transitionStage].join(' ')} onAnimationEnd={animationEndHandler}>
+            <Switch location={displayLocation}>
+                <Route path="/school" component={School} />
+                <Route exact path="/" component={Lobby} />
+                <Redirect from="*" to='/404' />
+            </Switch>
+        </div>
+    );
 }
 
 export default App;

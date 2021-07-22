@@ -1,5 +1,16 @@
 .App {
-  text-align: center;
+    height: 100vh;
+    background-color: #282c34;
+    background-color: #515E63;
+    background-color: #C9D8B6;
+    background-color: #D6EFC7;
+    background-color: #D6EFC7;
+    background-color: #a7b89c;
+    background-color: #FAD586;
+    background-color: #f4f4f4;
+    color: #515E63;
+    color: #282c34;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -36,3 +47,51 @@
     transform: rotate(360deg);
   }
 }
+.fadeIn {
+    animation: 180ms fadeIn forwards ease-in;
+  }
+  
+  .fadeOut {
+    animation: 180ms fadeOut forwards ease-out;
+  }
+  
+
+  /* @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-5px, 0);
+    }
+    80% {
+        opacity: 0;
+    }
+    90% {
+        transform: translate(-5px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  } */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      /* transform: translate(-5px, 0px); */
+    }
+    to {
+      opacity: 1;
+      /* transform: translate(0px, 0px); */
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+    to {
+      transform: translate(-5px, 0);
+      opacity: 0;
+    }
+  }
+  
