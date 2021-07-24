@@ -1,23 +1,23 @@
 .Footer {
+    color: white;
     background-color: #354e61;
     background-color: #282c34;
-    color: white;
 }
 
 .Footer h2 {
     font-size: 1.2rem;
     padding-bottom: 1rem;
+    padding-right: 0.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid gray;
-    padding-right: 0.5rem;
 }
 
 .Wrapper {
     display: grid;
     grid-template-columns: 35% 20% 45%;
+    padding: 3rem;
     /* max-width: 1280px;
     margin: 0 auto; */
-    padding: 3rem;
 }
 
 .About {
@@ -30,8 +30,8 @@
 .About p {
     font-size: 1.1rem;
     line-height: 1.4;
-    text-align: justify;
     padding: 0 0.5rem;
+    text-align: justify;
     /* color: rgb(214, 214, 214); */
 }
 .SVGs {
@@ -44,10 +44,10 @@
     background-color: #f4f4f4;
     width: 100px;
     height: 100px;
-    margin: 0 0.5rem;
     padding: 0.5rem;
-    box-shadow: 0 0 5px #354e61;
+    margin: 0 0.5rem;
     border-radius: 10px;
+    box-shadow: 0 0 5px #354e61;
 }
 
 .Links {
@@ -72,8 +72,8 @@
 .Contact {
     display: grid;
     /* background-color: pink; */
-    padding: 0 1rem;
     gap: 2rem 0;
+    padding: 0 1rem;
     margin-right: auto;
 }
 .Contact h3 {

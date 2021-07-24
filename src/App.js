@@ -13,7 +13,7 @@ const App = () => {
         if(displayLocation !== location) {
             setTransitionStage('fadeOut')
         }
-    }, [location])
+    }, [location, displayLocation])
 
     const animationEndHandler = () => {
         if(transitionStage === 'fadeOut') {

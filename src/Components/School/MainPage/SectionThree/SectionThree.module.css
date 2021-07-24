@@ -6,12 +6,11 @@
 
 .Wrapper {
     max-width: 1250px;
-    margin: 0 auto;
     /* background-color: #fcfcfc; */
-    padding: 1rem;
+    padding: 2rem;
+    margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 0 15px #cacaca;
-    padding: 2rem;
 }
 
 .Wrapper h2 {
@@ -30,8 +29,6 @@
     gap: 1rem;
     margin-top: 1rem;
     /* padding: 1rem; */
-
-
 }
 
 .Achievement {
@@ -39,8 +36,8 @@
     /* width: 300px; */
     height: 250px;
     background-color: #fcfcfc;
-    box-shadow: 0 0 10px black;
     border-radius: 15px;
+    box-shadow: 0 0 10px black;
     /* padding: 0.1rem; */
     /* border: 5px solid #ffb62d; */
 }

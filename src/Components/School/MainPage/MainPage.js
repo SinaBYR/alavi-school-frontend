@@ -1,4 +1,4 @@
-import MainPageHeader from './MainPageHeader/MainPageHeader';
+import PublicHeader from '../../Navigation/PublicHeader/PublicHeader';
 import classes from './MainPage.module.css';
 import SectionOne from './SectionOne/SectionOne';
 import TopNav from '../../Navigation/TopNav/TopNav';
@@ -11,8 +11,8 @@ import Footer from '../../Footer/Footer';
 const MainPage = props => {
     return (
         <div className={classes.MainPage}>
-            <TopNav />
-            <MainPageHeader />
+            {/* <TopNav /> */}
+            {/* <PublicHeader /> */}
             <SectionOne />
             <SectionTwo />
             <SectionThree />
