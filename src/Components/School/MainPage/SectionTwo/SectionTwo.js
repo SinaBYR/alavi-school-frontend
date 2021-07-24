@@ -1,4 +1,4 @@
-import LinkOne from '../../../UI/LinkOne/LinkOne.';
+import LinkOne from '../../../UI/LinkOne/LinkOne';
 import classes from './SectionTwo.module.css';
 
 const SectionTwo = props => {

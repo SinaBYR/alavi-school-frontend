@@ -1,7 +1,7 @@
 import classes from './SectionThree.module.css';
-import Image1 from '../../../../assets/illustrations/undraw_book_reading_kx9s.svg';
-import Image2 from '../../../../assets/illustrations/undraw_Growing_re_olpi.svg';
-import Image3 from '../../../../assets/illustrations/undraw_Faq_re_31cw.svg';
+// import Image1 from '../../../../assets/illustrations/undraw_book_reading_kx9s.svg';
+// import Image2 from '../../../../assets/illustrations/undraw_Growing_re_olpi.svg';
+// import Image3 from '../../../../assets/illustrations/undraw_Faq_re_31cw.svg';
 import Image4 from '../../../../assets/students.jpg';
 
 const SectionThree = props => {

@@ -1,5 +1,5 @@
 import classes from './TopNav.module.css';
-import { FaTelegram, FaInstagram } from 'react-icons/fa';
+// import { FaTelegram, FaInstagram } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
 import { NavLink } from 'react-router-dom';
 

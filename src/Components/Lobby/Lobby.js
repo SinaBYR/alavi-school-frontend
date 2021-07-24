@@ -1,6 +1,6 @@
 import classes from './Lobby.module.css';
 import { IoSchoolSharp } from 'react-icons/io5'
-import LinkOne from '../UI/LinkOne/LinkOne.';
+import LinkOne from '../UI/LinkOne/LinkOne';
 
 const Lobby = props => {
     return (
