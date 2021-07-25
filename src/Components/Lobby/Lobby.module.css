@@ -5,14 +5,30 @@
     justify-content: center;
     align-items: center;
 }
-.Lobby h1 {
-    font-size: 4rem;
+.Logo {
+    height: 300px;
 }
-.Lobby h2 {
+/* .Lobby h2 {
     font-size: 2rem;
-}
+} */
 .LinksWrapper {
     display: flex;
-    gap: 1rem;
     margin: 1rem 0;
+    text-align: center;
+}
+
+.LinksWrapper > * {
+    margin: 0 0.5rem;
+}
+
+@media screen and (max-width: 720px) and (max-height: 900px) {
+    .Logo {
+        height: 150px;
+    }
+    .LinksWrapper {
+        flex-direction: column;
+    }
+    .LinksWrapper > * {
+        margin: 0.5rem 0;
+    }
 }

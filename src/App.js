@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import './App.css';
-import Lobby from './Components/Lobby/Lobby';
-import School from './Components/School/School';
+import Lobby from './components/Lobby/Lobby';
+import School from './containers/School/School';
 
 const App = () => {
     const location = useLocation();
