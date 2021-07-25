@@ -6,7 +6,7 @@ const Sidedrawer = props => {
 
     return (
         <nav className={classNames}>
-            <MobileNavigationItems clicked={props.clicked}/>
+            <MobileNavigationItems />
         </nav>
     )
 }

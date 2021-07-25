@@ -10,12 +10,19 @@ const SCHOOL_IDENTIFIERS = {
 }
 
 const TopNav = props => {
+    // const urlParams = new URLSearchParams(window.location.search);
+    // urlParams.get('sch');
+    // console.log(urlParams.get('sch'))
+    const schoolBranch = localStorage.getItem('branch');
+
     return (
         <div className={classes.TopNav}>
             <div className={classes.Wrapper}>
                 <div>
                     <NavLink className={classes.Branch} to="/">علوی تبریز</NavLink>
-                    <span> / {SCHOOL_IDENTIFIERS[window.location.search.slice(-1)]}</span>
+                    {/* <span> / {SCHOOL_IDENTIFIERS[window.location.search.slice(-1)]}</span> */}
+                    {/* <span> / {SCHOOL_IDENTIFIERS[urlParams.get('sch')]}</span> */}
+                    <span> / {SCHOOL_IDENTIFIERS[schoolBranch]}</span>
                 </div>
                 <div className={classes.Social}>
                     {/* <FaTelegram color="#0088CC"/> */}

@@ -36,10 +36,11 @@ const EDUCATIONAL_CONTENT = {
 
 const EducationalContentDropdownItems = () => {
     const educationalContentList = EDUCATIONAL_CONTENT[window.location.search.slice(-1)];
+    const schoolBranch = localStorage.getItem('branch');
 
     return (
         <>
-            {educationalContentList}
+            {EDUCATIONAL_CONTENT[schoolBranch]}
         </>
     )
 }

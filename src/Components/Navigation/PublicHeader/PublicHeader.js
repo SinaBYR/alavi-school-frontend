@@ -12,7 +12,7 @@ const PublicHeader = props => {
     const burgerClassNames = [classes.Burger]
     
 
-    const openCloseSidedrawer = (isOpen) => {
+    const openCloseSidedrawerHandler = (isOpen) => {
         if(isOpen) {
             return setMobileNavOpen(false)
         }
@@ -23,13 +23,14 @@ const PublicHeader = props => {
     return (
         <>
         <header className={classes.PublicHeader}>
-            <Sidedrawer open={mobileNavOpen} clicked={openCloseSidedrawer}/>
+            <Sidedrawer open={mobileNavOpen} />
             <div className={classes.Wrapper}>
-                <Burger open={mobileNavOpen} clicked={() => openCloseSidedrawer(mobileNavOpen)}/>
+                <Burger open={mobileNavOpen} clicked={() => openCloseSidedrawerHandler(mobileNavOpen)}/>
                 <img className={classes.Logo} src={Logo} alt="logo"/>
                 <DesktopNavigationItems />
                 <div className={classes.Profile}>
-                    <LinkOne to={"/school/login?sch=" + window.location.search.slice(-1)}>ورود / ثبت نام</LinkOne>
+                    {/* <LinkOne to={"/school/login?sch=" + window.location.search.slice(-1)}>ورود / ثبت نام</LinkOne> */}
+                    <LinkOne to="/school/lessons">ورود / ثبت نام</LinkOne>
                 </div>
                 <div className={classes.ProfileIcon}>
                     <MdAccountBox />

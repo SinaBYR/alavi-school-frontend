@@ -6,6 +6,10 @@ import HOne from '../Utility/UI/Headings/HOne/HOne';
 import HTwo from '../Utility/UI/Headings/HTwo/HTwo';
 
 const Lobby = props => {
+    const setSchoolBranch = branch => {
+        localStorage.setItem('branch', branch);
+    }
+
     return (
         <div className={classes.Lobby}>
             {/* <IoSchoolSharp fontSize="6rem"/> */}
@@ -13,9 +17,9 @@ const Lobby = props => {
             <HOne>مجتمع آموزشی علوی</HOne>
             <HTwo>Tabriz Alavi Academy</HTwo>
             <div className={classes.LinksWrapper}>
-                <LinkOne to="/school?sch=1">دبستان میدان ساعت</LinkOne>
-                <LinkOne to="/school?sch=2">دبستان ویلاشهر</LinkOne>
-                <LinkOne to="/school?sch=3">دبیرستان دوره اول</LinkOne>
+                <LinkOne onClick={() => setSchoolBranch(1)} to="/school">دبستان میدان ساعت</LinkOne>
+                <LinkOne onClick={() => setSchoolBranch(2)} to="/school">دبستان ویلاشهر</LinkOne>
+                <LinkOne onClick={() => setSchoolBranch(3)} to="/school">دبیرستان دوره اول</LinkOne>
             </div>
         </div>
     )

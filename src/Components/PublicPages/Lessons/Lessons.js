@@ -4,7 +4,7 @@ import classes from './Lessons.module.css';
 const Lessons = props => {
     return (
         <div className={classes.Lessons}>
-            <MultiView></MultiView>
+            {/* <MultiView></MultiView> */}
         </div>
     )
 }

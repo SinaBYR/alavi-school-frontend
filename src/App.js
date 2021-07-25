@@ -25,8 +25,9 @@ const App = () => {
     return (
         <div className={['App', transitionStage].join(' ')} onAnimationEnd={animationEndHandler}>
             <Switch location={displayLocation}>
-                <Route path="/school" component={School} />
+                {localStorage.getItem('branch') && <Route path="/school" component={School} />}
                 <Route exact path="/" component={Lobby} />
+                <Redirect to="/"/>
                 <Redirect from="*" to='/404' />
             </Switch>
         </div>

@@ -16,8 +16,8 @@ const School = props => {
             <TopNav />
             <PublicHeader />
             <Switch>
-                <Route path="/lessons" component={Lessons}/>
-                <Route path="/" component={MainPage}/>
+                <Route path={props.match.path + "/lessons"} component={Lessons}/>
+                <Route path="/school" component={MainPage}/>
             </Switch>
         </div>
     )
