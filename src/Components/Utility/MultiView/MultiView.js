@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MdViewList, MdViewModule } from 'react-icons/md';
-import HTwo from '../../Utility/UI/Headings/HTwo/HTwo';
+import HTwo from '../UI/Headings/HTwo/HTwo';
 import classes from './MultiView.module.css';
 
 const MultiView = props => {
