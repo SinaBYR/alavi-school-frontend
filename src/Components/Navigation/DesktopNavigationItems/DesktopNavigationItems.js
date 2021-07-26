@@ -12,8 +12,8 @@ const NavigationItems = props => {
             {/* <img className={classes.Logo} src={Logo} alt="logo"/> */}
             <ul className={classes.Items}>
 
-                <NavLink className={classes.Link} to="/">خانه</NavLink>
-                <NavLink className={classes.Link} to="/">تصاویر</NavLink>
+                <NavLink className={classes.Link} to="/school">صفحه اصلی</NavLink>
+                {/* <NavLink className={classes.Link} to="/">تصاویر</NavLink> */}
                 <NavLink className={classes.Link} to="/">اخبار</NavLink>
 
                 <div className={classes.EducationalContent}>

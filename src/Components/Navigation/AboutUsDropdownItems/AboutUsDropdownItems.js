@@ -7,15 +7,16 @@ const AboutUsDropdownItems = props => {
     return (
         <>
             {/* {educationalContentList} */}
-            <NavLinkOne to="/">چشم انداز</NavLinkOne>
-            <NavLinkOne to="/">رسالت</NavLinkOne>
             <NavLinkOne to="/">اهداف</NavLinkOne>
-            <NavLinkOne to="/">منشور اخلاقی</NavLinkOne>
-            <NavLinkOne to="/">افتخارات</NavLinkOne>
             <NavLinkOne to="/">امکانات</NavLinkOne>
-            <NavLinkOne to="/">تاریخچه</NavLinkOne>
-            <NavLinkOne to="/">کادر اجرایی</NavLinkOne>
+            <NavLinkOne to="/">افتخارات</NavLinkOne>
             <NavLinkOne to="/">کادر آموزشی</NavLinkOne>
+            <NavLinkOne to="/">کادر اجرایی</NavLinkOne>
+            <NavLinkOne to="/">آلبوم تصاویر</NavLinkOne>
+            <NavLinkOne to="/">تاریخچه</NavLinkOne>
+            {/* <NavLinkOne to="/">چشم انداز</NavLinkOne>
+            <NavLinkOne to="/">رسالت</NavLinkOne>
+            <NavLinkOne to="/">منشور اخلاقی</NavLinkOne> */}
         </>
     )
 }

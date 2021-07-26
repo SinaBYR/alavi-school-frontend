@@ -13,7 +13,7 @@
     background-color: #282c34;
     padding: 0 1rem;
     box-shadow: 0 4px 10px -5px black;
-    z-index: 9;
+    z-index: 9999;
 }
 
 .Wrapper {

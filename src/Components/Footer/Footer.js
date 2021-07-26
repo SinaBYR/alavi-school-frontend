@@ -23,9 +23,11 @@ const Footer = props => {
                     <h2>بخش های سایت</h2>
                     <ul className={classes.LinksWrapper}>
                         <li>خانه</li>
-                        <li>اخبار</li>
+                        <li>اهداف</li>
+                        <li>امکانات</li>
+                        {/* <li>اخبار</li> */}
                         <li>مشاوره</li>
-                        <li>تاریخچه</li>
+                        {/* <li>تاریخچه</li> */}
                     </ul>
                 </div>
 

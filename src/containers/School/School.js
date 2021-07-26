@@ -3,6 +3,7 @@ import PublicHeader from '../../components/Navigation/PublicHeader/PublicHeader'
 import TopNav from '../../components/Navigation/TopNav/TopNav';
 import Lessons from '../../components/PublicPages/Lessons/Lessons';
 import MainPage from '../../components/PublicPages/MainPage/MainPage';
+import CustomSwitch from '../../components/Utility/CustomSwitch/CustomSwitch';
 import classes from './School.module.css';
 
 const School = props => {
@@ -13,12 +14,14 @@ const School = props => {
     // console.log(props);
     return (
         <div className={classes.School}>
+            {/* <ProgressBar /> */}
             <TopNav />
             <PublicHeader />
-            <Switch>
+            {/* <CustomSwitch></CustomSwitch> */}
+            <CustomSwitch>
                 <Route path={props.match.path + "/lessons"} component={Lessons}/>
                 <Route path="/school" component={MainPage}/>
-            </Switch>
+            </CustomSwitch>
         </div>
     )
 }

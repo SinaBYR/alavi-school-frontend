@@ -19,7 +19,7 @@ const SectionOne = props => {
                     {SCHOOL_IDENTIFIERS[window.location.search.slice(-1)]} */}
                     <HOne>ثبت نام آغاز شد</HOne>
                     <p>پیش دبستانی / دبستان / دبیرستان دوره اول و دوم</p>
-                    <LinkOne style={{marginTop: '1rem'}} to="/">اطلاعات بیشتر</LinkOne>
+                    <LinkOne style={{marginTop: '1rem'}} to="/school/lessons">اطلاعات بیشتر</LinkOne>
                 </div>
                 <img src={LandingImage} alt="landing"/>
 

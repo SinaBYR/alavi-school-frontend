@@ -15,7 +15,7 @@ const MobileNavigationItems = props => {
 
     return (
         <ul className={classes.MobileNavigationItems}>
-            <SubLinkOne to="/">خانه</SubLinkOne>
+            <SubLinkOne to="/school">خانه</SubLinkOne>
             <SubLinkOne to="/">تصاویر</SubLinkOne>
             <SubLinkOne to="/">اخبار</SubLinkOne>
             <li tabIndex="0" onClick={() => setSubMenuOneOpen(!subMenuOneOpen)}>محتوای آموزشی<FiPlus /></li>
