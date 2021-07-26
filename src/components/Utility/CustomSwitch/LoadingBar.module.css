@@ -1,0 +1,16 @@
+.LoadingBar {
+    direction: ltr;
+    position: fixed;
+    top: 124px !important;
+    left: 0;
+    height: 4px !important;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 720px) and (max-height: 900px) {
+    .LoadingBar {
+        top: 104px !important;
+    }
+}

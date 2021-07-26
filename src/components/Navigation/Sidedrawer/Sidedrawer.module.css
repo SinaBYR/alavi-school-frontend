@@ -1,0 +1,19 @@
+.Sidedrawer {
+    position: fixed;
+    top: 104px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    color: white;
+    background-color: #282c34;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: visibility 250ms ease, height 250ms ease;
+    z-index: 9999;
+}
+.Open {
+    height: 100%;
+    overflow-y: hidden;
+    visibility: visible;
+    border-top: 1px solid #ffb62d;
+}
