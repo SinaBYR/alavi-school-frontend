@@ -24,7 +24,6 @@
     /* direction: ltr; */
     overflow-y: auto;
     /* background-color: gray; */
-    height: 400px;
     min-width: 285px;
     padding: 0 0.5rem;
     border-radius: 5px;
@@ -98,7 +97,7 @@
         height: auto;
     }
     .Panel {
-        /* background-color: red; */
+        height: 400px;
         margin: 1rem 0;
     }
     .Media img {
