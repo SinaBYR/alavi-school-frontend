@@ -1,3 +1,87 @@
 .Lessons {
-    padding-top: 10rem;
+    padding-top: 7.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    padding: 1rem;
+}
+.Content {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-columns: 80% 20%;
+    grid-template-columns: 2fr 1fr;
+    height: 450px;
+}
+.Content > * {
+    /* margin: 0.5rem; */
+}
+.Panel {
+    /* direction: ltr; */
+    overflow-y: auto;
+    /* background-color: gray; */
+    min-width: 285px;
+    /* height: 400px; */
+    padding: 0 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #cacaca;
+    margin-right: 1rem;
+}
+.Panel::-webkit-scrollbar {
+    width: 6px;
+    /* padding: 1rem; */
+}
+
+.Panel::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
+    padding: 1rem;
+    background-color: red;
+    background-color: #adadad;
+    background-color: #282c34;
+    border-radius: 10px;
+}
+
+.Panel::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ffb62d;
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+}
+.Panel > * {
+    margin: 0.5rem 0;
+}
+.Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffb62d;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Item:hover {
+    background-color: #e69d17;
+}
+.Play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.Media {
+    width: 100%;
+    height: 450px;
+    background-color: green;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #cacaca;
+}
+.Media img {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }
