@@ -30,11 +30,11 @@ const PublicHeader = props => {
                 <DesktopNavigationItems />
                 <div className={classes.Profile}>
                     {/* <LinkOne to={"/school/login?sch=" + window.location.search.slice(-1)}>ورود / ثبت نام</LinkOne> */}
-                    <LinkOne to="/school/lessons">ورود / ثبت نام</LinkOne>
+                    <LinkOne to="/school/register">ورود / ثبت نام</LinkOne>
                 </div>
-                <div className={classes.ProfileIcon}>
-                    <MdAccountBox />
-                </div>
+                <LinkOne to="/school/register" className={classes.ProfileIcon}>
+                        <MdAccountBox />
+                </LinkOne>
             </div>
         </header>
         </>

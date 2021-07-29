@@ -1,0 +1,26 @@
+.Register {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    padding-top: 9.5rem;
+    /* color: #f4f4f4; */
+    /* color: #ffb62d; */
+}
+.Wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: yellow;
+    background-color: #F0E3CA;
+    background-color: #23272e;
+    background-color: #282c34;
+    background-color: #eeeeee;
+    box-shadow: 0 0 8px #bdbdbd;
+    padding: 1rem;
+}
+.Controls {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
+    width: 100%;
+    /* background-color: red; */
+    padding: 0.5rem;
+}
