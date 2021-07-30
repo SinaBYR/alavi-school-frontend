@@ -1,0 +1,117 @@
+.Preview {
+    /* background-color: green; */
+    transition: all 250ms ease;
+    padding: 1rem 3rem;
+    animation: animate1 forwards ease 350ms;
+}
+@keyframes animate1 {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.Process {
+    width: 100%;
+    counter-reset: step;
+}
+.Phase {
+    position: relative;
+    display: inline-block;
+    width: 11.11%;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+}
+.Phase::before {
+    content: counter(step);
+    counter-increment: step;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    line-height : 30px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    background-color: #fff;
+}
+.Phase::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    height: 1px;
+    background-color: #cacaca;
+    left: -50%;
+    z-index : -1;
+}
+.Phase:last-child:after {
+    content: none;
+  }
+.Phase.Active {
+    color: green;
+}
+.Phase.Active:before {
+    border-color: green;
+} 
+.Phase.Active::after {
+    background-color: green;
+}
+/* .Active + .Phase {
+    background-color: red;
+} */
+
+
+/* .Phase {
+    background-color: red;
+} */
+
+
+.Content {
+    max-width: 980px;
+    margin: 2rem auto;
+}
+
+.Content h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.Content p {
+    line-height: 1.8;
+    font-size: 1.2rem;
+}
+
+.Warning {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.Warning span {
+    color: red;
+}
+
+@media screen and (max-width: 750px) and (max-height: 900px) {
+    .Preview {
+        padding: 0;
+    }
+    .Preview p {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        line-height: 1.5;
+        text-align: justify;
+    }
+    .Warning {
+        margin-top: 2rem !important;
+    }
+    /* .Phase:last-child {
+        background-color: red;
+    } */
+}
