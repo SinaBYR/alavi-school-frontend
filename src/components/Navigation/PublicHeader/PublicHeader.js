@@ -1,15 +1,17 @@
 import classes from './PublicHeader.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DesktopNavigationItems from '../DesktopNavigationItems/DesktopNavigationItems';
 import LinkOne from '../../Utility/UI/LinkOne/LinkOne';
 import Sidedrawer from '../Sidedrawer/Sidedrawer';
 import Burger from '../../Utility/UI/Burger/Burger';
 import Logo from '../../../assets/logo.png';
 import { MdAccountBox } from 'react-icons/md';
+import { useLocation } from 'react-router-dom';
 
 const PublicHeader = props => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
     const burgerClassNames = [classes.Burger]
+    const location = useLocation();
     
 
     const openCloseSidedrawerHandler = (isOpen) => {
@@ -19,6 +21,10 @@ const PublicHeader = props => {
 
         setMobileNavOpen(true)
     }
+
+    useEffect(() => {
+        setMobileNavOpen(false)
+    }, [location])
 
     return (
         <>
