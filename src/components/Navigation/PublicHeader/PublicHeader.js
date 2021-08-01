@@ -27,7 +27,6 @@ const PublicHeader = props => {
     }, [location])
 
     return (
-        <>
         <header className={classes.PublicHeader}>
             <Sidedrawer open={mobileNavOpen} />
             <div className={classes.Wrapper}>
@@ -43,7 +42,6 @@ const PublicHeader = props => {
                 </LinkOne>
             </div>
         </header>
-        </>
     )   
 }
 
