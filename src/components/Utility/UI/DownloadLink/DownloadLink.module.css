@@ -1,0 +1,19 @@
+.DownloadLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #ffb62d;
+    background-color: #5f6979;
+    color: #ffb62d;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 420px) and (max-height: 900px) {
+    .DownloadLink {
+        font-size: 1rem;
+    }
+}
