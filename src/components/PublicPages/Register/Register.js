@@ -4,6 +4,7 @@ import ButtonOne from '../../Utility/UI/ButtonOne/ButtonOne';
 import InitialStage from './InitialStage/InitialStage';
 import Preview from './Preview/Preview';
 import FinalStage from './FinalStage/FinalStage';
+import Footer from '../../Footer/Footer';
 
 const Register = props => {
     const [stage, setStage] = useState(0);
@@ -19,6 +20,7 @@ const Register = props => {
     }
 
     return (
+        <>
         <div className={classes.Register}>
             <div className={classes.Wrapper}>
                 {stage === 0 && <InitialStage />}
@@ -26,7 +28,7 @@ const Register = props => {
                 {stage === 2 && <FinalStage />}
                 <div className={classes.Controls}>
                     <ButtonOne onClick={nextStageHandler}>
-                        {stage === 0 && 'مرحله بعد'}
+                        {stage === 0 && 'شروع ثبت نام'}
                         {stage === 1 && 'مرحله بعد'}
                         {stage === 2 && 'پیش ثبت نام'}
                     </ButtonOne>
@@ -40,6 +42,8 @@ const Register = props => {
                 </div>
             </div>
         </div>
+        <Footer />
+        </>
     )
 }
 

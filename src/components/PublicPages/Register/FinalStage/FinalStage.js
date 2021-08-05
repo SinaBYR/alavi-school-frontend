@@ -148,7 +148,7 @@ const FinalStage = props => {
                                         // ref={ref}
                                         // width="200px"
                                         height="50px"
-                                        theme='yellow'
+                                        theme='light'
                                     />
                                 </div>
                             </div>
@@ -398,25 +398,11 @@ const FinalStage = props => {
 
                     <div className={classes.Section}>
                         <div className={classes.Heading}>
-                            <h3>دیگر اطلاعات</h3>
+                            <h3>سایر اطلاعات</h3>
                         </div>
                         <div className={classes.More}>
-                            
-                            {/* <div className={classes.InputWrapper} style={{flexDirection: 'row', justifyContent: 'unset'}}>
-                                <label>آیا از سرویس استفاده خواهید کرد؟</label>
-                                <div className={classes.ServiceGroup}>
-                                    <div className={classes.Radio} tabIndex="0">
-                                        <label for="yes">بله</label>
-                                        <input type="radio" id="yes" name="service" value="بله"/>
-                                    </div>
-                                    <div className={[classes.Radio, classes.RadioChecked].join(' ')} tabIndex="0">
-                                        <label for="no">خیر</label>
-                                        <input type="radio" id="no" name="service" value="خیر"/>
-                                    </div>
-                                </div>
-                            </div> */}
 
-                            <div className={classes.InputWrapper} style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
+                            <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
                                 <label>از سرویس استفاده خواهیم کرد.</label>
                                 <div className={classes.Checkbox}>
                                     <input type="checkbox" value="yes"/>
@@ -426,7 +412,7 @@ const FinalStage = props => {
                                 </div>
                             </div>
 
-                            <div className={classes.InputWrapper} style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
+                            <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
                                 <label>فرزندم چپ دست است.</label>
                                 <div className={classes.Checkbox}>
                                     <input type="checkbox" value="yes"/>
@@ -436,7 +422,7 @@ const FinalStage = props => {
                                 </div>
                             </div>
 
-                            <div className={classes.InputWrapper} style={{flexDirection: 'row', gridColumn: '2 span/3', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
+                            <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', gridColumn: '2 span/3', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
                                 <label>با اعزام فرزندم به کلیه بازدیدها و اردوهای مقرر از طرف مدرسه موافقم.</label>
                                 <div className={classes.Checkbox}>
                                     <input type="checkbox" value="yes"/>

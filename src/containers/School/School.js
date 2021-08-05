@@ -21,7 +21,7 @@ const School = props => {
             {/* <CustomSwitch></CustomSwitch> */}
             <CustomSwitch>
                 <Route path="/school/register" component={Register}/>
-                <Route path={props.match.path + "/lessons/:grade"} component={Lessons}/>
+                <Route path="/school/lessons/:grade" component={Lessons}/>
                 <Route path="/school" component={MainPage}/>
             </CustomSwitch>
         </div>
