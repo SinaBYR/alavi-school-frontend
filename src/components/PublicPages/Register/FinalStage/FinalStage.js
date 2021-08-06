@@ -7,7 +7,8 @@ import { AkbariDatePicker } from 'akbari-react-date-picker'
 import 'akbari-react-date-picker/dist/index.css'
 import DownloadLink from '../../../Utility/UI/DownloadLink/DownloadLink';
 import { FaRegFilePdf } from 'react-icons/fa';
-// import { withFormik } from 'formik';
+import { Field, Form, withFormik } from 'formik';
+import * as yup from 'yup';
 
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',
@@ -50,20 +51,20 @@ const FinalStage = props => {
     if(schoolBranch === 'دبستان ویلاشهر' || schoolBranch === 'دبستان میدان ساعت') {
         gradesOptions = (
             <>
-                <option>اول</option>
-                <option>دوم</option>
-                <option>سوم</option>
-                <option>چهارم</option>
-                <option>پنجم</option>
-                <option>ششم</option>
+                <option value="اول">اول</option>
+                <option value="دوم">دوم</option>
+                <option value="سوم">سوم</option>
+                <option value="چهارم">چهارم</option>
+                <option value="پنجم">پنجم</option>
+                <option value="ششم">ششم</option>
             </>
         )
     } else {
         gradesOptions = (
             <>
-                <option>هفتم</option>
-                <option>هشتم</option>
-                <option>نهم</option>
+                <option value="هفتم">هفتم</option>
+                <option value="هشتم">هشتم</option>
+                <option value="نهم">نهم</option>
             </>
         )
     }
@@ -72,7 +73,8 @@ const FinalStage = props => {
         <div className={classes.FinalStage}>
             <div className={classes.Wrapper}>
                 <HThree style={{textAlign: 'center', marginBottom: '32px'}}>پیش ثبت نام</HThree>
-                <form>
+                <Form>
+                    
                     <div className={classes.Section}>
                         <div className={classes.Heading}>
                             <h3>اطلاعات مدرسه</h3>
@@ -89,9 +91,9 @@ const FinalStage = props => {
                             <div className={classes.SchoolItem}>
                                 پایه تحصیلی
                                 <div className={classes.Info}>
-                                    <select className={classes.Select}>
+                                    <Field as="select" className={classes.Select} name="school.grade">
                                         {gradesOptions}
-                                    </select>
+                                    </Field>
                                 </div>
                             </div>
 
@@ -113,27 +115,27 @@ const FinalStage = props => {
 
                             <div className={classes.InputWrapper}>
                                 <label>نام</label>
-                                <input type="text"/>
+                                <Field type="text" name="student.firstName"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>نام خانوادگی</label>
-                                <input type="text"/>
+                                <Field type="text" name="student.lastName"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>کدملی</label>
-                                <input type="text"/>
+                                <Field type="text" name="student.code"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>سریال شناسنامه</label>
-                                <input type="text"/>
+                                <Field type="text" name="student.serial"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>محل تولد</label>
-                                <input type="text"/>
+                                <Field type="text" name="student.birthplace"/>
                             </div>
                             
                             <div className={classes.InputWrapper}>
@@ -141,11 +143,11 @@ const FinalStage = props => {
                                 <div className={classes.DatePicker}>
                                     <AkbariDatePicker 
                                         input_type={'jalali'} 
-                                        // on_change_date={(date) => on_change_date(date)} 
+                                        on_change_date={props.handleChange} 
                                         current_date={'1400/1/1'}
                                         min_date={'1300/8/5'}
                                         max_date={'1400/5/9'} 
-                                        // ref={ref}
+                                        // ref="student.birthdate"
                                         // width="200px"
                                         height="50px"
                                         theme='light'
@@ -155,17 +157,17 @@ const FinalStage = props => {
 
                             <div className={classes.InputWrapper}>
                                 <label>نام مدرسه فعلی</label>
-                                <input type="text" />
+                                <Field type="text" name="student.currentSchoolName"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>شماره موبایل دانش آموز</label>
-                                <input type="text" />
+                                <Field type="text" name="phoneNumber"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>تصویر دانش آموز</label>
-                                <input type="file" accept="image/png, image/gif, image/jpeg" onChange={studentImageHanler}/>
+                                <input type="file" accept="image/png, image/gif, image/jpeg" onChange={studentImageHanler} />
                             </div>
                             <div className={classes.Preview}>
                                 {studentImage && <img src={studentImage} alt="student-image"/>}
@@ -181,42 +183,42 @@ const FinalStage = props => {
                         <div className={classes.Father}>
                             <div className={classes.InputWrapper}>
                                 <label>نام و نام خانوادگی</label>
-                                <input type="text"/>
+                                <Field type="text" name="father.fullName"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>کدملی</label>
-                                <input type="text"/>
+                                <Field type="text" name="father.code"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>محل تولد</label>
-                                <input type="text"/>
+                                <Field type="text" name="father.birthplace"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>مدرک تحصیلی</label>
-                                <input type="text"/>
+                                <Field type="text" name="father.education"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>شغل (به طور دقیق)</label>
-                                <input type="text"/>
+                                <Field type="text" name="father.profession"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>آدرس محل کار</label>
-                                <input type="text"/>
+                                <Field type="text" name="father.workplaceAddress"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>تلفن محل کار</label>
-                                <input type="text"/>
+                                <Field type="text" name="father.workplacePhoneNumber"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>شماره موبایل (بدون صفر)</label>
-                                <input type="text" placeholder="9141234567"/>
+                                <Field type="text" name="father.phoneNumber" placeholder="9141234567"/>
                             </div>
                         </div>
                     </div>
@@ -228,42 +230,42 @@ const FinalStage = props => {
                         <div className={classes.Mother}>
                             <div className={classes.InputWrapper}>
                                 <label>نام و نام خانوادگی</label>
-                                <input type="text"/>
+                                <Field type="text" name="mother.fullName"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>کدملی</label>
-                                <input type="text"/>
+                                <Field type="text" name="mother.code"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>محل تولد</label>
-                                <input type="text"/>
+                                <Field type="text" name="mother.birthplace"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>مدرک تحصیلی</label>
-                                <input type="text"/>
+                                <Field type="text" name="mother.education"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>شغل (به طور دقیق)</label>
-                                <input type="text"/>
+                                <Field type="text" name="mother.profession"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>آدرس محل کار</label>
-                                <input type="text"/>
+                                <Field type="text" name="mother.workplaceAddress"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>تلفن محل کار</label>
-                                <input type="text"/>
+                                <Field type="text" name="mother.workplacePhoneNumber"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>شماره موبایل (بدون صفر)</label>
-                                <input type="text" placeholder="9141234567"/>
+                                <Field type="text" name="mother.phoneNumber" placeholder="9141234567"/>
                             </div>
                         </div>
                     </div>
@@ -275,17 +277,17 @@ const FinalStage = props => {
                         <div className={classes.Family}>
                             <div className={classes.InputWrapper}>
                                 <label>آدرس منزل</label>
-                                <input type="text"/>
+                                <Field type="text" name="family.address"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>تلفن ثابت منزل</label>
-                                <input type="text"/>
+                                <Field type="text" name="family.phoneNumber"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
                                 <label>تلفن آشنای نزدیک</label>
-                                <input type="text"/>
+                                <Field type="text" name="closeIndividualPhoneNumber"/>
                             </div>
 
                             <div className={classes.InputWrapper}>
@@ -293,22 +295,22 @@ const FinalStage = props => {
                                 <div className={classes.LivingGroup}>
                                     <div className={classes.Radio} tabIndex="0">
                                         <label htmlFor="both">پدر و مادر</label>
-                                        <input type="radio" id="both" name="living-with" value="پدر و مادر"/>
+                                        <Field type="radio" id="both" name="family.livingWith" value="پدر و مادر"/>
                                         <div className={classes.FakeRadio}></div>
                                     </div>
                                     <div className={classes.Radio} tabIndex="0">
                                         <label htmlFor="father">پدر</label>
-                                        <input type="radio" id="father" name="living-with" value="پدر"/>
+                                        <Field type="radio" id="father" name="family.livingWith" value="پدر"/>
                                         <div className={classes.FakeRadio}></div>
                                     </div>
                                     <div className={classes.Radio} tabIndex="0">
                                         <label htmlFor="mother">مادر</label>
-                                        <input type="radio" id="mother" name="living-with" value="مادر"/>
+                                        <Field type="radio" id="mother" name="family.livingWith" value="مادر"/>
                                         <div className={classes.FakeRadio}></div>
                                     </div>
                                     <div className={classes.Radio} tabIndex="0">
                                         <label htmlFor="other">سایر</label>
-                                        <input type="radio" id="other" name="living-with" value="سایر"/>
+                                        <Field type="radio" id="other" name="family.livingWith" value="سایر"/>
                                         <div className={classes.FakeRadio}></div>
                                     </div>
                                 </div>
@@ -330,7 +332,7 @@ const FinalStage = props => {
                                     1- آیا تاکنون فرزندتان در بیمارستان بستری یا تحت عمل جراحی قرار گرفته است؟ در صورت مثبت بودن توضیح دهید.
                                 </label>
                                 {/* <input type="text" /> */}
-                                <textarea className={classes.Textarea} />
+                                <Field as="textarea" name="medical.q1" className={classes.Textarea} />
                             </div>
 
                             <div className={classes.InputWrapper}>
@@ -338,7 +340,7 @@ const FinalStage = props => {
                                     2- در صورتی که فرزندتان بیماری های قلبی، فشارخون، کم خونی، آسم، اعصاب یا موارد دیگر و یا سابقه بیماری دارد، به طور کامل بیان کنید.
                                 </label>
                                 {/* <input type="text" /> */}
-                                <textarea className={classes.Textarea} />
+                                <Field as="textarea" name="medical.q2" className={classes.Textarea} />
                             </div>
 
                             <div className={classes.InputWrapper}>
@@ -346,7 +348,7 @@ const FinalStage = props => {
                                     3- آیا فرزندتان داروی خاصی مصرف میکند؟ در صورت مثبت بودن، نام، مقدار و زمان مصرف دارو را اعلام کنید.
                                 </label>
                                 {/* <input type="text" /> */}
-                                <textarea className={classes.Textarea} />
+                                <Field as="textarea" name="medical.q3" className={classes.Textarea} />
                             </div>
 
                         </div>
@@ -365,8 +367,7 @@ const FinalStage = props => {
                                 <label>
                                     1- در صورت نقص عضو، آسیب جسمانی و یا هرگونه عارضه که فرزندتان را از انجام فعالیت بدنی و ورزشی باز می دارد، بیان کنید.
                                 </label>
-                                {/* <input type="text" /> */}
-                                <textarea className={classes.Textarea} />
+                                <Field as="textarea" name="athletic.q1" className={classes.Textarea} />
                             </div>
 
                             <div className={classes.InputWrapper}>
@@ -374,7 +375,7 @@ const FinalStage = props => {
                                     2- آیا فرزندتان تاکنون عضو تیم مدرسه یا باشگاه ورزشی بوده یا هست؟ رشته ورزشی و تاریخ عضویت؟
                                 </label>
                                 {/* <input type="text" /> */}
-                                <textarea className={classes.Textarea} />
+                                <Field as="textarea" name="athletic.q2" className={classes.Textarea} />
                             </div>
 
                             <div className={classes.InputWrapper}>
@@ -382,7 +383,7 @@ const FinalStage = props => {
                                     3- آیا فرزندتان تاکنون در مسابقات ورزشی شرکت کرده اند؟ در چه رشته ای و در چه سطحی؟
                                 </label>
                                 {/* <input type="text" /> */}
-                                <textarea className={classes.Textarea} />
+                                <Field as="textarea" name="athletic.q3" className={classes.Textarea} />
                             </div>
 
                             <div className={classes.InputWrapper}>
@@ -390,7 +391,7 @@ const FinalStage = props => {
                                     4- آیا فرزندتان خارج از مدرسه تمرینات ورزشی خاصی دارند؟ چه تمریناتی و چند جلسه در هفته؟
                                 </label>
                                 {/* <input type="text" /> */}
-                                <textarea className={classes.Textarea} />
+                                <Field as="textarea" name="athletic.q4" className={classes.Textarea} />
                             </div>
 
                         </div>
@@ -405,7 +406,7 @@ const FinalStage = props => {
                             <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
                                 <label>از سرویس استفاده خواهیم کرد.</label>
                                 <div className={classes.Checkbox}>
-                                    <input type="checkbox" value="yes"/>
+                                    <Field type="checkbox" name="more.willUseService"/>
                                     <div className={classes.FakeCheckbox}>
                                         <i>✓</i>
                                     </div>
@@ -415,7 +416,7 @@ const FinalStage = props => {
                             <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
                                 <label>فرزندم چپ دست است.</label>
                                 <div className={classes.Checkbox}>
-                                    <input type="checkbox" value="yes"/>
+                                    <Field type="checkbox" name="more.leftHanded"/>
                                     <div className={classes.FakeCheckbox}>
                                         <i>✓</i>
                                     </div>
@@ -425,7 +426,7 @@ const FinalStage = props => {
                             <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', gridColumn: '2 span/3', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
                                 <label>با اعزام فرزندم به کلیه بازدیدها و اردوهای مقرر از طرف مدرسه موافقم.</label>
                                 <div className={classes.Checkbox}>
-                                    <input type="checkbox" value="yes"/>
+                                    <Field type="checkbox" name="more.agreementsOnGoingToCamps"/>
                                     <div className={classes.FakeCheckbox}>
                                         <i>✓</i>
                                     </div>
@@ -490,20 +491,98 @@ const FinalStage = props => {
 
                         </div>
                     </div>
-                </form>
+
+                    <button>Submit</button>
+                </Form>
             </div>
         </div>
     )
 }
 
-// const options = {
-//     mapPropsToValues() {
-//         return {
+const options = {
+    mapPropsToValues(props) {
+        return {
+            school: {
+                branch: '',
+                grade: '',
+            },
+            student: {
+                firstName: '',
+                lastName: '',
+                code: '',
+                serial: '',
+                birthplace: '',
+                birthdate: '',
+                currentSchoolName: '',
+                phoneNumber: '',
+                photo: ''
+            },
+            father: {
+                fullName: '',
+                code: '',
+                birthplace: '',
+                education: '',
+                profession: '',
+                workplaceAddress: '',
+                workplacePhoneNumber: '',
+                phoneNumber: ''
+            },
+            mother: {
+                fullName: '',
+                code: '',
+                birthplace: '',
+                education: '',
+                profession: '',
+                workplaceAddress: '',
+                workplacePhoneNumber: '',
+                phoneNumber: ''
+            },
+            family: {
+                address: '',
+                phoneNumber: '',
+                closeIndividualPhoneNumber: '',
+                livingWith: ''
+            },
+            medical: {
+                q1: '',
+                q2: '',
+                q3: ''
+            },
+            athletic: {
+                q1: '',
+                q2: '',
+                q3: '',
+                q4: ''
+            },
+            more: {
+                willUseService: false,
+                leftHanded: false,
+                agreementsOnGoingToCamps: false
+            }
+        }
+    },
+    handleSubmit(values) {
+        console.log(values);
+    }
+    // validationSchema: yup.object().shape()
+}
 
-//         }
+const FormikFinalStage = withFormik(options)(FinalStage);
+
+export default FormikFinalStage;
+
+
+// {
+//     studentInfo: {
+//         fullName: '',
+//         age: ''
+//     },
+//     fatherInfo: {
+//         fullName: '',
+//         age: ''
+//     },
+//     motherInfo: {
+//         fullName: '',
+//         age: ''
 //     }
 // }
-
-// const FormikFinalStage = withFormik(options)(FinalStage);
-
-export default FinalStage;
