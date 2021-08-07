@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import HOne from '../../../Utility/UI/Headings/HOne/HOne';
-import HThree from '../../../Utility/UI/Headings/HThree/HThree';
-import HTwo from '../../../Utility/UI/Headings/HTwo/HTwo';
+import HOne from '../../../../Utility/UI/Headings/HOne/HOne';
+import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
+import HTwo from '../../../../Utility/UI/Headings/HTwo/HTwo';
 import classes from './InitialStage.module.css';
 
 const InitialStage = props => {

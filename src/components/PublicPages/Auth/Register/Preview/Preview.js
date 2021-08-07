@@ -1,6 +1,4 @@
 import classes from './Preview.module.css';
-import { BsArrowLeft } from 'react-icons/bs';
-import { useRef } from 'react';
 
 const Preview = props => {
 

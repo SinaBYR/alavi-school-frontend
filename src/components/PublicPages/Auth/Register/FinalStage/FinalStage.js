@@ -1,11 +1,11 @@
 import classes from './FinalStage.module.css';
 import { useEffect, useState } from 'react';
-import HThree from '../../../Utility/UI/Headings/HThree/HThree';
+import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
 // import { Calendar, DatePicker } from 'fixed-persian-datepicker';
 // import styles from "fixed-persian-datepicker/lib/styles/basic.css";
 import { AkbariDatePicker } from 'akbari-react-date-picker'
 import 'akbari-react-date-picker/dist/index.css'
-import DownloadLink from '../../../Utility/UI/DownloadLink/DownloadLink';
+import DownloadLink from '../../../../Utility/UI/DownloadLink/DownloadLink';
 import { FaRegFilePdf } from 'react-icons/fa';
 import { Field, Form, withFormik } from 'formik';
 import * as yup from 'yup';

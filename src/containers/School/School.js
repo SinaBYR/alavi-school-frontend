@@ -3,7 +3,7 @@ import PublicHeader from '../../components/Navigation/PublicHeader/PublicHeader'
 import TopNav from '../../components/Navigation/TopNav/TopNav';
 import Lessons from '../../components/PublicPages/Lessons/Lessons';
 import MainPage from '../../components/PublicPages/MainPage/MainPage';
-import Register from '../../components/PublicPages/Register/Register';
+import Auth from '../../components/PublicPages/Auth/Auth';
 import CustomSwitch from '../../components/Utility/CustomSwitch/CustomSwitch';
 import classes from './School.module.css';
 
@@ -20,7 +20,7 @@ const School = props => {
             <PublicHeader />
             {/* <CustomSwitch></CustomSwitch> */}
             <CustomSwitch>
-                <Route path="/school/register" component={Register}/>
+                <Route path="/school/register" component={Auth}/>
                 <Route path="/school/lessons/:grade" component={Lessons}/>
                 <Route path="/school" component={MainPage}/>
             </CustomSwitch>
