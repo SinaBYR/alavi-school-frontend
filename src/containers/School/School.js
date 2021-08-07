@@ -20,7 +20,7 @@ const School = props => {
             <PublicHeader />
             {/* <CustomSwitch></CustomSwitch> */}
             <CustomSwitch>
-                <Route path="/school/register" component={Auth}/>
+                <Route path="/school/auth" component={Auth}/>
                 <Route path="/school/lessons/:grade" component={Lessons}/>
                 <Route path="/school" component={MainPage}/>
             </CustomSwitch>
