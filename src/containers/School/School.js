@@ -6,6 +6,7 @@ import MainPage from '../../components/PublicPages/MainPage/MainPage';
 import Auth from '../../components/PublicPages/Auth/Auth';
 import CustomSwitch from '../../components/Utility/CustomSwitch/CustomSwitch';
 import classes from './School.module.css';
+import Footer from '../../components/Footer/Footer';
 
 const School = props => {
 
@@ -24,6 +25,7 @@ const School = props => {
                 <Route path="/school/lessons/:grade" component={Lessons}/>
                 <Route path="/school" component={MainPage}/>
             </CustomSwitch>
+            <Footer />
         </div>
     )
 }

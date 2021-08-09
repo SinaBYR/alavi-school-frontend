@@ -10,15 +10,11 @@ import Footer from '../../Footer/Footer';
 
 const MainPage = props => {
 
-    console.log(props)
     return (
         <div className={classes.MainPage}>
-            {/* <TopNav /> */}
-            {/* <PublicHeader /> */}
             <SectionOne />
             <SectionTwo />
             <SectionThree />
-            <Footer />
         </div>
     )
 }

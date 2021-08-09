@@ -43,9 +43,16 @@ const FinalStage = props => {
         }
     }
 
-    useEffect(() => {
+    const submitFormHandler = (e) => {
+        e.preventDefault();
 
-    })
+        const values = props.values;
+        values.student.photo = studentImage;
+        const data = {
+            ...props.values,
+        }
+        console.log(data);
+    }
 
     let gradesOptions;
     if(schoolBranch === 'دبستان ویلاشهر' || schoolBranch === 'دبستان میدان ساعت') {
@@ -73,7 +80,7 @@ const FinalStage = props => {
         <div className={classes.FinalStage}>
             <div className={classes.Wrapper}>
                 <HThree style={{textAlign: 'center', marginBottom: '32px'}}>پیش ثبت نام</HThree>
-                <Form>
+                <Form onSubmit={submitFormHandler}>
                     
                     <div className={classes.Section}>
                         <div className={classes.Heading}>
@@ -503,7 +510,7 @@ const options = {
     mapPropsToValues(props) {
         return {
             school: {
-                branch: '',
+                branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
                 grade: '',
             },
             student: {
@@ -562,27 +569,10 @@ const options = {
         }
     },
     handleSubmit(values) {
-        console.log(values);
+        // console.log(values);
     }
-    // validationSchema: yup.object().shape()
 }
 
 const FormikFinalStage = withFormik(options)(FinalStage);
 
 export default FormikFinalStage;
-
-
-// {
-//     studentInfo: {
-//         fullName: '',
-//         age: ''
-//     },
-//     fatherInfo: {
-//         fullName: '',
-//         age: ''
-//     },
-//     motherInfo: {
-//         fullName: '',
-//         age: ''
-//     }
-// }
