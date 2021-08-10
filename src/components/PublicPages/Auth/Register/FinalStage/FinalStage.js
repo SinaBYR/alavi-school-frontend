@@ -1,14 +1,13 @@
 import classes from './FinalStage.module.css';
 import { useEffect, useState } from 'react';
 import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
-// import { Calendar, DatePicker } from 'fixed-persian-datepicker';
-// import styles from "fixed-persian-datepicker/lib/styles/basic.css";
 import { AkbariDatePicker } from 'akbari-react-date-picker'
 import 'akbari-react-date-picker/dist/index.css'
 import DownloadLink from '../../../../Utility/UI/DownloadLink/DownloadLink';
 import { FaRegFilePdf } from 'react-icons/fa';
 import { Field, Form, withFormik } from 'formik';
 import * as yup from 'yup';
+import { Input, Textarea, FileInput } from '../../../../Utility/Inputs/index';
 
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',
@@ -120,31 +119,11 @@ const FinalStage = props => {
                         </div>
                         <div className={classes.Student}>
 
-                            <div className={classes.InputWrapper}>
-                                <label>نام</label>
-                                <Field type="text" name="student.firstName"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>نام خانوادگی</label>
-                                <Field type="text" name="student.lastName"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>کدملی</label>
-                                <Field type="text" name="student.code"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>سریال شناسنامه</label>
-                                <Field type="text" name="student.serial"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>محل تولد</label>
-                                <Field type="text" name="student.birthplace"/>
-                            </div>
-                            
+                            <Input label="نام" config={{type:"text", name:"student.firstName"}}/>
+                            <Input label="نام خانوادگی" config={{type:"text", name:"student.lastName"}}/>
+                            <Input label="کدملی" config={{type:"text", name:"student.code"}}/>
+                            <Input label="سریال شناسنامه" config={{type:"text", name:"student.serial"}}/>
+                            <Input label="محل تولد" config={{type:"text", name:"student.birthplace"}}/>
                             <div className={classes.InputWrapper}>
                                 <label>تاریخ تولد</label>
                                 <div className={classes.DatePicker}>
@@ -161,21 +140,9 @@ const FinalStage = props => {
                                     />
                                 </div>
                             </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>نام مدرسه فعلی</label>
-                                <Field type="text" name="student.currentSchoolName"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>شماره موبایل دانش آموز</label>
-                                <Field type="text" name="phoneNumber"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>تصویر دانش آموز</label>
-                                <input type="file" accept="image/png, image/gif, image/jpeg" onChange={studentImageHanler} />
-                            </div>
+                            <Input label="نام مدرسه فعلی" config={{type:"text", name:"student.currentSchoolName"}}/>   
+                            <Input label="شماره موبایل دانش آموز" config={{type:"text", name:"student.phoneNumber"}}/>
+                            <FileInput label="تصویر دانش آموز" config={{onChange: studentImageHanler}}/>
                             <div className={classes.Preview}>
                                 {studentImage && <img src={studentImage} alt="student-image"/>}
                             </div>
@@ -188,45 +155,16 @@ const FinalStage = props => {
                             <h3>مشخصات پدر</h3>
                         </div>
                         <div className={classes.Father}>
-                            <div className={classes.InputWrapper}>
-                                <label>نام و نام خانوادگی</label>
-                                <Field type="text" name="father.fullName"/>
-                            </div>
 
-                            <div className={classes.InputWrapper}>
-                                <label>کدملی</label>
-                                <Field type="text" name="father.code"/>
-                            </div>
+                            <Input label="نام و نام خانوادگی" config={{type:"text", name:"father.fullName"}}/>
+                            <Input label="کدملی" config={{type:"text", name:"father.code"}}/>
+                            <Input label="محل تولد" config={{type:"text", name:"father.birthplace"}}/>
+                            <Input label="مدرک تحصیلی" config={{type:"text", name:"father.education"}}/>
+                            <Input label="شغل (به طور دقیق)" config={{type:"text", name:"father.profession"}}/>
+                            <Input label="آدرس محل کار" config={{type:"text", name:"father.workplaceAddress"}}/>
+                            <Input label="تلفن محل کار" config={{type:"text", name:"father.workplacePhoneNumber"}}/>
+                            <Input label="شماره موبایل (بدون صفر)" config={{type:"text", name:"father.phoneNumber", placeholder: "9141234567"}}/>
 
-                            <div className={classes.InputWrapper}>
-                                <label>محل تولد</label>
-                                <Field type="text" name="father.birthplace"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>مدرک تحصیلی</label>
-                                <Field type="text" name="father.education"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>شغل (به طور دقیق)</label>
-                                <Field type="text" name="father.profession"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>آدرس محل کار</label>
-                                <Field type="text" name="father.workplaceAddress"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>تلفن محل کار</label>
-                                <Field type="text" name="father.workplacePhoneNumber"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>شماره موبایل (بدون صفر)</label>
-                                <Field type="text" name="father.phoneNumber" placeholder="9141234567"/>
-                            </div>
                         </div>
                     </div>
 
@@ -235,45 +173,16 @@ const FinalStage = props => {
                             <h3>مشخصات مادر</h3>
                         </div>
                         <div className={classes.Mother}>
-                            <div className={classes.InputWrapper}>
-                                <label>نام و نام خانوادگی</label>
-                                <Field type="text" name="mother.fullName"/>
-                            </div>
 
-                            <div className={classes.InputWrapper}>
-                                <label>کدملی</label>
-                                <Field type="text" name="mother.code"/>
-                            </div>
+                            <Input label="نام و نام خانوادگی" config={{type:"text", name:"mother.fullName"}}/>
+                            <Input label="کدملی" config={{type:"text", name:"mother.code"}}/>
+                            <Input label="محل تولد" config={{type:"text", name:"mother.birthplace"}}/>
+                            <Input label="مدرک تحصیلی" config={{type:"text", name:"mother.education"}}/>
+                            <Input label="شغل (به طور دقیق)" config={{type:"text", name:"mother.profession"}}/>
+                            <Input label="آدرس محل کار" config={{type:"text", name:"mother.workplaceAddress"}}/>
+                            <Input label="تلفن محل کار" config={{type:"text", name:"mother.workplacePhoneNumber"}}/>
+                            <Input label="شماره موبایل (بدون صفر)" config={{type:"text", name:"mother.phoneNumber", placeholder: "9141234567"}}/>
 
-                            <div className={classes.InputWrapper}>
-                                <label>محل تولد</label>
-                                <Field type="text" name="mother.birthplace"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>مدرک تحصیلی</label>
-                                <Field type="text" name="mother.education"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>شغل (به طور دقیق)</label>
-                                <Field type="text" name="mother.profession"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>آدرس محل کار</label>
-                                <Field type="text" name="mother.workplaceAddress"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>تلفن محل کار</label>
-                                <Field type="text" name="mother.workplacePhoneNumber"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>شماره موبایل (بدون صفر)</label>
-                                <Field type="text" name="mother.phoneNumber" placeholder="9141234567"/>
-                            </div>
                         </div>
                     </div>
 
@@ -282,21 +191,10 @@ const FinalStage = props => {
                             <h3>مشخصات خانواده</h3>
                         </div>
                         <div className={classes.Family}>
-                            <div className={classes.InputWrapper}>
-                                <label>آدرس منزل</label>
-                                <Field type="text" name="family.address"/>
-                            </div>
 
-                            <div className={classes.InputWrapper}>
-                                <label>تلفن ثابت منزل</label>
-                                <Field type="text" name="family.phoneNumber"/>
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>تلفن آشنای نزدیک</label>
-                                <Field type="text" name="closeIndividualPhoneNumber"/>
-                            </div>
-
+                            <Input label="آدرس منزل" config={{type:"text", name:"family.address"}}/>
+                            <Input label="تلفن ثابت منزل" config={{type:"text", name:"family.phoneNumber"}}/>
+                            <Input label="تلفن آشنای نزدیک" config={{type:"text", name:"family.closeIndividualPhoneNumber"}}/>
                             <div className={classes.InputWrapper}>
                                 <label>دانش آموز با چه کسی زندگی میکند؟</label>
                                 <div className={classes.LivingGroup}>
@@ -334,72 +232,38 @@ const FinalStage = props => {
                         <p style={{maxWidth: '980px', margin: '0 auto', textAlign: 'justify'}}>خواهشمند است با دقت و صدافت، فرم ذیل را تکمیل فرمایید.بدیهی است مسئولیت صحت و سقم اطلاعات و اظهارات ذیل و حوادث ناشی از عدم اطلاع رسانی کامل و صحیح، برعهده اولیای دانش آموز می باشد.</p>
                         <div className={classes.Medical}>
 
-                            <div className={classes.InputWrapper}>
-                                <label>
-                                    1- آیا تاکنون فرزندتان در بیمارستان بستری یا تحت عمل جراحی قرار گرفته است؟ در صورت مثبت بودن توضیح دهید.
-                                </label>
-                                {/* <input type="text" /> */}
-                                <Field as="textarea" name="medical.q1" className={classes.Textarea} />
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>
-                                    2- در صورتی که فرزندتان بیماری های قلبی، فشارخون، کم خونی، آسم، اعصاب یا موارد دیگر و یا سابقه بیماری دارد، به طور کامل بیان کنید.
-                                </label>
-                                {/* <input type="text" /> */}
-                                <Field as="textarea" name="medical.q2" className={classes.Textarea} />
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>
-                                    3- آیا فرزندتان داروی خاصی مصرف میکند؟ در صورت مثبت بودن، نام، مقدار و زمان مصرف دارو را اعلام کنید.
-                                </label>
-                                {/* <input type="text" /> */}
-                                <Field as="textarea" name="medical.q3" className={classes.Textarea} />
-                            </div>
+                            <Textarea
+                                label=" 1- آیا تاکنون فرزندتان در بیمارستان بستری یا تحت عمل جراحی قرار گرفته است؟ در صورت مثبت بودن توضیح دهید."
+                                config={{name: 'medical.q1'}}/>
+                            <Textarea
+                                label="2- در صورتی که فرزندتان بیماری های قلبی، فشارخون، کم خونی، آسم، اعصاب یا موارد دیگر و یا سابقه بیماری دارد، به طور کامل بیان کنید."
+                                config={{name: "medical.q2"}}/>
+                            <Textarea
+                                label="3- آیا فرزندتان داروی خاصی مصرف میکند؟ در صورت مثبت بودن، نام، مقدار و زمان مصرف دارو را اعلام کنید."
+                                config={{name: "medical.q3"}}/>
 
                         </div>
                         <p style={{textAlign: 'center', marginTop: '16px'}}>یادآوری: در صورت مثبت بودن پاسخ موارد فوق، ارائه گواهی معتبر پزشکی الزامی است.</p>
                     </div>
 
                     <div className={classes.Section}>
-
                         <div className={classes.Heading}>
                             <h3>اطلاعات ورزشی</h3>
                         </div>
-
                         <div className={classes.Athletic}>
 
-                            <div className={classes.InputWrapper}>
-                                <label>
-                                    1- در صورت نقص عضو، آسیب جسمانی و یا هرگونه عارضه که فرزندتان را از انجام فعالیت بدنی و ورزشی باز می دارد، بیان کنید.
-                                </label>
-                                <Field as="textarea" name="athletic.q1" className={classes.Textarea} />
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>
-                                    2- آیا فرزندتان تاکنون عضو تیم مدرسه یا باشگاه ورزشی بوده یا هست؟ رشته ورزشی و تاریخ عضویت؟
-                                </label>
-                                {/* <input type="text" /> */}
-                                <Field as="textarea" name="athletic.q2" className={classes.Textarea} />
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>
-                                    3- آیا فرزندتان تاکنون در مسابقات ورزشی شرکت کرده اند؟ در چه رشته ای و در چه سطحی؟
-                                </label>
-                                {/* <input type="text" /> */}
-                                <Field as="textarea" name="athletic.q3" className={classes.Textarea} />
-                            </div>
-
-                            <div className={classes.InputWrapper}>
-                                <label>
-                                    4- آیا فرزندتان خارج از مدرسه تمرینات ورزشی خاصی دارند؟ چه تمریناتی و چند جلسه در هفته؟
-                                </label>
-                                {/* <input type="text" /> */}
-                                <Field as="textarea" name="athletic.q4" className={classes.Textarea} />
-                            </div>
+                            <Textarea
+                                label="1- در صورت نقص عضو، آسیب جسمانی و یا هرگونه عارضه که فرزندتان را از انجام فعالیت بدنی و ورزشی باز می دارد، بیان کنید."
+                                config={{name: 'athletic.q1'}}/>
+                            <Textarea
+                                label="2- آیا فرزندتان تاکنون عضو تیم مدرسه یا باشگاه ورزشی بوده یا هست؟ رشته ورزشی و تاریخ عضویت؟"
+                                config={{name: 'athletic.q2'}}/>
+                            <Textarea
+                                label="3- آیا فرزندتان تاکنون در مسابقات ورزشی شرکت کرده اند؟ در چه رشته ای و در چه سطحی؟"
+                                config={{name: 'athletic.q3'}}/>
+                            <Textarea
+                                label="4- آیا فرزندتان خارج از مدرسه تمرینات ورزشی خاصی دارند؟ چه تمریناتی و چند جلسه در هفته؟"
+                                config={{name: 'athletic.q4'}}/>
 
                         </div>
                     </div>
