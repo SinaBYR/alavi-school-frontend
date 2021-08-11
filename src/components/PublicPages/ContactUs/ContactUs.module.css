@@ -1,0 +1,61 @@
+.ContactUs {
+    background-color: #f4f4f4;
+    padding: 1rem;
+}
+.Wrapper {
+    max-width: 980px;
+    background-color: #eeeeee;
+    padding: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 0 8px #bdbdbd;
+}
+
+.Content {
+    max-width: 680px;
+    margin: 2rem auto;
+}
+
+.SocialLinks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: teal;
+}
+
+.SocialLinks > * {
+    margin: 0.4rem;
+}
+
+.Item {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #282c34;
+    background-color: #eeeeee;
+    /* color: #f4f4f4; */
+    padding: 1rem;
+    /* border: 1px solid #ffb62d; */
+    border-radius: 5px;
+    box-shadow: 0 0 8px #282c34;
+    box-shadow: 0 0 8px #bdbdbd;
+}
+
+.Form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 4rem 0;
+    background-color: teal;
+}
+
+.Form > * {
+    margin: 0.4rem;
+}
+
+.Form div:last-child {
+    grid-column: 1 /span 2;
+}
+
+.Map {
+    background-color: teal;
+    height: 350px;
+    margin: 0 0.4rem;
+}

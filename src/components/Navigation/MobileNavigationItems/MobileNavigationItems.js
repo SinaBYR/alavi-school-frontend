@@ -27,7 +27,7 @@ const MobileNavigationItems = props => {
                 <AboutUsDropdownItems />
             </div>
             <SubLinkOne to="/">مشاوره</SubLinkOne>
-            <SubLinkOne to="/">ارتباط با ما</SubLinkOne>
+            <SubLinkOne to="/school/contact">ارتباط با ما</SubLinkOne>
         </ul>
     )
 }

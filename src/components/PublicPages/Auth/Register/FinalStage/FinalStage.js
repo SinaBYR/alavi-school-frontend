@@ -6,8 +6,8 @@ import 'akbari-react-date-picker/dist/index.css'
 import DownloadLink from '../../../../Utility/UI/DownloadLink/DownloadLink';
 import { FaRegFilePdf } from 'react-icons/fa';
 import { Field, Form, withFormik } from 'formik';
-import * as yup from 'yup';
 import { Input, Textarea, FileInput } from '../../../../Utility/Inputs/index';
+import * as yup from 'yup';
 
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',

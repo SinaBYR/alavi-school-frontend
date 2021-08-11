@@ -34,7 +34,7 @@ const NavigationItems = props => {
                     </div>
                 </div>
                 <NavLink className={classes.Link} to="/">مشاوره</NavLink>
-                <NavLink className={classes.Link} to="/">ارتباط با ما</NavLink>
+                <NavLink className={classes.Link} to="/school/contact">ارتباط با ما</NavLink>
             </ul>
 
         </nav>
