@@ -18,7 +18,7 @@
 .SocialLinks {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: teal;
+    /* background-color: teal; */
 }
 
 .SocialLinks > * {
@@ -43,7 +43,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 4rem 0;
-    background-color: teal;
+    /* background-color: teal; */
 }
 
 .Form > * {
@@ -55,7 +55,26 @@
 }
 
 .Map {
-    background-color: teal;
-    height: 350px;
-    margin: 0 0.4rem;
+    position: relative;
+    height: 400px !important;
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    /* height: 400px; */
+    /* margin: 0 0.4rem; */
+    /* margin-right: 1rem; */
+    text-align: center;
+    box-shadow: 0 0 8px #bdbdbd;
+}
+
+.Sidebar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #bdbdbd;
+    z-index: 9999;
 }
