@@ -32,11 +32,11 @@ const Login = props => {
                         <div className={classes.InputWrapper}>
                             <label>رمزعبور</label>
                             <input type={passVisible ? 'text' : 'password'} className={classes.Input}/>
-                            <div className={classes.PasswordVisibility} onClick={() => setPassVisible(!passVisible)}>
+                            <button className={classes.PasswordVisibility} onClick={() => setPassVisible(!passVisible)} type="button">
                                 {
                                     passVisible ? <AiFillEye /> : <AiFillEyeInvisible />
                                 }
-                            </div>
+                            </button>
                         </div>
                     </div>
                     {/* <button>ورود</button> */}

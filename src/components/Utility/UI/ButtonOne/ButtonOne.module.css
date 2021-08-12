@@ -13,7 +13,6 @@
         box-shadow 250ms ease,
         background-color 250ms ease;
     cursor: pointer;
-    outline: none;
     border: none;
 }
 .ButtonOne:hover {
