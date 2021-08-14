@@ -32,11 +32,12 @@ export const Input = ({ label, inputConfig, labelConfig, parentConfig, config, s
                 break;
             }
             case 'file': {
-                element = <input type="file" name={name} accept={accept} {...inputConfig}/>
+                element = <input type="file" name={name} accept={accept} {...inputConfig} style={{borderColor: error && 'red'}}/>
                 break;
             }
             case 'textarea': {
-                element = <FastField as="textarea" {...inputConfig} style={{borderColor: error && 'red'}} />
+                element = <FastField as="textarea" name={name} {...inputConfig} style={{borderColor: error && 'red', ...style}} />
+                break;
             }
             default:
                 element = null
@@ -47,6 +48,7 @@ export const Input = ({ label, inputConfig, labelConfig, parentConfig, config, s
             console.log('hi')
         }, [passVisible])
 
+        console.log(inputConfig)
     return (
         <div className={classes.InputWrapper} {...parentConfig}>
             <label {...labelConfig}>{label}</label>

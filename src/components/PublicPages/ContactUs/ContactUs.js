@@ -36,9 +36,14 @@ const ContactUs = ({errors, touched}) => {
                     <p style={{fontSize: '1.2rem', textAlign: 'center'}}>لطفا نظرات، سوالات، پیشنهادات و انتقادات خود را با ما درمیان بگذارید.</p>
                     <section className={classes.Section}>
                         <Form className={classes.Form}>
-                            <Input label="نام و نام خانوداگی" error={touched.fullName && errors.fullName} config={{type: 'text', name: 'fullName'}}/>
-                            <Input label="آدرس ایمیل" error={touched.email && errors.email} config={{type: 'email', name: 'email'}}/>
-                            <Textarea label="متن پیام" config={{name: 'message'}} error={touched.message && errors.message} style={{gridColumn: '1 /span 2'}}/>
+                            <Input label="نام و نام خانوداگی" type="text" name="fullName" error={touched.fullName && errors.fullName}/>
+                            <Input label="آدرس ایمیل" type="email" name="email" error={touched.email && errors.email}/>
+                            <Input
+                                label="متن پیام"
+                                type="textarea"
+                                name="message"
+                                error={touched.message && errors.message}
+                                parentConfig={{style: {gridColumn: '1 /span 2'}}}/>
                             <ButtonOne type="submit" style={{gridColumn: '2 /span 1'}}>ارسال</ButtonOne>
                         </Form>
                     </section>

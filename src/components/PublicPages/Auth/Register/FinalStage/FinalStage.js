@@ -119,11 +119,11 @@ const FinalStage = props => {
                         </div>
                         <div className={classes.Student}>
 
-                            <Input label="نام" config={{type:"text", name:"student.firstName"}}/>
-                            <Input label="نام خانوادگی" config={{type:"text", name:"student.lastName"}}/>
-                            <Input label="کدملی" config={{type:"text", name:"student.code"}}/>
-                            <Input label="سریال شناسنامه" config={{type:"text", name:"student.serial"}}/>
-                            <Input label="محل تولد" config={{type:"text", name:"student.birthplace"}}/>
+                            <Input label="نام" type="text" name="student.firstName" error={props.touched.fullName && props.errors.firstName}/>
+                            <Input label="نام خانوادگی" type="text" name="student.lastName" />
+                            <Input label="کدملی" type="text" name="student.code"/>
+                            <Input label="سریال شناسنامه" type="text" name="student.serial"/>
+                            <Input label="محل تولد" type="text" name="student.birthplace"/>
                             <div className={classes.InputWrapper}>
                                 <label>تاریخ تولد</label>
                                 <div className={classes.DatePicker}>
@@ -140,8 +140,8 @@ const FinalStage = props => {
                                     />
                                 </div>
                             </div>
-                            <Input label="نام مدرسه فعلی" config={{type:"text", name:"student.currentSchoolName"}}/>   
-                            <Input label="شماره موبایل دانش آموز" config={{type:"text", name:"student.phoneNumber"}}/>
+                            <Input label="نام مدرسه فعلی" type="text" name="student.currentSchoolName"/>   
+                            <Input label="شماره موبایل دانش آموز" type="text" name="student.phoneNumber"/>
                             <FileInput label="تصویر دانش آموز" config={{onChange: studentImageHanler}}/>
                             <div className={classes.Preview}>
                                 {studentImage && <img src={studentImage} alt="student-image"/>}
@@ -156,14 +156,14 @@ const FinalStage = props => {
                         </div>
                         <div className={classes.Father}>
 
-                            <Input label="نام و نام خانوادگی" config={{type:"text", name:"father.fullName"}}/>
-                            <Input label="کدملی" config={{type:"text", name:"father.code"}}/>
-                            <Input label="محل تولد" config={{type:"text", name:"father.birthplace"}}/>
-                            <Input label="مدرک تحصیلی" config={{type:"text", name:"father.education"}}/>
-                            <Input label="شغل (به طور دقیق)" config={{type:"text", name:"father.profession"}}/>
-                            <Input label="آدرس محل کار" config={{type:"text", name:"father.workplaceAddress"}}/>
-                            <Input label="تلفن محل کار" config={{type:"text", name:"father.workplacePhoneNumber"}}/>
-                            <Input label="شماره موبایل (بدون صفر)" config={{type:"text", name:"father.phoneNumber", placeholder: "9141234567"}}/>
+                            <Input label="نام و نام خانوادگی" type="text" name="father.fullName"/>
+                            <Input label="کدملی" type="text" name="father.code"/>
+                            <Input label="محل تولد" type="text" name="father.birthplace"/>
+                            <Input label="مدرک تحصیلی" type="text" name="father.education"/>
+                            <Input label="شغل (به طور دقیق)" type="text" name="father.profession"/>
+                            <Input label="آدرس محل کار" type="text" name="father.workplaceAddress"/>
+                            <Input label="تلفن محل کار" type="text" name="father.workplacePhoneNumber"/>
+                            <Input label="شماره موبایل (بدون صفر)" type="text" name="father.phoneNumber" inputConfig={{placeholder: "9141234567"}}/>
 
                         </div>
                     </div>
@@ -174,14 +174,14 @@ const FinalStage = props => {
                         </div>
                         <div className={classes.Mother}>
 
-                            <Input label="نام و نام خانوادگی" config={{type:"text", name:"mother.fullName"}}/>
-                            <Input label="کدملی" config={{type:"text", name:"mother.code"}}/>
-                            <Input label="محل تولد" config={{type:"text", name:"mother.birthplace"}}/>
-                            <Input label="مدرک تحصیلی" config={{type:"text", name:"mother.education"}}/>
-                            <Input label="شغل (به طور دقیق)" config={{type:"text", name:"mother.profession"}}/>
-                            <Input label="آدرس محل کار" config={{type:"text", name:"mother.workplaceAddress"}}/>
-                            <Input label="تلفن محل کار" config={{type:"text", name:"mother.workplacePhoneNumber"}}/>
-                            <Input label="شماره موبایل (بدون صفر)" config={{type:"text", name:"mother.phoneNumber", placeholder: "9141234567"}}/>
+                            <Input label="نام و نام خانوادگی" type="text" name="mother.fullName"/>
+                            <Input label="کدملی" type="text" name="mother.code"/>
+                            <Input label="محل تولد" type="text" name="mother.birthplace"/>
+                            <Input label="مدرک تحصیلی" type="text" name="mother.education"/>
+                            <Input label="شغل (به طور دقیق)" type="text" name="mother.profession"/>
+                            <Input label="آدرس محل کار" type="text" name="mother.workplaceAddress"/>
+                            <Input label="تلفن محل کار" type="text" name="mother.workplacePhoneNumber"/>
+                            <Input label="شماره موبایل (بدون صفر)" type="text" name="mother.phoneNumber" inputConfig={{placeholder: "9141234567"}}/>
 
                         </div>
                     </div>
@@ -192,9 +192,9 @@ const FinalStage = props => {
                         </div>
                         <div className={classes.Family}>
 
-                            <Input label="آدرس منزل" config={{type:"text", name:"family.address"}}/>
-                            <Input label="تلفن ثابت منزل" config={{type:"text", name:"family.phoneNumber"}}/>
-                            <Input label="تلفن آشنای نزدیک" config={{type:"text", name:"family.closeIndividualPhoneNumber"}}/>
+                            <Input label="آدرس منزل" type="text" name="family.address"/>
+                            <Input label="تلفن ثابت منزل" type="text" name="family.phoneNumber"/>
+                            <Input label="تلفن آشنای نزدیک" type="text" name="family.closeIndividualPhoneNumber"/>
                             <div className={classes.InputWrapper}>
                                 <label>دانش آموز با چه کسی زندگی میکند؟</label>
                                 <div className={classes.LivingGroup}>
@@ -232,15 +232,21 @@ const FinalStage = props => {
                         <p style={{maxWidth: '980px', margin: '0 auto', textAlign: 'justify'}}>خواهشمند است با دقت و صدافت، فرم ذیل را تکمیل فرمایید.بدیهی است مسئولیت صحت و سقم اطلاعات و اظهارات ذیل و حوادث ناشی از عدم اطلاع رسانی کامل و صحیح، برعهده اولیای دانش آموز می باشد.</p>
                         <div className={classes.Medical}>
 
-                            <Textarea
+                            <Input
                                 label=" 1- آیا تاکنون فرزندتان در بیمارستان بستری یا تحت عمل جراحی قرار گرفته است؟ در صورت مثبت بودن توضیح دهید."
-                                config={{name: 'medical.q1'}}/>
-                            <Textarea
+                                type="textarea"
+                                name="medical.q1"
+                                />
+                            <Input
                                 label="2- در صورتی که فرزندتان بیماری های قلبی، فشارخون، کم خونی، آسم، اعصاب یا موارد دیگر و یا سابقه بیماری دارد، به طور کامل بیان کنید."
-                                config={{name: "medical.q2"}}/>
-                            <Textarea
+                                type="textarea"
+                                name="medical.q2"
+                                />
+                            <Input
                                 label="3- آیا فرزندتان داروی خاصی مصرف میکند؟ در صورت مثبت بودن، نام، مقدار و زمان مصرف دارو را اعلام کنید."
-                                config={{name: "medical.q3"}}/>
+                                type="textarea"
+                                name="medical.q3"
+                                />
 
                         </div>
                         <p style={{textAlign: 'center', marginTop: '16px'}}>یادآوری: در صورت مثبت بودن پاسخ موارد فوق، ارائه گواهی معتبر پزشکی الزامی است.</p>
@@ -252,18 +258,26 @@ const FinalStage = props => {
                         </div>
                         <div className={classes.Athletic}>
 
-                            <Textarea
+                            <Input
                                 label="1- در صورت نقص عضو، آسیب جسمانی و یا هرگونه عارضه که فرزندتان را از انجام فعالیت بدنی و ورزشی باز می دارد، بیان کنید."
-                                config={{name: 'athletic.q1'}}/>
-                            <Textarea
+                                type="textarea"
+                                name="athletic.q1"
+                                />
+                            <Input
                                 label="2- آیا فرزندتان تاکنون عضو تیم مدرسه یا باشگاه ورزشی بوده یا هست؟ رشته ورزشی و تاریخ عضویت؟"
-                                config={{name: 'athletic.q2'}}/>
-                            <Textarea
+                                type="textarea"
+                                name="athletic.q2"
+                                />
+                            <Input
                                 label="3- آیا فرزندتان تاکنون در مسابقات ورزشی شرکت کرده اند؟ در چه رشته ای و در چه سطحی؟"
-                                config={{name: 'athletic.q3'}}/>
-                            <Textarea
+                                type="textarea"
+                                name="athletic.q3"
+                                />
+                            <Input
                                 label="4- آیا فرزندتان خارج از مدرسه تمرینات ورزشی خاصی دارند؟ چه تمریناتی و چند جلسه در هفته؟"
-                                config={{name: 'athletic.q4'}}/>
+                                type="textarea"
+                                name="athletic.q4"
+                                />
 
                         </div>
                     </div>
@@ -432,6 +446,65 @@ const options = {
             }
         }
     },
+    validationSchema: yup.object().shape({
+        // school: {
+        //     branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
+        //     grade: '',
+        // },
+        student: yup.object().shape({
+            firstName: yup.string().required('این فیلد'),
+            // lastName: '',
+            // code: '',
+            // serial: '',
+            // birthplace: '',
+            // birthdate: '',
+            // currentSchoolName: '',
+            // phoneNumber: '',
+            // photo: ''
+        }),
+        // father: {
+        //     fullName: '',
+        //     code: '',
+        //     birthplace: '',
+        //     education: '',
+        //     profession: '',
+        //     workplaceAddress: '',
+        //     workplacePhoneNumber: '',
+        //     phoneNumber: ''
+        // },
+        // mother: {
+        //     fullName: '',
+        //     code: '',
+        //     birthplace: '',
+        //     education: '',
+        //     profession: '',
+        //     workplaceAddress: '',
+        //     workplacePhoneNumber: '',
+        //     phoneNumber: ''
+        // },
+        // family: {
+        //     address: '',
+        //     phoneNumber: '',
+        //     closeIndividualPhoneNumber: '',
+        //     livingWith: ''
+        // },
+        // medical: {
+        //     q1: '',
+        //     q2: '',
+        //     q3: ''
+        // },
+        // athletic: {
+        //     q1: '',
+        //     q2: '',
+        //     q3: '',
+        //     q4: ''
+        // },
+        // more: {
+        //     willUseService: false,
+        //     leftHanded: false,
+        //     agreementsOnGoingToCamps: false
+        // }
+    }),
     handleSubmit(values) {
         // console.log(values);
     }
