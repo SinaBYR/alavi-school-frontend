@@ -10,11 +10,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { IoLocationSharp } from 'react-icons/io5';
 import Map from './Map/Map';
 
-
-// mapboxgl.accessToken = 'sk.eyJ1Ijoic2luYWJ5ciIsImEiOiJja3M3NmJqd3AwNDFvMnVsdTdmb3lmejE4In0.rNA0ix0GhZVxlk1OVWwzxQ';
-
-
-
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',
     2: 'دبستان ویلاشهر',
