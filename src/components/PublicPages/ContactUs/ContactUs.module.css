@@ -97,7 +97,8 @@
     }
 
     .Form {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     .Links, .Address {

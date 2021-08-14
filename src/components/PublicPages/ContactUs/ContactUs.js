@@ -1,19 +1,12 @@
-import { useState, useEffect, useRef } from 'react'; 
 import classes from './ContactUs.module.css';
-import { FaInstagram, FaPhone, FaTelegram } from 'react-icons/fa';
-import HThree from '../../Utility/UI/Headings/HThree/HThree';
-import HTwo from '../../Utility/UI/Headings/HTwo/HTwo';
-import { SocialIcon } from 'react-social-icons';
-import { Input, Textarea } from '../../Utility/Inputs';
 import { withFormik, Form } from 'formik';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { IoLocationSharp } from 'react-icons/io5';
+import * as yup from 'yup';
 import Map from './Map/Map';
-
-
-// mapboxgl.accessToken = 'sk.eyJ1Ijoic2luYWJ5ciIsImEiOiJja3M3NmJqd3AwNDFvMnVsdTdmb3lmejE4In0.rNA0ix0GhZVxlk1OVWwzxQ';
-
-
+import HThree from '../../Utility/UI/Headings/HThree/HThree';
+import ButtonOne from '../../Utility/UI/ButtonOne/ButtonOne';
+import { Input, Textarea } from '../../Utility/Inputs';
+import { IoLocationSharp } from 'react-icons/io5';
+import { FaInstagram, FaPhone, FaTelegram } from 'react-icons/fa';
 
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',
@@ -27,12 +20,12 @@ const SCHOOL_ADDRESSES = {
     'دبیرستان دوره اول': 'تبریز - ائل گولی - کوی ویلاشهر - انتهای خیابان گلها',
 }
 const SCHOOL_PHONE_NUMBERS = {
-    'دبستان میدان ساعت': ['04135562524', '04135556002'],
-    'دبستان ویلاشهر': ['04133821930'],
-    'دبیرستان دوره اول': ['04133822513']
+    'دبستان میدان ساعت': ['35562524', '35556002'],
+    'دبستان ویلاشهر': ['33821930'],
+    'دبیرستان دوره اول': ['33822513']
 }
 
-const ContactUs = props => {
+const ContactUs = ({errors, touched}) => {
     const schoolBranch = SCHOOL_IDENTIFIERS[localStorage.getItem('branch')];
 
     return (
@@ -43,9 +36,10 @@ const ContactUs = props => {
                     <p style={{fontSize: '1.2rem', textAlign: 'center'}}>لطفا نظرات، سوالات، پیشنهادات و انتقادات خود را با ما درمیان بگذارید.</p>
                     <section className={classes.Section}>
                         <Form className={classes.Form}>
-                            <Input label="نام و نام خانوداگی" config={{type: 'text', name: 'fullName'}}/>
-                            <Input label="آدرس ایمیل" config={{type: 'email', name: 'email'}}/>
-                            <Textarea label="متن پیام" config={{name: 'message'}}/>
+                            <Input label="نام و نام خانوداگی" error={touched.fullName && errors.fullName} config={{type: 'text', name: 'fullName'}}/>
+                            <Input label="آدرس ایمیل" error={touched.email && errors.email} config={{type: 'email', name: 'email'}}/>
+                            <Textarea label="متن پیام" config={{name: 'message'}} error={touched.message && errors.message} style={{gridColumn: '1 /span 2'}}/>
+                            <ButtonOne type="submit" style={{gridColumn: '2 /span 1'}}>ارسال</ButtonOne>
                         </Form>
                     </section>
 
@@ -71,7 +65,7 @@ const ContactUs = props => {
                             <div className={classes.AddressItem}>
                                 <div><FaPhone style={{fontSize: "30px", margin: '0.5rem 0'}}/></div>
                                 <div>
-                                    {SCHOOL_PHONE_NUMBERS[schoolBranch].map(phoneNum => <a key={phoneNum} href={'tel:' + phoneNum}>{phoneNum}</a>)}
+                                    {SCHOOL_PHONE_NUMBERS[schoolBranch].map(phoneNum => <a key={phoneNum} href={'tel:' + '041' + phoneNum}>{phoneNum + ' - ' + '041'}</a>)}
                                 </div>
                             </div>
                         </div>
@@ -91,6 +85,11 @@ const options = {
             message: ''
         }
     },
+    validationSchema: yup.object().shape({
+        fullName: yup.string().required('تکمیل این فیلد الزامی است'),
+        email: yup.string().email('آدرس ایمیل نامعتبر است').required('تکمیل این فیلد الزامی است'),
+        message: yup.string().required('تکمیل این فیلد الزامی است')
+    }),
     handleSubmit(values){
         console.log(values);
     }
