@@ -50,7 +50,7 @@ const FinalStage = ({handleChange, values, errors, touched}) => {
         if(file && file.size > 5000000 ) {
             return setStudentPhotoError('حجم تصویر باید کمتر از 5 مگابایت باشد');
         }
-        
+
         setStudentPhoto(URL.createObjectURL(file));
     }
 
@@ -511,16 +511,16 @@ const options = {
         student: yup.object().shape({
             firstName: yup.string().required('تکمیل این فیلد الزامی است'),
             lastName: yup.string().required('تکمیل این فیلد الزامی است'),
-            code: yup.string().required('تکمیل این فیلد الزامی است'),
+            code: yup.number()
+                .typeError('کدملی نامعتبر است')
+                .required('تکمیل این فیلد الزامی است'),
             serial: yup.string().required('تکمیل این فیلد الزامی است'),
             birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
             currentSchoolName: yup.string().required('تکمیل این فیلد الزامی است'),
-            phoneNumber: yup.number()
-                        .typeError('شماره تلفن نامعتبر است')
+            phoneNumber: yup.string()
                         .required('تکمیل این فیلد الزامی است')
                         .max(11, 'شماره تلفن نامعتبر است')
                         .min(11, 'شماره تلفن نامعتبر است'),
-            // photo: yup.mixed().test('fileSize', "File Size is too large", value => value.size <= FILE_SIZE) .test('fileType', "Unsupported File Format", value => SUPPORTED_FORMATS.includes(value.type) )
         }),
         // father: {
         //     fullName: '',

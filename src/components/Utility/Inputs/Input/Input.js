@@ -50,25 +50,12 @@ export const Input = ({ label, inputConfig, labelConfig, parentConfig, config, s
             {element}
             {
                 error &&
-                <p className={classes.DesktopError}>{error}</p>
+                <p className={classes.DesktopError}><BiError />&nbsp;{error}</p>
             }
             {
                 error &&
                 <p className={classes.MobileError}><BiError />&nbsp;{error}</p>
             }
         </div>
-        // <div className={classes.InputWrapper} style={style} {...parentConfig}>
-        //     <label {...labelConfig}>{label}</label>
-        //     <FastField {...config} style={{borderColor: error && 'red'}}/>
-        //     {element}
-        //     {
-        //         error &&
-        //         <p className={classes.DesktopError}>{error}</p>
-        //     }
-        //     {
-        //         error &&
-        //         <p className={classes.MobileError}><BiError />&nbsp;{error}</p>
-        //     }
-        // </div>
     )
 }
