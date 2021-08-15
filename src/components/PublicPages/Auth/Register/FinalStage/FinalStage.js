@@ -6,7 +6,7 @@ import 'akbari-react-date-picker/dist/index.css'
 import DownloadLink from '../../../../Utility/UI/DownloadLink/DownloadLink';
 import { FaRegFilePdf } from 'react-icons/fa';
 import { Field, Form, withFormik } from 'formik';
-import { Input, Textarea, FileInput } from '../../../../Utility/Inputs/index';
+import { Input } from '../../../../Utility/Inputs/index';
 import * as yup from 'yup';
 
 const SCHOOL_IDENTIFIERS = {
@@ -15,8 +15,10 @@ const SCHOOL_IDENTIFIERS = {
     3: 'دبیرستان دوره اول'
 }
 
-const FinalStage = props => {
-    const [studentImage, setStudentImage] = useState(null);
+const FinalStage = ({handleChange, values, errors, touched}) => {
+    const [studentPhoto, setStudentPhoto] = useState(null);
+    const [studentPhotoError, setStudentPhotoError] = useState(null);
+    const [studentBirthdate, setStudentBirthdate] = useState('');
     const schoolBranch = SCHOOL_IDENTIFIERS[localStorage.getItem('branch')];
 
     const schoolBranchRadioButtons = Object.keys(SCHOOL_IDENTIFIERS).map(branch => {
@@ -34,23 +36,37 @@ const FinalStage = props => {
         )
     })
 
-    const studentImageHanler = e => {
-        console.log(e);
+    const studentPhotoHanler = e => {
+        setStudentPhotoError(null);
+        // console.log(e);
         const [file] = e.target.files;
-        if(file) {
-            setStudentImage(URL.createObjectURL(file));
+        if(!file) {
+            return;
         }
+        if(file && !(file.type === 'image/png' || file.type === 'image/jpeg' || file.type === 'image/jpeg')) {
+            return setStudentPhotoError('تصویر دانش آموز نامعتبر است');
+        }
+
+        if(file && file.size > 5000000 ) {
+            return setStudentPhotoError('حجم تصویر باید کمتر از 5 مگابایت باشد');
+        }
+        
+        setStudentPhoto(URL.createObjectURL(file));
     }
 
     const submitFormHandler = (e) => {
         e.preventDefault();
 
-        const values = props.values;
-        values.student.photo = studentImage;
-        const data = {
-            ...props.values,
+        const formValues = {
+            ...values,
+            student: {
+                ...values.student,
+                birthdate: studentBirthdate,
+                photo: studentPhoto
+            }
         }
-        console.log(data);
+        console.log(formValues);
+
     }
 
     let gradesOptions;
@@ -119,20 +135,41 @@ const FinalStage = props => {
                         </div>
                         <div className={classes.Student}>
 
-                            <Input label="نام" type="text" name="student.firstName" error={props.touched.fullName && props.errors.firstName}/>
-                            <Input label="نام خانوادگی" type="text" name="student.lastName" />
-                            <Input label="کدملی" type="text" name="student.code"/>
-                            <Input label="سریال شناسنامه" type="text" name="student.serial"/>
-                            <Input label="محل تولد" type="text" name="student.birthplace"/>
+                            <Input
+                                label="نام"
+                                type="text"
+                                name="student.firstName"
+                                error={touched.student?.firstName && errors.student?.firstName}/>
+                            <Input
+                                label="نام خانوادگی"
+                                type="text"
+                                name="student.lastName"
+                                error={touched.student?.lastName && errors.student?.lastName}/>
+                            <Input
+                                label="کدملی"
+                                type="text"
+                                name="student.code"
+                                error={touched.student?.code && errors.student?.code}/>
+                            <Input
+                                label="سریال شناسنامه"
+                                type="text"
+                                name="student.serial"
+                                error={touched.student?.serial && errors.student?.serial}/>
+                            <Input
+                                label="محل تولد"
+                                type="text"
+                                name="student.birthplace"
+                                error={touched.student?.birthplace && errors.student?.birthplace}/>
                             <div className={classes.InputWrapper}>
+                                <p>{touched.student?.birthdate && errors.student?.birthdate}</p>
                                 <label>تاریخ تولد</label>
                                 <div className={classes.DatePicker}>
                                     <AkbariDatePicker 
                                         input_type={'jalali'} 
-                                        on_change_date={props.handleChange} 
+                                        on_change_date={(date) => setStudentBirthdate(date)} 
                                         current_date={'1400/1/1'}
-                                        min_date={'1300/8/5'}
-                                        max_date={'1400/5/9'} 
+                                        min_date={'1380/1/1'}
+                                        max_date={'1400/1/1'} 
                                         // ref="student.birthdate"
                                         // width="200px"
                                         height="50px"
@@ -140,11 +177,31 @@ const FinalStage = props => {
                                     />
                                 </div>
                             </div>
-                            <Input label="نام مدرسه فعلی" type="text" name="student.currentSchoolName"/>   
-                            <Input label="شماره موبایل دانش آموز" type="text" name="student.phoneNumber"/>
-                            <FileInput label="تصویر دانش آموز" config={{onChange: studentImageHanler}}/>
+                            <Input
+                                label="نام مدرسه فعلی"
+                                type="text"
+                                name="student.currentSchoolName"
+                                error={touched.student?.currentSchoolName && errors.student?.currentSchoolName}/>   
+                            <Input
+                                label="شماره موبایل دانش آموز"
+                                type="text"
+                                name="student.phoneNumber"
+                                error={touched.student?.phoneNumber && errors.student?.phoneNumber}/>
+                            <Input
+                                label="تصویر دانش آموز"
+                                type="file"
+                                name="student.photo"
+                                accept="image/png, image/jpeg"
+                                error={studentPhotoError}
+                                inputConfig={{onChange: studentPhotoHanler}} />
                             <div className={classes.Preview}>
-                                {studentImage && <img src={studentImage} alt="student-image"/>}
+                                <div className={classes.PreviewPhoto}>
+                                    {studentPhoto && <img src={studentPhoto} alt="student-image"/>}
+                                </div>
+                                <div className={classes.PreviewHint}>
+                                    <p>فرمت تصاویر باید JPEG یا PNG باشد.</p>
+                                    <p>حجم تصویر حداکثر باید 5 مگابایت باشد.</p>
+                                </div>
                             </div>
 
                         </div>
@@ -452,15 +509,18 @@ const options = {
         //     grade: '',
         // },
         student: yup.object().shape({
-            firstName: yup.string().required('این فیلد'),
-            // lastName: '',
-            // code: '',
-            // serial: '',
-            // birthplace: '',
-            // birthdate: '',
-            // currentSchoolName: '',
-            // phoneNumber: '',
-            // photo: ''
+            firstName: yup.string().required('تکمیل این فیلد الزامی است'),
+            lastName: yup.string().required('تکمیل این فیلد الزامی است'),
+            code: yup.string().required('تکمیل این فیلد الزامی است'),
+            serial: yup.string().required('تکمیل این فیلد الزامی است'),
+            birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
+            currentSchoolName: yup.string().required('تکمیل این فیلد الزامی است'),
+            phoneNumber: yup.number()
+                        .typeError('شماره تلفن نامعتبر است')
+                        .required('تکمیل این فیلد الزامی است')
+                        .max(11, 'شماره تلفن نامعتبر است')
+                        .min(11, 'شماره تلفن نامعتبر است'),
+            // photo: yup.mixed().test('fileSize', "File Size is too large", value => value.size <= FILE_SIZE) .test('fileType', "Unsupported File Format", value => SUPPORTED_FORMATS.includes(value.type) )
         }),
         // father: {
         //     fullName: '',

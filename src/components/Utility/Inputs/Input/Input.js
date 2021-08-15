@@ -11,7 +11,7 @@ export const Input = ({ label, inputConfig, labelConfig, parentConfig, config, s
 
         switch (type) {
             case 'text': {
-                element = <FastField type="text" name={name} {...inputConfig} style={{borderColor: error && 'red'}} />
+                element = <Field type="text" name={name} {...inputConfig} style={{borderColor: error && 'red'}} />
                 break;
             }
             case 'email': {
@@ -44,15 +44,9 @@ export const Input = ({ label, inputConfig, labelConfig, parentConfig, config, s
                 break;
         }
 
-        useEffect(() => {
-            console.log('hi')
-        }, [passVisible])
-
-        console.log(inputConfig)
     return (
         <div className={classes.InputWrapper} {...parentConfig}>
             <label {...labelConfig}>{label}</label>
-            {/* <FastField {...config} style={{borderColor: error && 'red'}}/> */}
             {element}
             {
                 error &&
