@@ -513,14 +513,21 @@ const options = {
             lastName: yup.string().required('تکمیل این فیلد الزامی است'),
             code: yup.number()
                 .typeError('کدملی نامعتبر است')
-                .required('تکمیل این فیلد الزامی است'),
+                .required('تکمیل این فیلد الزامی است')
+                .test('length', 'کدملی باید 10 رقم باشد', val => val?.toString().length === 10),
             serial: yup.string().required('تکمیل این فیلد الزامی است'),
             birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
             currentSchoolName: yup.string().required('تکمیل این فیلد الزامی است'),
             phoneNumber: yup.string()
                         .required('تکمیل این فیلد الزامی است')
-                        .max(11, 'شماره تلفن نامعتبر است')
-                        .min(11, 'شماره تلفن نامعتبر است'),
+                        .test('onlynum', 'شماره موبایل نامعتبر است', val => {
+                            if(!val) {return}
+                            if(isNaN(val)) {
+                                return false;
+                            }
+                            return true;
+                        })
+                        .test('length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
         }),
         // father: {
         //     fullName: '',
