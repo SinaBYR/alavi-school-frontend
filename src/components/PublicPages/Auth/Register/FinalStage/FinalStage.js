@@ -15,7 +15,7 @@ const SCHOOL_IDENTIFIERS = {
     3: 'دبیرستان دوره اول'
 }
 
-const FinalStage = ({handleChange, values, errors, touched}) => {
+const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubmitting}) => {
     const [studentPhoto, setStudentPhoto] = useState(null);
     const [studentPhotoError, setStudentPhotoError] = useState(null);
     const [studentBirthdate, setStudentBirthdate] = useState('');
@@ -95,7 +95,7 @@ const FinalStage = ({handleChange, values, errors, touched}) => {
         <div className={classes.FinalStage}>
             <div className={classes.Wrapper}>
                 <HThree style={{textAlign: 'center', marginBottom: '32px'}}>پیش ثبت نام</HThree>
-                <Form onSubmit={submitFormHandler}>
+                <Form>
                     
                     <div className={classes.Section}>
                         <div className={classes.Heading}>
@@ -213,14 +213,46 @@ const FinalStage = ({handleChange, values, errors, touched}) => {
                         </div>
                         <div className={classes.Father}>
 
-                            <Input label="نام و نام خانوادگی" type="text" name="father.fullName"/>
-                            <Input label="کدملی" type="text" name="father.code"/>
-                            <Input label="محل تولد" type="text" name="father.birthplace"/>
-                            <Input label="مدرک تحصیلی" type="text" name="father.education"/>
-                            <Input label="شغل (به طور دقیق)" type="text" name="father.profession"/>
-                            <Input label="آدرس محل کار" type="text" name="father.workplaceAddress"/>
-                            <Input label="تلفن محل کار" type="text" name="father.workplacePhoneNumber"/>
-                            <Input label="شماره موبایل (بدون صفر)" type="text" name="father.phoneNumber" inputConfig={{placeholder: "9141234567"}}/>
+                            <Input
+                                label="نام و نام خانوادگی"
+                                type="text"
+                                name="father.fullName"
+                                error={touched.father?.fullName && errors.father?.fullName}/>
+                            <Input
+                                label="کدملی"
+                                type="text"
+                                name="father.code"
+                                error={touched.father?.code && errors.father?.code}/>
+                            <Input
+                                label="محل تولد"
+                                type="text"
+                                name="father.birthplace"
+                                error={touched.father?.birthplace && errors.father?.birthplace}/>
+                            <Input
+                                label="مدرک تحصیلی"
+                                type="text"
+                                name="father.education"
+                                error={touched.father?.education && errors.father?.education}/>
+                            <Input
+                                label="شغل (به طور دقیق)"
+                                type="text"
+                                name="father.profession"
+                                error={touched.father?.profession && errors.father?.profession}/>
+                            <Input
+                                label="آدرس محل کار"
+                                type="text"
+                                name="father.workplaceAddress"
+                                error={touched.father?.workplaceAddress && errors.father?.workplaceAddress}/>
+                            <Input
+                                label="تلفن محل کار"
+                                type="text"
+                                name="father.workplacePhoneNumber"
+                                error={touched.father?.workplacePhoneNumber && errors.father?.workplacePhoneNumber}/>
+                            <Input
+                                label="شماره موبایل"
+                                type="text"
+                                name="father.phoneNumber"
+                                error={touched.father?.phoneNumber && errors.father?.phoneNumber}/>
 
                         </div>
                     </div>
@@ -231,14 +263,46 @@ const FinalStage = ({handleChange, values, errors, touched}) => {
                         </div>
                         <div className={classes.Mother}>
 
-                            <Input label="نام و نام خانوادگی" type="text" name="mother.fullName"/>
-                            <Input label="کدملی" type="text" name="mother.code"/>
-                            <Input label="محل تولد" type="text" name="mother.birthplace"/>
-                            <Input label="مدرک تحصیلی" type="text" name="mother.education"/>
-                            <Input label="شغل (به طور دقیق)" type="text" name="mother.profession"/>
-                            <Input label="آدرس محل کار" type="text" name="mother.workplaceAddress"/>
-                            <Input label="تلفن محل کار" type="text" name="mother.workplacePhoneNumber"/>
-                            <Input label="شماره موبایل (بدون صفر)" type="text" name="mother.phoneNumber" inputConfig={{placeholder: "9141234567"}}/>
+                        <Input
+                                label="نام و نام خانوادگی"
+                                type="text"
+                                name="mother.fullName"
+                                error={touched.mother?.fullName && errors.mother?.fullName}/>
+                            <Input
+                                label="کدملی"
+                                type="text"
+                                name="mother.code"
+                                error={touched.mother?.code && errors.mother?.code}/>
+                            <Input
+                                label="محل تولد"
+                                type="text"
+                                name="mother.birthplace"
+                                error={touched.mother?.birthplace && errors.mother?.birthplace}/>
+                            <Input
+                                label="مدرک تحصیلی"
+                                type="text"
+                                name="mother.education"
+                                error={touched.mother?.education && errors.mother?.education}/>
+                            <Input
+                                label="شغل (به طور دقیق)"
+                                type="text"
+                                name="mother.profession"
+                                error={touched.mother?.profession && errors.mother?.profession}/>
+                            <Input
+                                label="آدرس محل کار"
+                                type="text"
+                                name="mother.workplaceAddress"
+                                error={touched.mother?.workplaceAddress && errors.mother?.workplaceAddress}/>
+                            <Input
+                                label="تلفن محل کار"
+                                type="text"
+                                name="mother.workplacePhoneNumber"
+                                error={touched.mother?.workplacePhoneNumber && errors.mother?.workplacePhoneNumber}/>
+                            <Input
+                                label="شماره موبایل"
+                                type="text"
+                                name="mother.phoneNumber"
+                                error={touched.mother?.phoneNumber && errors.mother?.phoneNumber}/>
 
                         </div>
                     </div>
@@ -249,9 +313,21 @@ const FinalStage = ({handleChange, values, errors, touched}) => {
                         </div>
                         <div className={classes.Family}>
 
-                            <Input label="آدرس منزل" type="text" name="family.address"/>
-                            <Input label="تلفن ثابت منزل" type="text" name="family.phoneNumber"/>
-                            <Input label="تلفن آشنای نزدیک" type="text" name="family.closeIndividualPhoneNumber"/>
+                            <Input
+                                label="آدرس منزل"
+                                type="text"
+                                name="family.address"
+                                error={touched.family?.address && errors.family?.address}/>
+                            <Input
+                                label="تلفن ثابت منزل"
+                                type="text"
+                                name="family.phoneNumber"
+                                error={touched.family?.phoneNumber && errors.family?.phoneNumber}/>
+                            <Input
+                                label="تلفن آشنای نزدیک"
+                                type="text"
+                                name="family.closeIndividualPhoneNumber"
+                                error={touched.family?.closeIndividualPhoneNumber && errors.family?.closeIndividualPhoneNumber}/>
                             <div className={classes.InputWrapper}>
                                 <label>دانش آموز با چه کسی زندگی میکند؟</label>
                                 <div className={classes.LivingGroup}>
@@ -434,7 +510,7 @@ const FinalStage = ({handleChange, values, errors, touched}) => {
                         </div>
                     </div>
 
-                    <button>Submit</button>
+                    <button type="submit">Submit</button>
                 </Form>
             </div>
         </div>
@@ -514,47 +590,107 @@ const options = {
             code: yup.number()
                 .typeError('کدملی نامعتبر است')
                 .required('تکمیل این فیلد الزامی است')
-                .test('length', 'کدملی باید 10 رقم باشد', val => val?.toString().length === 10),
+                .test('student-length', 'کدملی باید 10 رقم باشد', val => val?.toString().length === 10),
             serial: yup.string().required('تکمیل این فیلد الزامی است'),
             birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
             currentSchoolName: yup.string().required('تکمیل این فیلد الزامی است'),
             phoneNumber: yup.string()
                         .required('تکمیل این فیلد الزامی است')
-                        .test('onlynum', 'شماره موبایل نامعتبر است', val => {
-                            if(!val) {return}
-                            if(isNaN(val)) {
-                                return false;
-                            }
-                            return true;
-                        })
-                        .test('length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
+                        // .test('student-onlynum', 'شماره موبایل نامعتبر است', val => {
+                        //     if(!val) {return}
+                        //     if(isNaN(val)) {
+                        //         return false;
+                        //     }
+                        //     return true;
+                        // })
+                        // .test('length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
         }),
-        // father: {
-        //     fullName: '',
-        //     code: '',
-        //     birthplace: '',
-        //     education: '',
-        //     profession: '',
-        //     workplaceAddress: '',
-        //     workplacePhoneNumber: '',
-        //     phoneNumber: ''
-        // },
-        // mother: {
-        //     fullName: '',
-        //     code: '',
-        //     birthplace: '',
-        //     education: '',
-        //     profession: '',
-        //     workplaceAddress: '',
-        //     workplacePhoneNumber: '',
-        //     phoneNumber: ''
-        // },
-        // family: {
-        //     address: '',
-        //     phoneNumber: '',
-        //     closeIndividualPhoneNumber: '',
-        //     livingWith: ''
-        // },
+        father: yup.object().shape({
+            fullName: yup.string().required('تکمیل این فیلد الزامی است'),
+            code: yup.number()
+                .typeError('کدملی نامعتبر است')
+                .required('تکمیل این فیلد الزامی است')
+                .test('father-code-length', 'کدملی باید 10 رقم باشد', val => val?.toString().length === 10),
+            birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
+            education: yup.string().required('تکمیل این فیلد الزامی است'),
+            profession: yup.string().required('تکمیل این فیلد الزامی است'),
+            workplaceAddress: yup.string().required('تکمیل این فیلد الزامی است'),
+            workplacePhoneNumber: yup.string()
+                .required('تکمیل این فیلد الزامی است')
+                .test('father-onlynum', 'شماره تلفن نامعتبر است', val => {
+                    if(!val) {return}
+                    if(isNaN(val)) {
+                        return false;
+                    }
+                    return true;
+                })
+                .test('father-pn-length', 'شماره تلفن باید حداقل 8 رقم باشد', val => val?.length >= 8),
+            phoneNumber: yup.string()
+                .required('تکمیل این فیلد الزامی است')
+                .test('father-onlynum-1', 'شماره موبایل نامعتبر است', val => {
+                    if(!val) {return}
+                    if(isNaN(val)) {
+                        return false;
+                    }
+                    return true;
+                })
+                .test('father-pn1-length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
+        }),
+        mother: yup.object().shape({
+            fullName: yup.string().required('تکمیل این فیلد الزامی است'),
+            code: yup.number()
+                .typeError('کدملی نامعتبر است')
+                .required('تکمیل این فیلد الزامی است')
+                .test('mother-code-length', 'کدملی باید 10 رقم باشد', val => val?.toString().length === 10),
+            birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
+            education: yup.string().required('تکمیل این فیلد الزامی است'),
+            profession: yup.string().required('تکمیل این فیلد الزامی است'),
+            workplaceAddress: yup.string().required('تکمیل این فیلد الزامی است'),
+            workplacePhoneNumber: yup.string()
+                .required('تکمیل این فیلد الزامی است')
+                .test('mother-onlynum', 'شماره تلفن نامعتبر است', val => {
+                    if(!val) {return}
+                    if(isNaN(val)) {
+                        return false;
+                    }
+                    return true;
+                })
+                .test('mother-pn-length', 'شماره تلفن باید حداقل 8 رقم باشد', val => val?.length >= 8),
+            phoneNumber: yup.string()
+                .required('تکمیل این فیلد الزامی است')
+                .test('mother-onlynum-1', 'شماره موبایل نامعتبر است', val => {
+                    if(!val) {return}
+                    if(isNaN(val)) {
+                        return false;
+                    }
+                    return true;
+                })
+                .test('mother-pn1-length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
+        }),
+        family: yup.object().shape({
+            address: yup.string().required('تکمیل این فیلد الزامی است'),
+            phoneNumber: yup.string()
+                .required('تکمیل این فیلد الزامی است')
+                .test('family-onlynum', 'شماره تلفن نامعتبر است', val => {
+                    if(!val) {return}
+                    if(isNaN(val)) {
+                        return false;
+                    }
+                    return true;
+                })
+                .test('family-pn-length', 'شماره تلفن باید حداقل 8 رقم باشد', val => val?.length >= 8),
+            closeIndividualPhoneNumber: yup.string()
+                .required('تکمیل این فیلد الزامی است')
+                .test('family-onlynum-1', 'شماره تلفن نامعتبر است', val => {
+                    if(!val) {return}
+                    if(isNaN(val)) {
+                        return false;
+                    }
+                    return true;
+                })
+                .test('family-pn1-length', 'شماره تلفن باید حداقل 8 رقم باشد', val => val?.length >= 8),
+            livingWith: yup.string().required('تکمیل این فیلد الزامی است')
+        }),
         // medical: {
         //     q1: '',
         //     q2: '',
