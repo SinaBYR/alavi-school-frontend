@@ -1,5 +1,5 @@
 import classes from './FinalStage.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
 import { AkbariDatePicker } from 'akbari-react-date-picker'
 import 'akbari-react-date-picker/dist/index.css'
@@ -8,6 +8,8 @@ import { FaCheck, FaRegFilePdf } from 'react-icons/fa';
 import { Field, Form, withFormik } from 'formik';
 import { Input } from '../../../../Utility/Inputs/index';
 import * as yup from 'yup';
+import ButtonOne from '../../../../Utility/UI/ButtonOne/ButtonOne';
+import { useHistory } from 'react-router-dom';
 
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',
@@ -15,7 +17,7 @@ const SCHOOL_IDENTIFIERS = {
     3: 'دبیرستان دوره اول'
 }
 
-const FinalStage = ({values, errors, touched, setFieldValue}) => {
+const FinalStage = ({values, errors, touched, setFieldValue, prev, getData, isValid, dirty, isValidating}) => {
     const [studentPhoto, setStudentPhoto] = useState(null);
     const [studentPhotoError, setStudentPhotoError] = useState(null);
     const [studentBirthdate, setStudentBirthdate] = useState('');
@@ -81,12 +83,26 @@ const FinalStage = ({values, errors, touched, setFieldValue}) => {
     }
 
 
+    useEffect(() => {
+        if(Object.keys(errors).length && isValidating) {
+            console.log('an error caught!')
+            window.scrollTo(0, 0);
+            // errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }, [errors])
+
+    // console.log(touched);
+    // console.log(errors);
+    // console.log('touched: ', Object.keys(touched).length);
+    // console.log('errors: ', Object.keys(errors).length);
+
+
     return (
         <div className={classes.FinalStage}>
             <div className={classes.Wrapper}>
                 <HThree style={{textAlign: 'center', marginBottom: '32px'}}>پیش ثبت نام</HThree>
-                <Form onSubmit={submitFormHandler}>
-                    
+                <Form >
+                    {/* <div className={classes.ErrorDisplay}>{}</div> */}
                     <div className={classes.Section}>
                         <div className={classes.Heading}>
                             <h3>اطلاعات مدرسه</h3>
@@ -187,7 +203,7 @@ const FinalStage = ({values, errors, touched, setFieldValue}) => {
                                 name="student.photo"
                                 accept="image/png, image/jpeg"
                                 inputConfig={{onChange: e => setFieldValue('student.photo', studentPhotoHanler(e))}}
-                                error={studentPhotoError} />
+                                error={studentPhotoError || touched.student?.photo && errors.student?.photo} />
                             <div className={classes.Preview}>
                                 <div className={classes.PreviewPhoto}>
                                     {studentPhoto && <img src={studentPhoto} alt="student-image"/>}
@@ -479,6 +495,10 @@ const FinalStage = ({values, errors, touched, setFieldValue}) => {
                         </div>
                     </div>
 
+                    <div className={classes.Controls}>
+                        <div><ButtonOne type="submit" disabled={!(isValid && dirty)}>پیش ثبت نام</ButtonOne></div>
+                        <ButtonOne type="button" onClick={prev}>مرحله قبل</ButtonOne>
+                    </div>
                     {/* <button type="submit">Submit</button> */}
                 </Form>
             </div>
@@ -488,11 +508,9 @@ const FinalStage = ({values, errors, touched, setFieldValue}) => {
 
 const options = {
     mapPropsToValues(props) {
-        console.log(props);
         return {
             school: {
-                // branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
-                branch: '',
+                branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
                 grade: localStorage.getItem('branch') === 3 ? 'هفتم' : 'اول'
             },
             student: {
@@ -551,10 +569,6 @@ const options = {
         }
     },
     validationSchema: yup.object().shape({
-        // school: {
-        //     branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
-        //     grade: '',
-        // },
         student: yup.object().shape({
             firstName: yup.string().required('تکمیل این فیلد الزامی است'),
             lastName: yup.string().required('تکمیل این فیلد الزامی است'),
@@ -574,7 +588,8 @@ const options = {
                             }
                             return true;
                         })
-                        .test('length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
+                        .test('length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11),
+            photo: yup.mixed().required('ارسال تصویر دانش آموز الزامی است')
         }),
         father: yup.object().shape({
             fullName: yup.string().required('تکمیل این فیلد الزامی است'),
@@ -679,9 +694,10 @@ const options = {
             agreeWithSchoolCamps: yup.boolean()
         })
     }),
-    handleSubmit(values, api) {
-        console.log(values);
-        console.log(api);
+    handleSubmit(values, formikBag) {
+        // console.log(values);
+        // console.log(formikBag);
+        formikBag.props.getData(values);
     }
 }
 

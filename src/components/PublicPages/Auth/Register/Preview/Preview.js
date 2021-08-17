@@ -1,3 +1,4 @@
+import ButtonOne from '../../../../Utility/UI/ButtonOne/ButtonOne';
 import classes from './Preview.module.css';
 
 const Preview = props => {
@@ -48,6 +49,10 @@ const Preview = props => {
                 <p>9 - پایان</p>
                 <p className={classes.Warning}><span>تذکر مهم: </span>  
                 خواهشمند است در زمان وارد کردن اطلاعات، دقت کافی داشته باشید، بدیهی است عواقب ورود اشتباه اطلاعات بر عهده ثبت نام کننده می باشد.</p>
+            </div>
+            <div className={classes.Controls}>
+                <ButtonOne onClick={props.next}>مرحله بعد</ButtonOne>
+                <ButtonOne onClick={props.prev}>مرحله قبل</ButtonOne>
             </div>
         </div>
     )
