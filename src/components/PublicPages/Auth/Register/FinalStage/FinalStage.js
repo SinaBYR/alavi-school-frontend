@@ -15,7 +15,7 @@ const SCHOOL_IDENTIFIERS = {
     3: 'دبیرستان دوره اول'
 }
 
-const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubmitting}) => {
+const FinalStage = ({values, errors, touched, setFieldValue}) => {
     const [studentPhoto, setStudentPhoto] = useState(null);
     const [studentPhotoError, setStudentPhotoError] = useState(null);
     const [studentBirthdate, setStudentBirthdate] = useState('');
@@ -38,11 +38,11 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
         }
 
         setStudentPhoto(URL.createObjectURL(file));
+        return URL.createObjectURL(file)
     }
 
     const submitFormHandler = (e) => {
         e.preventDefault();
-        isValidating = true;
         const formValues = {
             ...values,
             student: {
@@ -52,10 +52,6 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
             }
         }
         console.log(formValues);
-
-    }
-
-    const photoOnChangeHandler = () => {
 
     }
 
@@ -102,7 +98,6 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
                                     label="شعبه مدرسه"
                                     type="radio"
                                     name="school.branch"
-                                    // error={touched.school?.branch && errors.family?.livingWith}
                                     groupClassName={classes.SchoolBranchGroup}
                                     elements={branchesArray}/>
                             </div>
@@ -165,7 +160,7 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
                                 <div className={classes.DatePicker}>
                                     <AkbariDatePicker 
                                         input_type={'jalali'} 
-                                        on_change_date={(date) => setStudentBirthdate(date)} 
+                                        on_change_date={(date) => setFieldValue('student.birthdate', date)} 
                                         current_date={'1400/1/1'}
                                         min_date={'1380/1/1'}
                                         max_date={'1400/1/1'} 
@@ -191,8 +186,8 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
                                 type="file"
                                 name="student.photo"
                                 accept="image/png, image/jpeg"
-                                error={studentPhotoError}
-                                inputConfig={{onChange: studentPhotoHanler}} />
+                                inputConfig={{onChange: e => setFieldValue('student.photo', studentPhotoHanler(e))}}
+                                error={studentPhotoError} />
                             <div className={classes.Preview}>
                                 <div className={classes.PreviewPhoto}>
                                     {studentPhoto && <img src={studentPhoto} alt="student-image"/>}
@@ -484,7 +479,7 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
                         </div>
                     </div>
 
-                    <button type="submit">Submit</button>
+                    {/* <button type="submit">Submit</button> */}
                 </Form>
             </div>
         </div>
@@ -493,6 +488,7 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
 
 const options = {
     mapPropsToValues(props) {
+        console.log(props);
         return {
             school: {
                 // branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
@@ -569,10 +565,6 @@ const options = {
             serial: yup.string().required('تکمیل این فیلد الزامی است'),
             birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
             currentSchoolName: yup.string().required('تکمیل این فیلد الزامی است'),
-            // photo: yup.mixed()
-            //     // .test('lel', 'hehe', (val) => console.log(val)),
-            //     .test('fileSize', "حجم تصویر باید کمتر از 5 مگابایت باشد", val => val?.size <= 5000000)
-            //     .test('fileType', "Unsupported File Format", val => ['image/png', 'image/jpeg'].includes(val?.type)),
             phoneNumber: yup.string()
                         .required('تکمیل این فیلد الزامی است')
                         .test('student-onlynum', 'شماره موبایل نامعتبر است', val => {
@@ -687,9 +679,6 @@ const options = {
             agreeWithSchoolCamps: yup.boolean()
         })
     }),
-    validate: values => {
-        console.log(values);
-    },
     handleSubmit(values, api) {
         console.log(values);
         console.log(api);
