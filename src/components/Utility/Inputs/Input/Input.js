@@ -3,8 +3,9 @@ import { FastField, Field } from "formik";
 import React, { useEffect, useState } from 'react';
 import { BiError } from 'react-icons/bi';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import { FaCheck } from 'react-icons/fa';
 
-export const Input = ({ label, inputConfig, labelConfig, parentConfig, config, style, error, type, name, accept}) => {
+export const Input = ({ label, type, name, error, groupClassName, elements, inputConfig, labelConfig, parentConfig, style, accept}) => {
 
     const [passVisible, setPassVisible] = useState(false);
     let element;
@@ -37,6 +38,56 @@ export const Input = ({ label, inputConfig, labelConfig, parentConfig, config, s
             }
             case 'textarea': {
                 element = <FastField as="textarea" name={name} {...inputConfig} style={{borderColor: error && 'red', ...style}} />
+                break;
+            }
+            case 'radio': {
+                // const radios = [{value: 'male', text: 'Male'}, {value: 'female', text: 'Female'}];
+                element = (
+                    <div className={groupClassName} style={{border: error && '1px solid red'}}>
+                        {
+                            elements.map(radio => {
+                                return (
+                                    <div className={classes.Radio} tabIndex="0" key={radio.value}>
+                                        <label htmlFor={radio.value}>{radio.text}</label>
+                                        <Field
+                                            type="radio"
+                                            id={radio.value}
+                                            name={name}
+                                            value={radio.value}
+                                            checked={radio.checked}
+                                            disabled={radio.disabled}/>
+                                        <div className={classes.FakeRadio}></div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                )
+                break;
+            }
+            case 'select': {
+                element = (
+                    <Field as="select" className={classes.Select} name={name}>
+                        {
+                            elements.map(option => {
+                                return (
+                                    <option value={option.value} disabled={option.disabled} key={option.value}>{option.text}</option>
+                                )
+                            })
+                        }
+                    </Field>
+                )
+                break;
+            }
+            case 'checkbox': {
+                element = (
+                    <div className={classes.Checkbox}>
+                        <Field type="checkbox" name={name}/>
+                        <div className={classes.FakeCheckbox}>
+                            <FaCheck />
+                        </div>
+                    </div>
+                )
                 break;
             }
             default:

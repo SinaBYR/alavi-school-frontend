@@ -4,7 +4,7 @@ import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
 import { AkbariDatePicker } from 'akbari-react-date-picker'
 import 'akbari-react-date-picker/dist/index.css'
 import DownloadLink from '../../../../Utility/UI/DownloadLink/DownloadLink';
-import { FaRegFilePdf } from 'react-icons/fa';
+import { FaCheck, FaRegFilePdf } from 'react-icons/fa';
 import { Field, Form, withFormik } from 'formik';
 import { Input } from '../../../../Utility/Inputs/index';
 import * as yup from 'yup';
@@ -20,21 +20,6 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
     const [studentPhotoError, setStudentPhotoError] = useState(null);
     const [studentBirthdate, setStudentBirthdate] = useState('');
     const schoolBranch = SCHOOL_IDENTIFIERS[localStorage.getItem('branch')];
-
-    const schoolBranchRadioButtons = Object.keys(SCHOOL_IDENTIFIERS).map(branch => {
-        return (
-            <div className={classes.Radio} tabIndex="0" key={branch}>
-                <label>{SCHOOL_IDENTIFIERS[branch]}</label>
-                <input
-                    type="radio"
-                    name="school-branch-to-register"
-                    value={branch}
-                    defaultChecked={schoolBranch === SCHOOL_IDENTIFIERS[branch]}
-                    disabled={schoolBranch !== SCHOOL_IDENTIFIERS[branch]}/>
-                <div className={classes.FakeRadio}></div>
-            </div>
-        )
-    })
 
     const studentPhotoHanler = e => {
         setStudentPhotoError(null);
@@ -69,33 +54,37 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
 
     }
 
-    let gradesOptions;
+    const branchesArray = Object.keys(SCHOOL_IDENTIFIERS).map(branch => {
+        return {
+            value: SCHOOL_IDENTIFIERS[branch],
+            text: SCHOOL_IDENTIFIERS[branch],
+            checked: SCHOOL_IDENTIFIERS[branch] === schoolBranch,
+            disabled: SCHOOL_IDENTIFIERS[branch] !== schoolBranch
+        }
+    })
+
+    let gradesOptions = [
+        {value: 'هفتم', text: 'هفتم'},
+        {value: 'هشتم', text: 'هشتم'},
+        {value: 'نهم', text: 'هفتم'}
+    ]
     if(schoolBranch === 'دبستان ویلاشهر' || schoolBranch === 'دبستان میدان ساعت') {
-        gradesOptions = (
-            <>
-                <option value="اول">اول</option>
-                <option value="دوم">دوم</option>
-                <option value="سوم">سوم</option>
-                <option value="چهارم">چهارم</option>
-                <option value="پنجم">پنجم</option>
-                <option value="ششم">ششم</option>
-            </>
-        )
-    } else {
-        gradesOptions = (
-            <>
-                <option value="هفتم">هفتم</option>
-                <option value="هشتم">هشتم</option>
-                <option value="نهم">نهم</option>
-            </>
-        )
+        gradesOptions = [
+            {value: 'اول', text: 'اول'},
+            {value: 'دوم', text: 'دوم'},
+            {value: 'سوم', text: 'سوم'},
+            {value: 'چهارم', text: 'چهارم'},
+            {value: 'پنجم', text: 'پنجم'},
+            {value: 'ششم', text: 'ششم'}
+        ]
     }
+
 
     return (
         <div className={classes.FinalStage}>
             <div className={classes.Wrapper}>
                 <HThree style={{textAlign: 'center', marginBottom: '32px'}}>پیش ثبت نام</HThree>
-                <Form>
+                <Form onSubmit={submitFormHandler}>
                     
                     <div className={classes.Section}>
                         <div className={classes.Heading}>
@@ -104,18 +93,23 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
                         <div className={classes.School}>
 
                             <div className={classes.SchoolItem}>
-                                شعبه مدرسه
-                                <div className={classes.SchoolBranchGroup}>
-                                    {schoolBranchRadioButtons}
-                                </div>
+                                <Input
+                                    label="شعبه مدرسه"
+                                    type="radio"
+                                    name="school.branch"
+                                    // error={touched.school?.branch && errors.family?.livingWith}
+                                    groupClassName={classes.SchoolBranchGroup}
+                                    elements={branchesArray}/>
                             </div>
 
                             <div className={classes.SchoolItem}>
                                 پایه تحصیلی
                                 <div className={classes.Info}>
-                                    <Field as="select" className={classes.Select} name="school.grade">
-                                        {gradesOptions}
-                                    </Field>
+                                    <Input
+                                        type="select"
+                                        name="school.grade"
+                                        elements={gradesOptions}
+                                        parentConfig={{style: {width: '100%'}}}/>
                                 </div>
                             </div>
 
@@ -328,31 +322,18 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
                                 type="text"
                                 name="family.closeIndividualPhoneNumber"
                                 error={touched.family?.closeIndividualPhoneNumber && errors.family?.closeIndividualPhoneNumber}/>
-                            <div className={classes.InputWrapper}>
-                                <label>دانش آموز با چه کسی زندگی میکند؟</label>
-                                <div className={classes.LivingGroup}>
-                                    <div className={classes.Radio} tabIndex="0">
-                                        <label htmlFor="both">پدر و مادر</label>
-                                        <Field type="radio" id="both" name="family.livingWith" value="پدر و مادر"/>
-                                        <div className={classes.FakeRadio}></div>
-                                    </div>
-                                    <div className={classes.Radio} tabIndex="0">
-                                        <label htmlFor="father">پدر</label>
-                                        <Field type="radio" id="father" name="family.livingWith" value="پدر"/>
-                                        <div className={classes.FakeRadio}></div>
-                                    </div>
-                                    <div className={classes.Radio} tabIndex="0">
-                                        <label htmlFor="mother">مادر</label>
-                                        <Field type="radio" id="mother" name="family.livingWith" value="مادر"/>
-                                        <div className={classes.FakeRadio}></div>
-                                    </div>
-                                    <div className={classes.Radio} tabIndex="0">
-                                        <label htmlFor="other">سایر</label>
-                                        <Field type="radio" id="other" name="family.livingWith" value="سایر"/>
-                                        <div className={classes.FakeRadio}></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <Input
+                                label="دانش آموز با چه کسی زندگی میکند؟"
+                                type="radio"
+                                name="family.livingWith"
+                                error={touched.family?.livingWith && errors.family?.livingWith}
+                                groupClassName={classes.LivingGroup}
+                                elements={[
+                                    {value: 'پدر و مادر', text: 'پدر و مادر'},
+                                    {value: 'پدر', text: 'پدر'},
+                                    {value: 'مادر', text: 'مادر'},
+                                    {value: 'سایر', text: 'سایر'},
+                                ]}/>
 
                         </div>
                     </div>
@@ -421,35 +402,23 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
                         </div>
                         <div className={classes.More}>
 
-                            <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
-                                <label>از سرویس استفاده خواهیم کرد.</label>
-                                <div className={classes.Checkbox}>
-                                    <Field type="checkbox" name="more.willUseService"/>
-                                    <div className={classes.FakeCheckbox}>
-                                        <i>✓</i>
-                                    </div>
-                                </div>
-                            </div>
+                            <Input
+                                type="checkbox"
+                                name="more.willUseService"
+                                label="از سرویس استفاده خواهیم کرد."
+                                parentConfig={{style: {display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}}/>
 
-                            <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
-                                <label>فرزندم چپ دست است.</label>
-                                <div className={classes.Checkbox}>
-                                    <Field type="checkbox" name="more.leftHanded"/>
-                                    <div className={classes.FakeCheckbox}>
-                                        <i>✓</i>
-                                    </div>
-                                </div>
-                            </div>
+                            <Input
+                                type="checkbox"
+                                name="more.leftHanded"
+                                label="فرزندم چپ دست است."
+                                parentConfig={{style: {display: 'grid', gridTemplateColumns: '3fr 30px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}}/>
 
-                            <div className={classes.InputWrapper} style={{display: 'grid', gridTemplateColumns: '3fr 30px', gridColumn: '2 span/3', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}>
-                                <label>با اعزام فرزندم به کلیه بازدیدها و اردوهای مقرر از طرف مدرسه موافقم.</label>
-                                <div className={classes.Checkbox}>
-                                    <Field type="checkbox" name="more.agreementsOnGoingToCamps"/>
-                                    <div className={classes.FakeCheckbox}>
-                                        <i>✓</i>
-                                    </div>
-                                </div>
-                            </div>
+                            <Input
+                                type="checkbox"
+                                name="more.agreeWithSchoolCamps"
+                                label="با اعزام فرزندم به کلیه بازدیدها و اردوهای مقرر از طرف مدرسه موافقم."
+                                parentConfig={{style: {display: 'grid', gridTemplateColumns: '3fr 30px', gridColumn: '2 span/3', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#dfdfdf', padding: '0.5rem', borderRadius: '5px'}}}/>
 
                         </div>
                     </div>
@@ -521,8 +490,9 @@ const options = {
     mapPropsToValues(props) {
         return {
             school: {
-                branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
-                grade: '',
+                // branch: SCHOOL_IDENTIFIERS[localStorage.getItem('branch')],
+                branch: '',
+                grade: localStorage.getItem('branch') === 3 ? 'هفتم' : 'اول'
             },
             student: {
                 firstName: '',
@@ -575,7 +545,7 @@ const options = {
             more: {
                 willUseService: false,
                 leftHanded: false,
-                agreementsOnGoingToCamps: false
+                agreeWithSchoolCamps: false
             }
         }
     },
@@ -596,14 +566,14 @@ const options = {
             currentSchoolName: yup.string().required('تکمیل این فیلد الزامی است'),
             phoneNumber: yup.string()
                         .required('تکمیل این فیلد الزامی است')
-                        // .test('student-onlynum', 'شماره موبایل نامعتبر است', val => {
-                        //     if(!val) {return}
-                        //     if(isNaN(val)) {
-                        //         return false;
-                        //     }
-                        //     return true;
-                        // })
-                        // .test('length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
+                        .test('student-onlynum', 'شماره موبایل نامعتبر است', val => {
+                            if(!val) {return}
+                            if(isNaN(val)) {
+                                return false;
+                            }
+                            return true;
+                        })
+                        .test('length', 'شماره موبایل باید 11 رقم باشد', val => val?.length === 11)
         }),
         father: yup.object().shape({
             fullName: yup.string().required('تکمیل این فیلد الزامی است'),
@@ -705,7 +675,7 @@ const options = {
         // more: {
         //     willUseService: false,
         //     leftHanded: false,
-        //     agreementsOnGoingToCamps: false
+        //     agreeWithSchoolCamps: false
         // }
     }),
     handleSubmit(values) {
