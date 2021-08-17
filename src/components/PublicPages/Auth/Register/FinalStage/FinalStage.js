@@ -23,13 +23,14 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
 
     const studentPhotoHanler = e => {
         setStudentPhotoError(null);
+        setStudentPhoto(null);
         // console.log(e);
         const [file] = e.target.files;
         if(!file) {
             return;
         }
-        if(file && !(file.type === 'image/png' || file.type === 'image/jpeg' || file.type === 'image/jpeg')) {
-            return setStudentPhotoError('تصویر دانش آموز نامعتبر است');
+        if(file && !(file.type === 'image/png' || file.type === 'image/jpeg')) {
+            return setStudentPhotoError('فایل آپلودشده باید تصویر باشد');
         }
 
         if(file && file.size > 5000000 ) {
@@ -41,7 +42,7 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
 
     const submitFormHandler = (e) => {
         e.preventDefault();
-
+        isValidating = true;
         const formValues = {
             ...values,
             student: {
@@ -51,6 +52,10 @@ const FinalStage = ({handleChange, values, errors, touched, isValidating, isSubm
             }
         }
         console.log(formValues);
+
+    }
+
+    const photoOnChangeHandler = () => {
 
     }
 
@@ -564,6 +569,10 @@ const options = {
             serial: yup.string().required('تکمیل این فیلد الزامی است'),
             birthplace: yup.string().required('تکمیل این فیلد الزامی است'),
             currentSchoolName: yup.string().required('تکمیل این فیلد الزامی است'),
+            // photo: yup.mixed()
+            //     // .test('lel', 'hehe', (val) => console.log(val)),
+            //     .test('fileSize', "حجم تصویر باید کمتر از 5 مگابایت باشد", val => val?.size <= 5000000)
+            //     .test('fileType', "Unsupported File Format", val => ['image/png', 'image/jpeg'].includes(val?.type)),
             phoneNumber: yup.string()
                         .required('تکمیل این فیلد الزامی است')
                         .test('student-onlynum', 'شماره موبایل نامعتبر است', val => {
@@ -661,25 +670,29 @@ const options = {
                 .test('family-pn1-length', 'شماره تلفن باید حداقل 8 رقم باشد', val => val?.length >= 8),
             livingWith: yup.string().required('تکمیل این فیلد الزامی است')
         }),
-        // medical: {
-        //     q1: '',
-        //     q2: '',
-        //     q3: ''
-        // },
-        // athletic: {
-        //     q1: '',
-        //     q2: '',
-        //     q3: '',
-        //     q4: ''
-        // },
-        // more: {
-        //     willUseService: false,
-        //     leftHanded: false,
-        //     agreeWithSchoolCamps: false
-        // }
+        medical: yup.object().shape({
+            q1: yup.string(),
+            q2: yup.string(),
+            q3: yup.string()
+        }),
+        athletic: yup.object().shape({
+            q1: yup.string(),
+            q2: yup.string(),
+            q3: yup.string(),
+            q4: yup.string()
+        }),
+        more: yup.object().shape({
+            willUseService: yup.boolean(),
+            leftHanded: yup.boolean(),
+            agreeWithSchoolCamps: yup.boolean()
+        })
     }),
-    handleSubmit(values) {
-        // console.log(values);
+    validate: values => {
+        console.log(values);
+    },
+    handleSubmit(values, api) {
+        console.log(values);
+        console.log(api);
     }
 }
 
