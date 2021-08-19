@@ -6,11 +6,7 @@ import HThree from '../../Utility/UI/Headings/HThree/HThree';
 import ButtonOne from '../../Utility/UI/ButtonOne/ButtonOne';
 import { Input, Textarea } from '../../Utility/Inputs';
 import { IoLocationSharp } from 'react-icons/io5';
-<<<<<<< HEAD
-import Map from './Map/Map';
-=======
-import { FaInstagram, FaPhone, FaTelegram } from 'react-icons/fa';
->>>>>>> wip_forms-validation
+import { FaPhone, FaTelegram, FaInstagram } from 'react-icons/fa';
 
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',
