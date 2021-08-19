@@ -102,7 +102,6 @@ const FinalStage = ({values, errors, touched, setFieldValue, prev, getData, isVa
             <div className={classes.Wrapper}>
                 <HThree style={{textAlign: 'center', marginBottom: '32px'}}>پیش ثبت نام</HThree>
                 <Form >
-                    {/* <div className={classes.ErrorDisplay}>{}</div> */}
                     <div className={classes.Section}>
                         <div className={classes.Heading}>
                             <h3>اطلاعات مدرسه</h3>
@@ -494,6 +493,8 @@ const FinalStage = ({values, errors, touched, setFieldValue, prev, getData, isVa
 
                         </div>
                     </div>
+                    
+                    {/* <div className={classes.ErrorDisplay}></div> */}
 
                     <div className={classes.Controls}>
                         <div><ButtonOne type="submit" disabled={!(isValid && dirty)}>پیش ثبت نام</ButtonOne></div>

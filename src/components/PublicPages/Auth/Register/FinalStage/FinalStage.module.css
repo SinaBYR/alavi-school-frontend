@@ -322,6 +322,13 @@
     align-items: center;
 }
 
+.ErrorDisplay {
+    max-width: 980px;
+    height: 300px;
+    background-color: teal;
+    margin: 0 auto;
+}
+
 .Controls {
     display: flex;
     justify-content: center;
