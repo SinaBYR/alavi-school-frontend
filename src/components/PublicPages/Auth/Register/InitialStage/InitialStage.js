@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import ButtonOne from '../../../../Utility/UI/ButtonOne/ButtonOne';
 import HOne from '../../../../Utility/UI/Headings/HOne/HOne';
 import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
 import HTwo from '../../../../Utility/UI/Headings/HTwo/HTwo';
@@ -61,6 +62,9 @@ const InitialStage = props => {
                 </div>
 
                 <p style={{textAlign: 'center', margin: '3rem 0'}}>پس از مطالعه‌ی موارد فوق روی دکمه <span style={{color: '#ffb62d'}}>« شروع ثبت نام »</span> کلیک فرمایید.</p>
+            </div>
+            <div className={classes.Controls}>
+                <ButtonOne onClick={props.next}>شروع ثبت نام</ButtonOne>
             </div>
         </div>
     )

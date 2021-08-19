@@ -1,6 +1,7 @@
 import classes from './Map.module.css';
 import mapboxgl from 'mapbox-gl';
 import { useState, useEffect, useRef } from 'react';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 

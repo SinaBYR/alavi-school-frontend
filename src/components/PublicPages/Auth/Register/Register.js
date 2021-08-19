@@ -18,26 +18,16 @@ const Register = props => {
         window.scrollTo(0, 0);
     }
 
+    const registerFormHandler = data => {
+        console.log(data);
+    }
+
     return (
         <div className={classes.Register}>
             <div className={classes.Wrapper}>
-                {stage === 0 && <InitialStage />}
-                {stage === 1 && <Preview />}
-                {stage === 2 && <FinalStage />}
-                <div className={classes.Controls}>
-                    <ButtonOne onClick={nextStageHandler}>
-                        {stage === 0 && 'شروع ثبت نام'}
-                        {stage === 1 && 'مرحله بعد'}
-                        {stage === 2 && 'پیش ثبت نام'}
-                    </ButtonOne>
-                    {
-                    stage > 0 &&
-                        <ButtonOne onClick={prevStageHandler}>
-                            {stage === 1 && 'مرحله قبل'}
-                            {stage === 2 && 'مرحله قبل'}
-                        </ButtonOne>
-                    }
-                </div>
+                {stage === 0 && <InitialStage next={nextStageHandler}/>}
+                {stage === 1 && <Preview prev={prevStageHandler} next={nextStageHandler} />}
+                {stage === 2 && <FinalStage prev={prevStageHandler} getData={(data) => registerFormHandler(data)}/>}
             </div>
         </div>
     )
