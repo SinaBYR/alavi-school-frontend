@@ -6,14 +6,14 @@ const Academic = props => {
     return (
         <div className={classes.Academic}>
             <div className={classes.Wrapper}>
-                <h3>کادر آموزشی</h3>
+                <h2 style={{textAlign: 'center'}}>کادر آموزشی</h2>
                 <div className={classes.Content}>
 
                     <div className={classes.Member}>
-                        <div className={classes.Photo}>
-                            <img src={teacher} alt="تصویر دبیر"/>
-                        </div>
                         <div className={classes.Header}>
+                            <div className={classes.Photo}>
+                                <img src={teacher} alt="تصویر دبیر"/>
+                            </div>
                             <div className={classes.Name}>سید دانیال معین آل داود</div>
                         </div>
                         <div className={classes.Info}>
@@ -29,11 +29,11 @@ const Academic = props => {
                     </div>
 
                     <div className={classes.Member}>
-                        <div className={classes.Photo}>
-                            <img src={teacher} alt="تصویر دبیر"/>
-                        </div>
                         <div className={classes.Header}>
-                            <div className={classes.Name}>سعید حسین نیا سنجرانی</div>
+                            <div className={classes.Photo}>
+                                <img src={teacher} alt="تصویر دبیر"/>
+                            </div>
+                            <div className={classes.Name}>سید دانیال معین آل داود</div>
                         </div>
                         <div className={classes.Info}>
                             <div className={classes.Properties}>
@@ -42,17 +42,36 @@ const Academic = props => {
                             </div>
                             <div className={classes.Values}>
                                 <div>دبیر تربیت بدنی</div>
-                                <div>فوق دیپلم ادبیات فارسی</div>
+                                <div>لیسانس مهندسی کامپیوتر</div>
                             </div>
                         </div>
                     </div>
 
                     <div className={classes.Member}>
-                        <div className={classes.Photo}>
-                            <img src={teacher} alt="تصویر دبیر"/>
-                        </div>
                         <div className={classes.Header}>
-                            <div className={classes.Name}>عباس بوعذار</div>
+                            <div className={classes.Photo}>
+                                <img src={teacher} alt="تصویر دبیر"/>
+                            </div>
+                            <div className={classes.Name}>سید دانیال معین آل داود</div>
+                        </div>
+                        <div className={classes.Info}>
+                            <div className={classes.Properties}>
+                                <div>سمت</div>
+                                <div>تحصیلات</div>
+                            </div>
+                            <div className={classes.Values}>
+                                <div>دبیر ریاضیات گسسته</div>
+                                <div>لیسانس ریاضیات کاربردی</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={classes.Member}>
+                        <div className={classes.Header}>
+                            <div className={classes.Photo}>
+                                <img src={teacher} alt="تصویر دبیر"/>
+                            </div>
+                            <div className={classes.Name}>سید دانیال معین آل داود</div>
                         </div>
                         <div className={classes.Info}>
                             <div className={classes.Properties}>
@@ -61,7 +80,7 @@ const Academic = props => {
                             </div>
                             <div className={classes.Values}>
                                 <div>دبیر تربیت بدنی</div>
-                                <div>فوق دیپلم ادبیات فارسی</div>
+                                <div>لیسانس مهندسی کامپیوتر</div>
                             </div>
                         </div>
                     </div>
