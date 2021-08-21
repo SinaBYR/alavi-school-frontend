@@ -1,13 +1,106 @@
 .Academic {
     background-color: #f4f4f4;
     padding: 1rem;
-    height: 250px;
 }
 
 .Wrapper {
-    max-width: 980px;
+    max-width: 1280px;
     background-color: #eeeeee;
-    padding-top: 1rem;
+    padding: 1rem;
     margin: 0 auto;
     box-shadow: 0 0 8px #bdbdbd;
 }
+
+.Content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1080px;
+    padding: 0.5rem;
+    margin: 0 auto;
+}
+
+.Content > * {
+    margin: 1rem;
+}
+
+.Member {
+    position: relative;
+    /* background-color: red; */
+    min-width: 420px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #bdbdbd;
+}
+
+.Header {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    height: 100px;
+    background-color: #282c34;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.Name {
+    color: #f4f4f4;
+    /* background-color: purple; */
+    font-size: 1.2rem;
+    margin-right: auto;
+    margin-left: 60px;
+    text-align: center;
+}
+
+.Photo {
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    width: 140px;
+    height: 125px;
+    height: 130px;
+    border-radius: 15px;
+    border-radius: 50%;
+}
+
+.Photo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 130px;
+    background-color: #eeeeee;
+    background-color: #282c34;
+    border-radius: 50%;
+    transform: scale(1.08);
+}
+
+.Photo img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+}
+
+.Info {
+    display: grid;
+    grid-template-columns: 100px 180px;
+    align-items: center;
+    justify-content: end;
+    height: 150px;
+    padding: 0 1rem;
+    /* margin-right: 80px; */
+}
+
+.Properties {
+    color: #bdbdbd;
+}
+
+:is(.Properties, .Values) > * {
+    /* background-color: teal; */
+    margin: 1rem auto;
+    text-align: center;
+}
+
+/* @media screen and (max-width: 420px) and (max-height: 900px) {} */

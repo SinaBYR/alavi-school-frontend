@@ -6,7 +6,7 @@ const Staff = props => {
         <div>
             <Switch>
                 <Route path="/school/staff/academic" component={Academic}/>
-                <Route path="/school/staff/administrative" />
+                {/* <Route path="/school/staff/administrative" /> */}
                 <Redirect to="/school"/>
             </Switch>
         </div>
