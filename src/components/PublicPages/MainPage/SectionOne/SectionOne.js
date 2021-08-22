@@ -20,7 +20,14 @@ const SectionOne = props => {
         <section className={classes.SectionOne}>
             <div className={classes.Wrapper}>
                 <Carousel slides={slides} thumbnail arrows infinite interval="5000" />
-                
+                {/* <div className={classes.RegisterPost}>
+                    <div className={classes.Text}>
+                        <HOne>ثبت نام آغاز شد</HOne>
+                        <p>پیش دبستانی / دبستان / دبیرستان دوره اول و دوم</p>
+                        <LinkOne style={{marginTop: '1rem'}} to="/school/lessons">اطلاعات بیشتر</LinkOne>
+                    </div>
+                    <img src={LandingImage} alt="landing"/>
+                </div> */}
             </div>
         </section>
     )
