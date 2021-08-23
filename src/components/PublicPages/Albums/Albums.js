@@ -1,6 +1,5 @@
 import classes from './Albums.module.css';
-import { ImFolder } from 'react-icons/im';
-import { Link } from 'react-router-dom';
+import { Folder } from './Folder/Folder';
 
 const Albums = props => {
     return (
@@ -9,48 +8,13 @@ const Albums = props => {
                 <h2 style={{textAlign: 'center'}}>آلبوم تصاویر</h2>
                 <div className={classes.Content}>
 
-                    <Link to="/school/staff/academic" className={classes.Link}>
-                        <div className={classes.Folder}>
-                            سال تحصیلی
-                            <div className={classes.Year}>00-01</div>
-                        </div>
-                    </Link>
-                    <Link to="/school/staff/academic" className={classes.Link}>
-                        <div className={classes.Folder}>
-                            سال تحصیلی
-                            <div className={classes.Year}>99-00</div>
-                        </div>
-                    </Link>
-                    <Link to="/school/staff/academic" className={classes.Link}>
-                        <div className={classes.Folder}>
-                            سال تحصیلی
-                            <div className={classes.Year}>98-99</div>
-                        </div>
-                    </Link>
-                    <Link to="/school/staff/academic" className={classes.Link}>
-                        <div className={classes.Folder}>
-                            سال تحصیلی
-                            <div className={classes.Year}>97-98</div>
-                        </div>
-                    </Link>
-                    <Link to="/school/staff/academic" className={classes.Link}>
-                        <div className={classes.Folder}>
-                            سال تحصیلی
-                            <div className={classes.Year}>96-97</div>
-                        </div>
-                    </Link>
-                    <Link to="/school/staff/academic" className={classes.Link}>
-                        <div className={classes.Folder}>
-                            سال تحصیلی
-                            <div className={classes.Year}>95-96</div>
-                        </div>
-                    </Link>
-                    <Link to="/school/staff/academic" className={classes.Link}>
-                        <div className={classes.Folder}>
-                            سال تحصیلی
-                            <div className={classes.Year}>94-95</div>
-                        </div>
-                    </Link>
+                    <Folder path="/school/staff/academic" text="00-01" year/>
+                    <Folder path="/school/staff/academic" text="99-00" year/>
+                    <Folder path="/school/staff/academic" text="98-99" year/>
+                    <Folder path="/school/staff/academic" text="97-98" year/>
+                    <Folder path="/school/staff/academic" text="96-97" year/>
+                    <Folder path="/school/staff/academic" text="95-96" year/>
+                    <Folder path="/school/staff/academic" text="94-95" year/>
 
                 </div>
             </div>

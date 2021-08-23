@@ -1,0 +1,25 @@
+.FolderLink {
+    display: block;
+    filter: drop-shadow(0 0 2px #282c34);
+}
+
+.FolderLink:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 4px #282c34);
+}
+
+.FolderContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 30% 0, 34% 10%, 100% 10%, 100% 100%, 0 100%);
+    color: #b1b1b1;
+    background-color: #282c34;
+    padding: 1rem;
+}
+
+.Year {
+    font-size: 1.5rem;
+    color: #f4f4f4;
+}
