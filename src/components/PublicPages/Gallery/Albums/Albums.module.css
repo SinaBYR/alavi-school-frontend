@@ -1,16 +1,16 @@
-.EventsWrapper {
+.AlbumsWrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-width: 980px;
     margin: 0 auto;
 }
 
-.EventsWrapper > * {
+.AlbumsWrapper > * {
     margin: 1rem;
 }
 
 @media screen and (max-width: 1020px) and (max-height: 900px) {
-    .EventsWrapper {
+    .AlbumsWrapper {
         grid-template-columns: repeat(1, 1fr);
     }
 }

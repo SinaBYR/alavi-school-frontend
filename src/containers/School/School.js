@@ -9,7 +9,7 @@ import classes from './School.module.css';
 import Footer from '../../components/Footer/Footer';
 import ContactUs from '../../components/PublicPages/ContactUs/ContactUs';
 import Staff from '../../components/PublicPages/Staff/Staff';
-import { Albums } from '../../components/PublicPages/Albums/Albums';
+import { Gallery } from '../../components/PublicPages/Gallery/Gallery';
 
 const School = props => {
 
@@ -24,7 +24,7 @@ const School = props => {
             <PublicHeader />
             {/* <CustomSwitch></CustomSwitch> */}
             <CustomSwitch>
-                <Route path="/school/albums" component={Albums}/>
+                <Route path="/school/gallery" component={Gallery}/>
                 <Route path="/school/staff" component={Staff}/>
                 <Route path="/school/contact" component={ContactUs}/>
                 <Route path="/school/auth" component={Auth}/>

@@ -12,7 +12,7 @@ const AboutUsDropdownItems = props => {
             <NavLinkOne to="/">افتخارات</NavLinkOne>
             <NavLinkOne to="/school/staff/academic">کادر آموزشی</NavLinkOne>
             <NavLinkOne to="/school/staff/administrative">کادر اداری</NavLinkOne>
-            <NavLinkOne to="/school/albums">آلبوم تصاویر</NavLinkOne>
+            <NavLinkOne to="/school/gallery">آلبوم تصاویر</NavLinkOne>
             <NavLinkOne to="/">تاریخچه</NavLinkOne>
             {/* <NavLinkOne to="/">چشم انداز</NavLinkOne>
             <NavLinkOne to="/">رسالت</NavLinkOne>

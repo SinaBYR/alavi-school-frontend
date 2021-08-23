@@ -12,14 +12,14 @@ const YearFolder = ({year, path}) => {
     )
 }
 
-const EventFolder = ({event, path}) => {
+const AlbumFolder = ({album, path}) => {
     return (
         <Link to={path} className={classes.FolderLink}>
-            <div className={classes.EventFolderContent}>
-                <div className={classes.Event}>{event}</div>
+            <div className={classes.AlbumFolderContent}>
+                <div className={classes.Album}>{album}</div>
             </div>
         </Link>
     )
 }
 
-export { YearFolder, EventFolder }
+export { YearFolder, AlbumFolder }
