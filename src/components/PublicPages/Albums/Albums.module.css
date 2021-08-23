@@ -11,14 +11,29 @@
     box-shadow: 0 0 8px #bdbdbd;
 }
 
-.Content {
+.YearsWrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     max-width: 680px;
     margin: 0 auto;
 }
 
-.Content > * {
+.YearsWrapper > * {
+    margin: 1rem;
+}
+
+.Content {
+
+}
+
+.EventsWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.EventsWrapper > * {
     margin: 1rem;
 }
 
@@ -27,7 +42,11 @@
         padding-top: 104px;
     }
 
-    .Content {
+    .YearsWrapper {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .EventsWrapper {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

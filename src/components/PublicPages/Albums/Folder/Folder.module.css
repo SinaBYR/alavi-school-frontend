@@ -8,7 +8,7 @@
     filter: drop-shadow(0 0 4px #282c34);
 }
 
-.FolderContent {
+.YearFolderContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,9 +17,28 @@
     color: #b1b1b1;
     background-color: #282c34;
     padding: 1rem;
+    text-align: center;
 }
 
 .Year {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: #f4f4f4;
+}
+
+.EventFolderContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    clip-path: polygon(0 0, 30% 0, 34% 10%, 100% 10%, 100% 100%, 0 100%);
+    color: #b1b1b1;
+    background-color: #282c34;
+    padding: 1rem;
+    text-align: center;
+}
+
+.Event {
+    font-size: 1.2rem;
     color: #f4f4f4;
 }
