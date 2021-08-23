@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import classes from './Albums.module.css';
 import { YearFolder, EventFolder } from './Folder/Folder';
+import { SchoolEvents } from './SchoolEvents/SchoolEvents';
 
 const Albums = props => {
     const [years, setYears] = useState([]);
@@ -37,20 +38,8 @@ const Albums = props => {
         <div className={classes.Albums}>
             <div className={classes.Wrapper}>
                 <Switch>
-                    <Route path="/school/albums/:year/:albumID">
-                        <h1>Hello</h1>
-                    </Route>
-                    <Route path="/school/albums/:year">
-                        <div className={classes.Album}>
-                            <div className={classes.EventsWrapper}>
-                                <EventFolder path="/school/albums/97/274864" event="راهپیمایی 22 بهمن" />
-                                <EventFolder path="/school/albums/96/274864" event="گزارش تصویری کلاس های آنلاین دوره دوم" />
-                                <EventFolder path="/school/albums/95/274864" event="دیداراولیا با دبیران دی" />
-                                <EventFolder path="/school/albums/94/274864" event="نمایشگاه روزنامه های انقلاب" />
-                                <EventFolder path="/school/albums/94/274864" event="مسابقه طناب کشی" />
-                            </div>
-                        </div>
-                    </Route>
+                    <Route path="/school/albums/:year/:albumID" />
+                    <Route path="/school/albums/:year" component={SchoolEvents}/>
                     <Route path="/school/albums">
                         <h2 style={{textAlign: 'center'}}>آلبوم تصاویر</h2>
                         {displayedContent}
