@@ -56,7 +56,7 @@
     border-radius: 50%;
 }
 
-.Info {
+.DesktopInfo {
     display: grid;
     grid-template-columns: 100px 180px;
     align-items: center;
@@ -74,6 +74,18 @@
     /* background-color: teal; */
     margin: 1rem auto;
     text-align: center;
+}
+
+.MobileInfo {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.MobileInfo > * {
+    margin: 0.2rem 0;
 }
 
 @media screen and (max-width: 1020px) and (max-height: 900px) {
@@ -108,7 +120,12 @@
         transform: scale(1.04);
     }
 
-    .Info {
-        height: 120px;
+    .DesktopInfo {
+        display: none;
+    }
+    
+    .MobileInfo {
+        display: flex;
+        /* height: 120px; */
     }
 }

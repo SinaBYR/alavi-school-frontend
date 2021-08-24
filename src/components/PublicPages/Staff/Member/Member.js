@@ -9,7 +9,8 @@ const Member = ({fullName, photo, position, education}) => {
                 </div>
                 <div className={classes.Name}>{fullName}</div>
             </div>
-            <div className={classes.Info}>
+
+            <div className={classes.DesktopInfo}>
                 <div className={classes.Properties}>
                     <div>سمت</div>
                     <div>تحصیلات</div>
@@ -19,6 +20,14 @@ const Member = ({fullName, photo, position, education}) => {
                     <div>{education}</div>
                 </div>
             </div>
+
+            <div className={classes.MobileInfo}>
+                <div className={classes.Properties}>سمت</div>
+                <div className={classes.Values}>{position}</div>
+                <div className={classes.Properties}>تحصیلات</div>
+                <div className={classes.Values}>{education}</div>
+            </div>
+            
         </div>
     )
 }
