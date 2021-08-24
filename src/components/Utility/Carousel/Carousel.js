@@ -58,12 +58,14 @@ const Carousel = ({ slides, thumbnail, arrows, infinite, interval }) => {
                 plugins={options}/>
             {
                 thumbnail && 
-                <Dots
-                    number={thumbnails.length}
-                    thumbnails={thumbnails}
-                    value={value}
-                    onChange={slideOnChangeHandler}
-                    number={slides.length}/>
+                <div className={classes.ThumbnailsWrapper}>
+                    <Dots
+                        number={thumbnails.length}
+                        thumbnails={thumbnails}
+                        value={value}
+                        onChange={slideOnChangeHandler}
+                        number={slides.length}/>
+                </div>
             }
         </div>
     )

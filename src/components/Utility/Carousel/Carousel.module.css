@@ -2,11 +2,13 @@
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 0 8px #cacaca;
+    /* padding: 0.5rem; */
 }
 
 .Carousel {
     position: relative;
     border-radius: 5px;
+    padding: 0.5rem;
 }
 
 .Carousel img {
@@ -41,22 +43,26 @@
     height: 100%;
     outline: none;
     border: none;
-    background-color: red;
-    background-color: rgba(0, 0, 0, 0.1);
     background-color: transparent;
     cursor: pointer;
     z-index: 1;
 }
 
+.ThumbnailsWrapper {
+    display: flex;
+    overflow-x: auto;
+}
+
 .Thumbnail img {
     width: 50px;
     height: 50px;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 750px) and (max-height: 900px) {
     .Carousel img {
+        height: 100%;
         object-fit: cover;
         object-position: center;
-        height: 100%;
     }
 }
