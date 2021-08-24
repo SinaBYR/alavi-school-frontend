@@ -1,0 +1,35 @@
+.Album {
+    /* background-color: teal; */
+    padding: 1rem;
+}
+
+.Content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* background-color: red; */
+}
+
+.Content > * {
+    margin: 1rem;
+}
+
+.ImageWrapper {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 200ms ease;
+}
+
+.ImageWrapper:hover {
+    transform: scale(1.01);
+}
+
+.Image {
+    padding: 0.2rem;
+    width: 100%;
+    /* background-color: #282c34; */
+    /* height: 100%; */
+    object-fit: contain;
+    object-position: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #282c34;
+}

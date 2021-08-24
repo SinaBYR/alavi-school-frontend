@@ -10,11 +10,11 @@ import { Carousel } from '../../../Utility/Carousel/Carousel';
 const SectionOne = props => {
 
     const slides = [
-        (<img src={image} alt="a pair of glasses"/>),
-        (<img src={imageOne} alt="a pair of glasses"/>),
-        (<img src={imageTwo} alt="a pair of glasses"/>),
-        (<img src={imageThree} alt="a pair of glasses"/>),
-        (<img src={imageFour} alt="a pair of glasses"/>),
+        (<img className={classes.IMG} src={image} alt="a pair of glasses"/>),
+        (<img className={classes.IMG} src={imageOne} alt="a pair of glasses"/>),
+        (<img className={classes.IMG} src={imageTwo} alt="a pair of glasses"/>),
+        (<img className={classes.IMG} src={imageThree} alt="a pair of glasses"/>),
+        (<img className={classes.IMG} src={imageFour} alt="a pair of glasses"/>),
     ]
     return (
         <section className={classes.SectionOne}>
