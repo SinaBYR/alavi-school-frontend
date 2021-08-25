@@ -14,7 +14,7 @@ const NavigationItems = props => {
 
                 <NavLink className={classes.Link} to="/school">صفحه اصلی</NavLink>
                 {/* <NavLink className={classes.Link} to="/">تصاویر</NavLink> */}
-                <NavLink className={classes.Link} to="/">اخبار</NavLink>
+                <NavLink className={classes.Link} to="/school/news">اخبار</NavLink>
 
                 <div className={classes.EducationalContent}>
                     <NavLink className={classes.Link} to="/">محتوای آموزشی <RiArrowDropDownFill /></NavLink>
