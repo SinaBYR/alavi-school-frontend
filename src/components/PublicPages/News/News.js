@@ -1,9 +1,9 @@
 import classes from './News.module.css';
 import image from '../../../assets/kitten.jpg';
-import LinkOne from '../../Utility/UI/LinkOne/LinkOne';
-import { GrView, GrFormView } from 'react-icons/gr';
-import { FiEye } from 'react-icons/fi';
-import { BiCalendarEdit } from 'react-icons/bi';
+import imageOne from '../../../assets/bird.jpg';
+import imageTwo from '../../../assets/bird-1.jpg';
+import imageThree from '../../../assets/monkey.jpg';
+import { CardTwo } from '../../Utility/UI/Cards/CardTwo/CardTwo';
 
 const News = props => {
     return (
@@ -11,135 +11,34 @@ const News = props => {
             <div className={classes.Wrapper}>
                 <h2 style={{textAlign: 'center'}}>اخبار مجموعه</h2>
                 <div className={classes.Content}>
-                    <div className={classes.CardTwo}>
-                        <h4>برنامه امتحانات نوبت دوم اصلاحيه</h4>
-                        <div className={classes.Thumbnail}>
-                            <img src={image} alt="kitten"/>
-                        </div>
-                        <div className={classes.Bottom}>
-                            <div className={classes.Info} style={{display: 'flex', alignItems: 'center'}}>
-                                <div style={{
-                                        // display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        fontSize: '12px',
-                                        paddingLeft: '8px',
-                                        textAlign: 'center'
-                                            }}>
-                                    <BiCalendarEdit />
-                                    <div>16 اردیبهشت</div>
-                                </div>
-                                <div style={{
-                                        // display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        fontSize: '12px',
-                                        paddingRight: '8px',
-                                        // borderRight: '1px solid #dbdbdb',
-                                        textAlign: 'center'
-                                            }}>
-                                    <FiEye />
-                                    <div>299</div>
-                                </div>
-                            </div>
-                            <LinkOne to="school/news/249763" style={{marginRight: 'auto'}}>ادامه مطلب</LinkOne>
-                        </div>
-                    </div>
-                    <div className={classes.CardTwo}>
-                        <h4>برنامه امتحانات نوبت دوم اصلاحيه</h4>
-                        <div className={classes.Thumbnail}>
-                            <img src={image} alt="kitten"/>
-                        </div>
-                        <div className={classes.Bottom}>
-                            <div className={classes.Info} style={{display: 'flex', alignItems: 'center'}}>
-                                <div style={{
-                                        // display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        fontSize: '12px',
-                                        paddingLeft: '8px',
-                                        textAlign: 'center'
-                                            }}>
-                                    <BiCalendarEdit />
-                                    <div>16 اردیبهشت</div>
-                                </div>
-                                <div style={{
-                                        // display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        fontSize: '12px',
-                                        paddingRight: '8px',
-                                        // borderRight: '1px solid #dbdbdb',
-                                        textAlign: 'center'
-                                            }}>
-                                    <FiEye />
-                                    <div>299</div>
-                                </div>
-                            </div>
-                            <LinkOne to="school/news/249763" style={{marginRight: 'auto'}}>ادامه مطلب</LinkOne>
-                        </div>
-                    </div>
-                    <div className={classes.CardTwo}>
-                        <h4 style={{textAlign: 'center'}}>برنامه امتحانات نوبت دوم اصلاحيه</h4>
-                        <div className={classes.Thumbnail}>
-                            <img src={image} alt="kitten"/>
-                        </div>
-                        <div className={classes.Bottom}>
-                            <div className={classes.Info} style={{display: 'flex', alignItems: 'center'}}>
-                                <div style={{
-                                        fontSize: '12px',
-                                        paddingLeft: '8px',
-                                        textAlign: 'center'
-                                        }}>
-                                    <BiCalendarEdit />
-                                    <div>16 اردیبهشت</div>
-                                </div>
-                                <div style={{
-                                        fontSize: '12px',
-                                        paddingRight: '8px',
-                                        textAlign: 'center'
-                                        }}>
-                                    <FiEye />
-                                    <div>299</div>
-                                </div>
-                            </div>
-                            <LinkOne to="school/news/249763" style={{marginRight: 'auto'}}>ادامه مطلب</LinkOne>
-                        </div>
-                    </div>
-                    <div className={classes.CardTwo}>
-                        <h4>برنامه امتحانات نوبت دوم اصلاحيه</h4>
-                        <div className={classes.Thumbnail}>
-                            <img src={image} alt="kitten"/>
-                        </div>
-                        <div className={classes.Bottom}>
-                            <div className={classes.Info} style={{display: 'flex', alignItems: 'center'}}>
-                                <div style={{
-                                        // display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        fontSize: '12px',
-                                        paddingLeft: '8px',
-                                        textAlign: 'center'
-                                            }}>
-                                    <BiCalendarEdit />
-                                    <div>16 اردیبهشت</div>
-                                </div>
-                                <div style={{
-                                        // display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        fontSize: '12px',
-                                        paddingRight: '8px',
-                                        // borderRight: '1px solid #dbdbdb',
-                                        textAlign: 'center'
-                                            }}>
-                                    <FiEye />
-                                    <div>299</div>
-                                </div>
-                            </div>
-                            <LinkOne to="school/news/249763" style={{marginRight: 'auto'}}>ادامه مطلب</LinkOne>
-                        </div>
-                    </div>
+                    <CardTwo
+                        title="راهپیمایی 22 بهمن"
+                        src={imageOne}
+                        path="/school/news/274698"
+                        views="267"
+                        date="24 بهمن"
+                        />
+                    <CardTwo
+                        title="روز دانش آموز"
+                        src={imageTwo}
+                        path="/school/news/274698"
+                        views="267"
+                        date="4 آبان"
+                        />
+                    <CardTwo
+                        title="برنامه امتحانات نوبت اول"
+                        src={image}
+                        path="/school/news/274698"
+                        views="267"
+                        date="16 اردیبهشت"
+                        />
+                    <CardTwo
+                        title="جلسه دیدار با اولیا"
+                        src={imageThree}
+                        path="/school/news/274698"
+                        views="267"
+                        date="28 فروردین"
+                        />
                 </div>
             </div>
         </div>
