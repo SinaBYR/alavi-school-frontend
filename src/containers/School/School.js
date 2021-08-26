@@ -26,7 +26,7 @@ const School = props => {
             {/* <CustomSwitch></CustomSwitch> */}
             <CustomSwitch>
                 <Route path="/school/news" component={News}/>
-                {/* <Route path="/school/gallery" component={Gallery}/> */}
+                <Route path="/school/gallery" component={Gallery}/>
                 <Route path="/school/staff" component={Staff}/>
                 <Route path="/school/contact" component={ContactUs}/>
                 <Route path="/school/auth" component={Auth}/>

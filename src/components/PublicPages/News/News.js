@@ -6,6 +6,7 @@ import imageThree from '../../../assets/monkey.jpg';
 import { CardTwo } from '../../Utility/UI/Cards/CardTwo/CardTwo';
 
 const News = props => {
+
     return (
         <div className={classes.News}>
             <div className={classes.Wrapper}>
