@@ -1,0 +1,34 @@
+.Report {
+    max-width: 780px;
+    padding: 0 1rem;
+    margin: 0 auto;
+    /* background-color: #f4f4f4; */
+}
+
+.Report > * {
+    margin: 1rem 0;
+}
+
+.Report h2 {
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header > * {
+    margin: 0 1rem;
+}
+
+
+.Content img {
+    width: 100%;
+}
+
+.Text {
+    line-height: 2;
+    text-align: justify;
+}
