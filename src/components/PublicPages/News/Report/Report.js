@@ -9,16 +9,12 @@ const Report = props => {
         <div className={classes.Report}>
             <HTwo style={{textAlign: 'center'}}>راهپیمایی 22 بهمن</HTwo>
             <div className={classes.Header}>
-                <div style={{
-                    textAlign: 'center'
-                }}>
+                <div>
                     <BiCalendarEdit />
                     <div>16 اسفند 1398</div>
                 </div>
 
-                <div style={{
-                    textAlign: 'center'
-                }}>
+                <div>
                     <FiEye />
                     <div>274</div>
                 </div>
