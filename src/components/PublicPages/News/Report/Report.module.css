@@ -9,9 +9,6 @@
     margin: 1rem 0;
 }
 
-.Report h2 {
-}
-
 .Header {
     display: flex;
     justify-content: space-between;
@@ -23,8 +20,7 @@
     margin: 0 1rem;
 }
 
-
-.Content img {
+.Img {
     width: 100%;
 }
 
