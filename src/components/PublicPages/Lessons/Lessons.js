@@ -1,16 +1,12 @@
-import MultiView from '../../Utility/MultiView/MultiView';
-import HTwo from '../../Utility/UI/Headings/HTwo/HTwo';
 import classes from './Lessons.module.css';
 import placeholder from '../../../assets/students.jpg';
-import { FaPlay } from 'react-icons/fa';
 import { AiFillPlayCircle } from 'react-icons/ai';
-import HThree from '../../Utility/UI/Headings/HThree/HThree';
+import { HThree } from '../../Utility/UI';
 
 const Lessons = props => {
-    console.log(props);
+    // console.log(props);
     return (
         <div className={classes.Lessons}>
-            {/* <MultiView></MultiView> */}
             <div className={classes.Wrapper}>
                 <HThree>محتوای آموزشی / پایه اول</HThree>
                 <div className={classes.Content}>
@@ -103,4 +99,4 @@ const Lessons = props => {
     )
 }
 
-export default Lessons;
+export { Lessons }

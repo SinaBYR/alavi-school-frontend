@@ -1,6 +1,6 @@
 import classes from './Burger.module.css';
 
-const Burger = props => {
+export const Burger = props => {
     const classNames = [classes.Burger, props.open ? classes.Open : null].join(' ');
 
     return (
@@ -11,5 +11,3 @@ const Burger = props => {
         </div>
     )
 }
-
-export default Burger;

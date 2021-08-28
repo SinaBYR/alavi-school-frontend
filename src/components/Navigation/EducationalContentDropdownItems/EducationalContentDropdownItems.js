@@ -1,4 +1,4 @@
-import NavLinkOne from '../../Utility/UI/NavLinkOne/NavLinkOne';
+import { NavLinkOne } from '../../Utility/UI';
 import { BiVideo } from 'react-icons/bi';
 
 const EducationalContentDropdownItems = props => {

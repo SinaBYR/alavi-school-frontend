@@ -1,8 +1,8 @@
+import * as yup from 'yup';
 import classes from './Login.module.css';
-import ButtonOne from '../../../Utility/UI/ButtonOne/ButtonOne';
+import { ButtonOne } from '../../../Utility/UI';
 import { Input } from '../../../Utility/Inputs';
 import { withFormik, Form } from 'formik';
-import * as yup from 'yup';
 
 const Login = ({errors, touched}) => {
     return(

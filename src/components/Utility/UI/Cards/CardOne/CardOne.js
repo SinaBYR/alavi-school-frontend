@@ -1,7 +1,7 @@
-import LinkOne from '../../LinkOne/LinkOne';
 import classes from './CardOne.module.css';
+import { LinkOne } from '../..';
 
-const CardOne = props => {
+export const CardOne = props => {
     const hStyles = props.hStyles;
     const pStyles = props.pStyles;
     const lStyles = props.lStyles;
@@ -14,5 +14,3 @@ const CardOne = props => {
         </div>
     )
 }
-
-export default CardOne;

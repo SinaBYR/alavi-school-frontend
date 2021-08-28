@@ -1,9 +1,6 @@
-import NavLinkOne from '../../Utility/UI/NavLinkOne/NavLinkOne';
-
-
+import { NavLinkOne } from '../../Utility/UI';
 
 const AboutUsDropdownItems = props => {
-
     return (
         <>
             {/* {educationalContentList} */}

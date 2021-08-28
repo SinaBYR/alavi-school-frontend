@@ -6,14 +6,14 @@ import { useState } from 'react';
 
 const Album = props => {
     const [showcaseURL, setShowcaseURL] = useState(null);
-    console.log(props);
+    // console.log(props);
 
-    const data = [image, imageOne]
+    const data = [image, imageOne, imageOne, imageOne, imageOne, imageOne, imageOne, imageOne, imageOne, imageOne, imageOne, imageOne]
 
     const displayedImages = data.map(src => {
         return (
-            <div className={classes.ImageWrapper} key={src}>
-                <img className={classes.Image} src={src} alt="kitten" />
+            <div className={classes.ThumbnailWrapper} key={src}>
+                <img className={classes.Thumbnail} src={src} alt="kitten" />
             </div>
         )
     });
@@ -34,10 +34,14 @@ const Album = props => {
                 <div className={classes.Showcase}>
                     {
                         data.length &&  
-                        <img src={showcaseURL || data[0]} alt="showcase"/>
+                        <>
+                            <div className={classes.Description}>ahahahahahahah</div>
+                            <img src={showcaseURL || data[0]} alt="showcase"/>
+                        </>
+                        
                     }
                 </div>
-                <div className={classes.Content} onClick={openModalHandler}>
+                <div className={classes.ThumbnailsContainer} onClick={openModalHandler}>
                     {displayedImages}
                 </div>
             </div>

@@ -1,10 +1,9 @@
 import classes from './PublicHeader.module.css';
 import { useEffect, useState } from 'react';
-import DesktopNavigationItems from '../DesktopNavigationItems/DesktopNavigationItems';
-import LinkOne from '../../Utility/UI/LinkOne/LinkOne';
-import Sidedrawer from '../Sidedrawer/Sidedrawer';
-import Burger from '../../Utility/UI/Burger/Burger';
+import { Burger, LinkOne } from '../../Utility/UI';
 import Logo from '../../../assets/logo.png';
+import DesktopNavigationItems from '../DesktopNavigationItems/DesktopNavigationItems';
+import Sidedrawer from '../Sidedrawer/Sidedrawer';
 import { MdAccountBox } from 'react-icons/md';
 import { useLocation } from 'react-router-dom';
 
@@ -42,4 +41,4 @@ const PublicHeader = props => {
     )   
 }
 
-export default PublicHeader;
+export { PublicHeader }

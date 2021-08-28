@@ -1,6 +1,6 @@
+import classes from './Carousel.module.css';
 import BrainhubeuCarousel, { arrowsPlugin, Dots, autoplayPlugin  } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import classes from './Carousel.module.css';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { useState } from 'react';
 
@@ -39,15 +39,11 @@ const Carousel = ({ slides, thumbnail, arrows, infinite, interval }) => {
     ]
 
     if(!arrows) {
-        // const optionToDelete = options.find(option => option.resolve === arrowsPlugin);
         options = options.filter(option => option.resolve !== arrowsPlugin);
-        // options.splice(optionToDelete);
     } else if (!interval) {
         options = options.filter(option => option.resolve !== autoplayPlugin);
-        // options.slice(optionToDelete);
     }
 
-    console.log(options);
     return (
         <div className={classes.CarouselWrapper}>
             <BrainhubeuCarousel

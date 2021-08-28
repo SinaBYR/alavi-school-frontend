@@ -1,9 +1,6 @@
 import classes from './Lobby.module.css';
-import { IoSchoolSharp } from 'react-icons/io5'
-import LinkOne from '../Utility/UI/LinkOne/LinkOne';
+import { HOne, HTwo, LinkOne } from '../Utility/UI';
 import Logo from '../../assets/logo.png';
-import HOne from '../Utility/UI/Headings/HOne/HOne';
-import HTwo from '../Utility/UI/Headings/HTwo/HTwo';
 
 const Lobby = props => {
     const setSchoolBranch = branch => {

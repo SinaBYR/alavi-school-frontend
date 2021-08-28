@@ -1,14 +1,20 @@
 import classes from './MobileNavigationItems.module.css';
-import { MdClose } from 'react-icons/md';
-import SubLinkOne from '../../Utility/UI/SubLinkOne/SubLinkOne';
+import { useEffect, useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
+import { SubLinkOne } from '../../Utility/UI';
 import AboutUsDropdownItems from '../AboutUsDropdownItems/AboutUsDropdownItems';
 import EducationalContentDropdownItems from '../EducationalContentDropdownItems/EducationalContentDropdownItems';
-import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const MobileNavigationItems = props => {
     const [subMenuOneOpen, setSubMenuOneOpen] = useState(false);
     const [subMenuTwoOpen, setSubMenuTwoOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        setSubMenuOneOpen(false);
+        setSubMenuTwoOpen(false);
+    }, [location])
 
     const subMenuOneClassNames = [classes.SubMenu, subMenuOneOpen ? classes.Open : null].join(' ');
     const subMenuTwoClassNames = [classes.SubMenu, subMenuTwoOpen ? classes.Open : null].join(' ');
@@ -16,7 +22,6 @@ const MobileNavigationItems = props => {
     return (
         <ul className={classes.MobileNavigationItems}>
             <SubLinkOne to="/school">خانه</SubLinkOne>
-            <SubLinkOne to="/">تصاویر</SubLinkOne>
             <SubLinkOne to="/school/news">اخبار</SubLinkOne>
             <li tabIndex="0" onClick={() => setSubMenuOneOpen(!subMenuOneOpen)}>محتوای آموزشی<FiPlus /></li>
             <div className={subMenuOneClassNames}>

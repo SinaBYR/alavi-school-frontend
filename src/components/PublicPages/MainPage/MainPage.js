@@ -1,12 +1,7 @@
-import PublicHeader from '../../Navigation/PublicHeader/PublicHeader';
 import classes from './MainPage.module.css';
-import SectionOne from './SectionOne/SectionOne';
-import TopNav from '../../Navigation/TopNav/TopNav';
-import SectionTwo from './SectionTwo/SectionTwo';
-import SectionThree from './SectionThree/SectionThree';
-import Footer from '../../Footer/Footer';
-
-
+import { SectionOne } from './SectionOne/SectionOne';
+import { SectionTwo } from './SectionTwo/SectionTwo';
+import { SectionThree } from './SectionThree/SectionThree';
 
 const MainPage = props => {
 
@@ -19,4 +14,4 @@ const MainPage = props => {
     )
 }
 
-export default MainPage;
+export { MainPage }

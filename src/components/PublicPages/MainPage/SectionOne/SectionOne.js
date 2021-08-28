@@ -1,5 +1,4 @@
 import classes from './SectionOne.module.css';
-import React from 'react';
 import image from '../../../../assets/bird.jpg';
 import imageOne from '../../../../assets/bird-1.jpg';
 import imageTwo from '../../../../assets/kitten.jpg';
@@ -50,7 +49,8 @@ const SectionOne = props => {
     return (
         <section className={classes.SectionOne}>
             <div className={classes.Wrapper}>
-                <Carousel slides={slides} thumbnail arrows infinite interval="5000" />
+                {/* <Carousel slides={slides} thumbnail arrows infinite interval="5000" /> */}
+
                 {/* <div className={classes.RegisterPost}>
                     <div className={classes.Text}>
                         <HOne>ثبت نام آغاز شد</HOne>
@@ -64,4 +64,4 @@ const SectionOne = props => {
     )
 }
 
-export default SectionOne;
+export { SectionOne }

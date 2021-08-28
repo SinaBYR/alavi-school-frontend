@@ -1,9 +1,9 @@
 import classes from './SectionThree.module.css';
+import { HTwo } from '../../../Utility/UI';
 // import Image1 from '../../../../assets/illustrations/undraw_book_reading_kx9s.svg';
 // import Image2 from '../../../../assets/illustrations/undraw_Growing_re_olpi.svg';
 // import Image3 from '../../../../assets/illustrations/undraw_Faq_re_31cw.svg';
 import Image4 from '../../../../assets/students.jpg';
-import HTwo from '../../../Utility/UI/Headings/HTwo/HTwo';
 
 const SectionThree = props => {
     return (
@@ -34,4 +34,4 @@ const SectionThree = props => {
     )
 }
 
-export default SectionThree;
+export { SectionThree }

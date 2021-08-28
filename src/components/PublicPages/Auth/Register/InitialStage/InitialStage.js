@@ -1,10 +1,6 @@
-import { useEffect } from 'react';
-import ButtonOne from '../../../../Utility/UI/ButtonOne/ButtonOne';
-import HOne from '../../../../Utility/UI/Headings/HOne/HOne';
-import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
-import HTwo from '../../../../Utility/UI/Headings/HTwo/HTwo';
 import classes from './InitialStage.module.css';
-
+import { useEffect } from 'react';
+import { ButtonOne } from '../../../../Utility/UI';
 const InitialStage = props => {
 
     let classNames = [classes.InitialStage]
@@ -70,4 +66,4 @@ const InitialStage = props => {
     )
 }
 
-export default InitialStage;
+export { InitialStage }

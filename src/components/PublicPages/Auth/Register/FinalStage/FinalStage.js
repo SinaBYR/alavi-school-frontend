@@ -1,15 +1,11 @@
-import classes from './FinalStage.module.css';
-import { useEffect, useRef, useState } from 'react';
-import HThree from '../../../../Utility/UI/Headings/HThree/HThree';
-import { AkbariDatePicker } from 'akbari-react-date-picker'
-import 'akbari-react-date-picker/dist/index.css'
-import DownloadLink from '../../../../Utility/UI/DownloadLink/DownloadLink';
-import { FaCheck, FaRegFilePdf } from 'react-icons/fa';
-import { Field, Form, withFormik } from 'formik';
-import { Input } from '../../../../Utility/Inputs/index';
 import * as yup from 'yup';
-import ButtonOne from '../../../../Utility/UI/ButtonOne/ButtonOne';
-import { useHistory } from 'react-router-dom';
+import classes from './FinalStage.module.css';
+import 'akbari-react-date-picker/dist/index.css'
+import { useEffect, useState } from 'react';
+import { Input } from '../../../../Utility/Inputs/index';
+import { HThree, DownloadLink, ButtonOne } from '../../../../Utility/UI';
+import { AkbariDatePicker } from 'akbari-react-date-picker'
+import { Field, Form, withFormik } from 'formik';
 
 const SCHOOL_IDENTIFIERS = {
     1: 'دبستان میدان ساعت',
@@ -22,7 +18,7 @@ const FinalStage = ({values, errors, touched, setFieldValue, prev, getData, isVa
     const [studentPhotoError, setStudentPhotoError] = useState(null);
     const [studentBirthdate, setStudentBirthdate] = useState('');
     const schoolBranch = SCHOOL_IDENTIFIERS[localStorage.getItem('branch')];
-
+    
     const studentPhotoHanler = e => {
         setStudentPhotoError(null);
         setStudentPhoto(null);

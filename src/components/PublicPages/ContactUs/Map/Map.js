@@ -77,4 +77,4 @@ const Map = props => {
     )
 }
 
-export default Map;
+export { Map }

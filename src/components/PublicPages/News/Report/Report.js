@@ -1,8 +1,8 @@
 import classes from './Report.module.css';
 import image from '../../../../assets/kitten.jpg';
+import { HTwo } from '../../../Utility/UI';
 import { BiCalendarEdit } from 'react-icons/bi';
 import { FiEye } from 'react-icons/fi';
-import HTwo from '../../../Utility/UI/Headings/HTwo/HTwo'
 
 const Report = props => {
     return (

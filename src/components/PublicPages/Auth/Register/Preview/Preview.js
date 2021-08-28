@@ -1,5 +1,5 @@
-import ButtonOne from '../../../../Utility/UI/ButtonOne/ButtonOne';
 import classes from './Preview.module.css';
+import { ButtonOne } from '../../../../Utility/UI';
 
 const Preview = props => {
 
@@ -58,4 +58,4 @@ const Preview = props => {
     )
 }
 
-export default Preview;
+export { Preview }

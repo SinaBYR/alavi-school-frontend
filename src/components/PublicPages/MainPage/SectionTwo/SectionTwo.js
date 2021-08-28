@@ -1,6 +1,5 @@
-import LinkOne from '../../../Utility/UI/LinkOne/LinkOne';
 import classes from './SectionTwo.module.css';
-import CardOne from '../../../Utility/UI/Cards/CardOne/CardOne';
+import { CardOne } from '../../../Utility/UI';
 
 const SectionTwo = props => {
     return (
@@ -18,4 +17,4 @@ const SectionTwo = props => {
     )
 }
 
-export default SectionTwo;
+export { SectionTwo }

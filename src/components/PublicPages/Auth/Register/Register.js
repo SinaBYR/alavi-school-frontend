@@ -1,8 +1,7 @@
 import classes from './Register.module.css';
 import { useState } from 'react';
-import ButtonOne from '../../../Utility/UI/ButtonOne/ButtonOne';
-import InitialStage from './InitialStage/InitialStage';
-import Preview from './Preview/Preview';
+import { InitialStage } from './InitialStage/InitialStage';
+import { Preview } from './Preview/Preview';
 import FinalStage from './FinalStage/FinalStage';
 
 const Register = props => {
@@ -33,4 +32,4 @@ const Register = props => {
     )
 }
 
-export default Register;
+export { Register };

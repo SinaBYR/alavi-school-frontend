@@ -1,9 +1,8 @@
 import classes from './Auth.module.css';
 import { useEffect, useState } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import Register from './Register/Register';
+import { Register } from './Register/Register';
 import Login from './Login/Login';
-import Footer from '../../Footer/Footer';
 
 const Auth = props => {
 
@@ -27,4 +26,4 @@ const Auth = props => {
     )
 }
 
-export default Auth;
+export { Auth }

@@ -15,14 +15,16 @@ const SchoolYears = props => {
         <YearFolder path="/school/gallery/1394-95" year="94-95" key={Math.random()} />
     ]
     useEffect(() => {
-        setYears(finalData);
+        setTimeout(() => {
+            setYears(finalData);
+        }, 2000)
     }, [])
 
     return (
         <div className={classes.SchoolYears}>
             <h2 style={{textAlign: 'center'}}>آلبوم تصاویر</h2>
             <div className={classes.YearsWrapper}>
-                {years}
+                {years.length ? years : 'loading'}
             </div>
         </div>
     )

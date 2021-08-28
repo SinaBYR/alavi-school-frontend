@@ -1,7 +1,6 @@
 import classes from './DesktopNavigationItems.module.css';
 import { NavLink } from 'react-router-dom';
 import { RiArrowDropDownFill } from 'react-icons/ri';
-import Logo from '../../../assets/logo.png';
 import AboutUsDropdownItems from '../AboutUsDropdownItems/AboutUsDropdownItems';
 import EducationalContentDropdownItems from '../EducationalContentDropdownItems/EducationalContentDropdownItems';
 
@@ -9,11 +8,9 @@ const NavigationItems = props => {
 
     return (
         <nav className={classes.DesktopNavigationItems}>
-            {/* <img className={classes.Logo} src={Logo} alt="logo"/> */}
             <ul className={classes.Items}>
 
                 <NavLink className={classes.Link} to="/school">صفحه اصلی</NavLink>
-                {/* <NavLink className={classes.Link} to="/">تصاویر</NavLink> */}
                 <NavLink className={classes.Link} to="/school/news">اخبار</NavLink>
 
                 <div className={classes.EducationalContent}>
@@ -33,10 +30,10 @@ const NavigationItems = props => {
                         </div>
                     </div>
                 </div>
+
                 <NavLink className={classes.Link} to="/">مشاوره</NavLink>
                 <NavLink className={classes.Link} to="/school/contact">ارتباط با ما</NavLink>
             </ul>
-
         </nav>
     )
 }

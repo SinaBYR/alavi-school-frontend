@@ -1,9 +1,8 @@
 import classes from './ContactUs.module.css';
-import { withFormik, Form } from 'formik';
 import * as yup from 'yup';
-import Map from './Map/Map';
-import HThree from '../../Utility/UI/Headings/HThree/HThree';
-import ButtonOne from '../../Utility/UI/ButtonOne/ButtonOne';
+import { withFormik, Form } from 'formik';
+import { Map } from './Map/Map';
+import { HThree, ButtonOne } from '../../Utility/UI';
 import { Input, Textarea } from '../../Utility/Inputs';
 import { IoLocationSharp } from 'react-icons/io5';
 import { FaPhone, FaTelegram, FaInstagram } from 'react-icons/fa';

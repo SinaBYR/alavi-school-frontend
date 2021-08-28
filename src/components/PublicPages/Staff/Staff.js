@@ -14,4 +14,4 @@ const Staff = props => {
     )
 }
 
-export default Staff;
+export { Staff };

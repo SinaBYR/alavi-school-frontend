@@ -11,7 +11,8 @@
 .Showcase {
     height: 580px;
     padding: 1rem;
-    margin: 0 auto;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
     border-radius: 5px;
 }
 
@@ -24,26 +25,27 @@
     box-shadow: 0 0 8px #282c34;
 }
 
-.Content {
+.ThumbnailsContainer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    /* background-color: red; */
 }
 
-.Content > * {
-    margin: 1rem;
+.ThumbnailsContainer > * {
+    margin: 0.5rem 1rem;
 }
 
-.ImageWrapper {
+.ThumbnailWrapper {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 200ms ease;
 }
 
-.ImageWrapper:hover {
+.ThumbnailWrapper:hover {
     transform: scale(1.01);
 }
 
-.Image {
+.Thumbnail {
     padding: 0.2rem;
     width: 100%;
     /* background-color: #282c34; */

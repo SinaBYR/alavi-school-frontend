@@ -1,9 +1,9 @@
 import classes from './Reports.module.css';
+import { CardTwo } from '../../../Utility/UI/Cards/CardTwo/CardTwo';
 import image from '../../../../assets/kitten.jpg';
 import imageOne from '../../../../assets/bird.jpg';
 import imageTwo from '../../../../assets/bird-1.jpg';
 import imageThree from '../../../../assets/monkey.jpg';
-import { CardTwo } from '../../../Utility/UI/Cards/CardTwo/CardTwo';
 
 const Reports = props => {
     return (

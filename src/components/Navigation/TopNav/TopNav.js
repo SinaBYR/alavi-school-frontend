@@ -38,4 +38,4 @@ const TopNav = props => {
     )
 }
 
-export default TopNav;
+export { TopNav }

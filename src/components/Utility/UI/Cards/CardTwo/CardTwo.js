@@ -1,9 +1,9 @@
 import classes from './CardTwo.module.css';
+import { LinkOne } from '../..';
 import { FiEye } from 'react-icons/fi';
 import { BiCalendarEdit } from 'react-icons/bi';
-import LinkOne from '../../LinkOne/LinkOne';
 
-const CardTwo = ({title, src, date, views, path, style}) => {
+export const CardTwo = ({title, src, date, views, path, style}) => {
     return (
         <div className={classes.CardTwo} style={style}>
             <h4 style={{textAlign: 'center'}}>{title}</h4>
@@ -40,5 +40,3 @@ const CardTwo = ({title, src, date, views, path, style}) => {
         </div>
     )
 }
-
-export { CardTwo }
