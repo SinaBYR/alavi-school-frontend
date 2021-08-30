@@ -3,6 +3,7 @@ import classes from './Member.module.css';
 const Member = ({fullName, photo, position, education}) => {
     return (
         <div className={classes.Member}>
+
             <div className={classes.Header}>
                 <div className={classes.Photo}>
                     <img src={photo} alt="تصویر دبیر"/>
@@ -12,11 +13,11 @@ const Member = ({fullName, photo, position, education}) => {
 
             <div className={classes.DesktopInfo}>
                 <div className={classes.Properties}>
-                    <div>سمت</div>
-                    <div>تحصیلات</div>
+                    <div>سمت: &nbsp;</div>
+                    <div>تحصیلات: &nbsp;</div>
                 </div>
                 <div className={classes.Values}>
-                    <div>دبیر {position}</div>
+                    <div>{position}</div>
                     <div>{education}</div>
                 </div>
             </div>

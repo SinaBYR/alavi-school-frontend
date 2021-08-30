@@ -9,7 +9,7 @@
 .Header {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 70px;
     background-color: #282c34;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -27,9 +27,13 @@
 .Photo {
     position: absolute;
     top: 35px;
+    top: 10px;
     right: 25px;
     width: 140px;
+    width: 120px;
     height: 130px;
+    height: 120px;
+    color: white;
     border-radius: 15px;
     border-radius: 50%;
 }
@@ -40,7 +44,9 @@
     top: 0;
     left: 0;
     width: 140px;
+    width: 120px;
     height: 130px;
+    height: 120px;
     background-color: #eeeeee;
     background-color: #282c34;
     border-radius: 50%;
@@ -73,7 +79,15 @@
 :is(.Properties, .Values) > * {
     /* background-color: teal; */
     margin: 1rem auto;
-    text-align: center;
+    /* text-align: left; */
+}
+
+.Properties > * {
+    text-align: left;
+}
+
+.Values > * {
+    text-align: right;
 }
 
 .MobileInfo {
