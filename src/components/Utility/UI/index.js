@@ -18,3 +18,6 @@ export { CardTwo } from './Cards/CardTwo/CardTwo';
 
 // Burger
 export { Burger } from './Burger/Burger';
+
+// Spinner
+export { Spinner } from './Spinner/Spinner';

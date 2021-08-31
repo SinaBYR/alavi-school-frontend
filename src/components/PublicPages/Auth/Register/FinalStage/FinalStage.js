@@ -497,7 +497,7 @@ const FinalStage = ({values, errors, touched, setFieldValue, prev, getData, isVa
                         <div><ButtonOne type="submit" disabled={!(isValid && dirty)}>پیش ثبت نام</ButtonOne></div>
                         <ButtonOne type="button" onClick={prev}>مرحله قبل</ButtonOne>
                     </div>
-                    {/* <button type="submit">Submit</button> */}
+                    <button type="submit">Submit</button>
                 </Form>
             </div>
         </div>

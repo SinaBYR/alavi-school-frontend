@@ -5,6 +5,7 @@
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",
     "@react-leaflet/core": "^1.0.2",
+    "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -19,6 +20,7 @@
     "react-intersection-observer": "^8.32.0",
     "react-leaflet": "^3.1.0",
     "react-modal-image": "^2.5.0",
+    "react-redux": "^7.2.4",
     "react-redux-loading-bar": "^5.0.2",
     "react-responsive-carousel": "^3.2.21",
     "react-router-dom": "^5.2.0",

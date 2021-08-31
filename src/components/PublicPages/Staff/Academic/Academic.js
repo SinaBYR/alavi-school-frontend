@@ -10,25 +10,25 @@ const Academic = props => {
                 <div className={classes.Content}>
 
                     <Member
-                        fullName="عباس بوعذار"
+                        fullName="شیما طاهری"
+                        position="دبیر ادبیات فارسی"
+                        education="دکترای زبان و ادبیات فارسی"
+                        photo=""/>
+
+                    <Member
+                        fullName="شیما طاهری"
                         position="دبیر ادبیات فارسی"
                         education="دکترای زبان و ادبیات فارسی"
                         photo={teacher}/>
 
                     <Member
-                        fullName="عباس بوعذار"
+                        fullName="شیما طاهری"
                         position="دبیر ادبیات فارسی"
                         education="دکترای زبان و ادبیات فارسی"
                         photo={teacher}/>
 
                     <Member
-                        fullName="عباس بوعذار"
-                        position="دبیر ادبیات فارسی"
-                        education="دکترای زبان و ادبیات فارسی"
-                        photo={teacher}/>
-
-                    <Member
-                        fullName="عباس بوعذار"
+                        fullName="شیما طاهری"
                         position="دبیر ادبیات فارسی"
                         education="دکترای زبان و ادبیات فارسی"
                         photo={teacher}/>

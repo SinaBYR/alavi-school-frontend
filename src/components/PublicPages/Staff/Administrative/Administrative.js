@@ -10,25 +10,25 @@ const Administrative = props => {
                 <div className={classes.Content}>
 
                     <Member
-                        fullName="عباس بوعذار"
+                        fullName="سینا بیرقدار"
                         position="معاون آموزشی"
                         education="لیسانس مدیریت"
                         photo={teacher}/>
 
                     <Member
-                        fullName="عباس بوعذار"
+                        fullName="سینا بیرقدار"
                         position="معاون آموزشی"
                         education="لیسانس مدیریت"
                         photo={teacher}/>
 
                     <Member
-                        fullName="عباس بوعذار"
+                        fullName="سینا بیرقدار"
                         position="معاون آموزشی"
                         education="لیسانس مدیریت"
                         photo={teacher}/>
 
                     <Member
-                        fullName="عباس بوعذار"
+                        fullName="سینا بیرقدار"
                         position="معاون آموزشی"
                         education="لیسانس مدیریت"
                         photo={teacher}/>

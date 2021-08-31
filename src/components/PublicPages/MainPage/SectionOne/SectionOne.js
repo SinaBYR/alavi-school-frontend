@@ -49,7 +49,7 @@ const SectionOne = props => {
     return (
         <section className={classes.SectionOne}>
             <div className={classes.Wrapper}>
-                {/* <Carousel slides={slides} thumbnail arrows infinite interval="5000" /> */}
+                <Carousel slides={slides} thumbnail arrows infinite interval="5000" />
 
                 {/* <div className={classes.RegisterPost}>
                     <div className={classes.Text}>

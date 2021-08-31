@@ -3,11 +3,11 @@
     position: relative;
     width: 80px;
     height: 80px;
-    background-color: #282c34;
+    /* background-color: #282c34; */
     border-radius: 50%;
-    box-shadow: 0 0 8px #282c34;
+    /* box-shadow: 0 0 8px #282c34; */
   }
-  .Spinner::before {
+  /* .Spinner::before {
       content: '';
       position: absolute;
       top: 50%;
@@ -17,7 +17,7 @@
       height: 60%;
       background-color: #eeeeee;
       border-radius: 50%;
-  }
+  } */
   .Spinner div {
     animation: Spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     transform-origin: 40px 40px;
@@ -29,8 +29,8 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background-color: #282c34;
     background-color: #ffb62d;
+    background-color: #282c34;
     margin: -4px 0 0 -4px;
   }
   .Spinner div:nth-child(1) {
