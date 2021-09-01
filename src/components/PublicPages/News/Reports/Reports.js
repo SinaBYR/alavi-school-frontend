@@ -96,14 +96,17 @@ const Reports = props => {
 
     // --------------------------------------------------------------------------------------------------------------------------
     const dispatch = useDispatch();
-    const { data, isLoading } = useSelector((state) => state.news);
+    const { data, isLoading, error } = useSelector((state) => state.news);
 
     useEffect(() => {
         dispatch(fetchNews())
     }, [])
 
-    let displayedReports = <Spinner />;
-    if(data.length) {
+    let displayedReports;
+    if(isLoading) {
+        displayedReports = <Spinner />;
+    }
+    if(!isLoading && data?.length) {
         displayedReports = (
             <div className={classes.ReportsWrapper}>
                 {data.map(({id, userId, title, completed}) => (
@@ -123,11 +126,17 @@ const Reports = props => {
             </div>
         )
     }
+    if(!data?.length) {
+        displayedReports = <p>No news was found!</p>
+    }
+
+    if(error) {
+        displayedReports = <p>{error}</p>
+    }
 
     return (
         <div className={classes.Reports}>
             <h2 style={{textAlign: 'center'}}>اخبار مجموعه</h2>
-            <div>number of news fetched: {data.length}</div>
             <div className={classes.Content}>
                 {displayedReports}
             </div>

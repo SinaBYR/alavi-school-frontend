@@ -25,7 +25,7 @@ const App = () => {
     }
     
     console.log('[App]: Mounted')
-    console.clear();
+    // console.clear();
     return (
         <div className={['App'].join(' ')} onAnimationEnd={animationEndHandler}>
             <Switch>
